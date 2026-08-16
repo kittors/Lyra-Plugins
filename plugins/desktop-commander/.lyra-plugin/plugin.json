@@ -1,0 +1,24 @@
+{
+  "name": "desktop-commander",
+  "version": "0.2.47",
+  "description": "在本机跑命令、编辑文件、管进程。长任务在后台跑，不占着对话。",
+  "author": {
+    "name": "Eduard Ruzga"
+  },
+  "homepage": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+  "interface": {
+    "displayName": "Desktop Commander",
+    "shortDescription": "在本机跑命令、编辑文件、管进程。长任务在后台跑，不占着对话。",
+    "longDescription": "终端加文件编辑。和直接给 agent 一个 shell 的差别在于它把长任务放进后台会话——跑一个几分钟的构建不会把对话堵死，输出可以随时回来取。\n\n文件编辑是按块替换而不是整份重写，所以改一个大文件里的一行不用把整个文件读进来再吐出去。\n\n它能碰的东西和你自己在终端里能碰的一样多。装之前想清楚这一点。",
+    "developerName": "Eduard Ruzga",
+    "category": "本机",
+    "brandColor": "#0ea5e9",
+    "websiteURL": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+    "defaultPrompt": [
+      "把这个项目跑起来，构建失败的话把错误贴给我",
+      "在后台跑测试，跑完告诉我哪些挂了",
+      "找出这台机器上占空间最大的十个目录"
+    ]
+  },
+  "mcpServers": ".mcp.json"
+}

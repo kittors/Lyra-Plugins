@@ -1,0 +1,24 @@
+{
+  "name": "playwright",
+  "version": "0.0.79",
+  "description": "用无障碍树而不是截图来驱动浏览器，所以它读到的是结构，不是像素。",
+  "author": {
+    "name": "Microsoft"
+  },
+  "homepage": "https://github.com/microsoft/playwright-mcp",
+  "interface": {
+    "displayName": "Playwright",
+    "shortDescription": "用无障碍树而不是截图来驱动浏览器，所以它读到的是结构，不是像素。",
+    "longDescription": "微软官方出的 Playwright MCP。它给模型的是页面的无障碍树——元素、角色、可见文本——而不是一张要去认的图。\n\n这意味着两件事：不需要视觉模型也能精确点到第五行第二列那个按钮，以及同一段脚本在不同分辨率下行为一致。\n\n浏览器是它自己起的干净实例，没有你的登录态。要操作需要登录的页面，用 Agent Browser。",
+    "developerName": "Microsoft",
+    "category": "浏览器",
+    "brandColor": "#2ead33",
+    "websiteURL": "https://github.com/microsoft/playwright-mcp",
+    "defaultPrompt": [
+      "打开这个站点，把注册流程从头走一遍，遇到报错停下来告诉我",
+      "对比这个页面在手机和桌面宽度下的布局差异",
+      "把这个表单的所有校验规则试出来"
+    ]
+  },
+  "mcpServers": ".mcp.json"
+}

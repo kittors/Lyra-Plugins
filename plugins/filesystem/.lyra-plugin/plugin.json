@@ -1,0 +1,24 @@
+{
+  "name": "filesystem",
+  "version": "2026.7.10",
+  "description": "只在你点名的目录里读写。官方实现，边界是硬的。",
+  "author": {
+    "name": "Model Context Protocol"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+  "interface": {
+    "displayName": "Filesystem",
+    "shortDescription": "只在你点名的目录里读写。官方实现，边界是硬的。",
+    "longDescription": "MCP 官方的文件系统服务。关键不在于它能读写文件——那件事很多东西都能做——而在于它只能在启动时传给它的那几个目录里读写，越界的路径会被拒绝。\n\n默认配的是 ~/Documents。装完请去插件目录里改 .mcp.json 的最后一个参数，把它指向你真正想让 agent 碰的地方。多个目录就多写几个参数。",
+    "developerName": "Model Context Protocol",
+    "category": "本机",
+    "brandColor": "#eab308",
+    "websiteURL": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+    "defaultPrompt": [
+      "把这个目录下所有 markdown 的标题列成一份目录",
+      "找出这批文件里重复的内容",
+      "按修改时间把这个文件夹整理成按月分的子目录"
+    ]
+  },
+  "mcpServers": ".mcp.json"
+}

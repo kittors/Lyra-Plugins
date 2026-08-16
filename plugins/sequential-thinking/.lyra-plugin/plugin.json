@@ -1,0 +1,24 @@
+{
+  "name": "sequential-thinking",
+  "version": "2026.7.4",
+  "description": "把一个难问题拆成能一步步走、并且允许走回头路的思考。",
+  "author": {
+    "name": "Model Context Protocol"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+  "interface": {
+    "displayName": "Sequential Thinking",
+    "shortDescription": "把一个难问题拆成能一步步走、并且允许走回头路的思考。",
+    "longDescription": "官方实现。它给模型一个显式的思考结构：一步一步地推进，可以修正前面某一步，可以分叉出另一条路再回来，可以在中途发现需要更多步骤。\n\n对付那种「一口气想不清楚，但拆开就清楚了」的问题——架构取舍、多个约束互相打架的设计、需要反复推翻假设的排查。简单问题上用它只是变慢。",
+    "developerName": "Model Context Protocol",
+    "category": "思考",
+    "brandColor": "#ec4899",
+    "websiteURL": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+    "defaultPrompt": [
+      "这个系统要同时满足这三个互相冲突的约束，一步步帮我想",
+      "把这个迁移方案的每一步风险单独评估一遍",
+      "我这个判断哪里可能是错的，逐条推翻看看"
+    ]
+  },
+  "mcpServers": ".mcp.json"
+}

@@ -1,0 +1,53 @@
+name: 同步上游
+
+on:
+  schedule:
+    # 每天 03:00 UTC，也就是北京时间中午 11 点。错开整点，避开 GitHub 定时任务最挤的那几分钟。
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - sources.json
+      - scripts/sync.mjs
+      - .github/workflows/sync.yml
+
+# 一次只跑一个：两个 job 同时改 registry.json 会互相覆盖。
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: 生成索引与包装
+        env:
+          # 只用于读 releases 的版本号。没有它 GitHub API 会按 IP 限流，在 Actions 上必被限。
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync.mjs
+
+      - name: 有变化就提交
+        run: |
+          if git diff --quiet; then
+            echo "上游没有新版本。"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          # 版本号写进标题，这样 commit 列表本身就是一份上游变更记录。
+          git commit -m "同步上游：$(node -e "
+            const r = require('./registry.json');
+            const v = r.plugins.filter(p => p.version).map(p => p.name + ' ' + p.version);
+            console.log(v.join('、'));
+          ")"
+          git push

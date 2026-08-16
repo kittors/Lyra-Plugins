@@ -1,0 +1,24 @@
+{
+  "name": "context7",
+  "version": "4.0.2",
+  "description": "取库的当前文档，而不是模型记忆里那个版本的。",
+  "author": {
+    "name": "Upstash"
+  },
+  "homepage": "https://github.com/upstash/context7",
+  "interface": {
+    "displayName": "Context7",
+    "shortDescription": "取库的当前文档，而不是模型记忆里那个版本的。",
+    "longDescription": "模型对一个库的印象停在训练截止那天。库不会停。于是你得到能跑但是过时的写法、被废弃三个版本的 API、以及听起来很有道理的编造。\n\nContext7 在回答之前去取这个库此刻的文档，塞进上下文。对着变化快的框架写代码时，这是「能跑」和「照着两年前的教程写」之间的差别。",
+    "developerName": "Upstash",
+    "category": "开发",
+    "brandColor": "#8b5cf6",
+    "websiteURL": "https://github.com/upstash/context7",
+    "defaultPrompt": [
+      "用 Next.js 最新的写法做一个带流式响应的路由",
+      "这个库的这个 API 在当前版本里改成什么了",
+      "按官方现在推荐的方式配置这个工具"
+    ]
+  },
+  "mcpServers": ".mcp.json"
+}
