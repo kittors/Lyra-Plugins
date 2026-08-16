@@ -89,7 +89,8 @@
       "repository": "https://github.com/tw93/Waza.git",
       "homepage": "https://github.com/tw93/Waza",
       "author": "Tw93",
-      "brandColor": "#111827"
+      "brandColor": "#111827",
+      "version": "3.34.0"
     },
     {
       "id": "sequential-thinking",
