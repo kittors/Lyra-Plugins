@@ -6,6 +6,7 @@
 		{
 			"id": "waza",
 			"name": "Waza",
+			"kind": "skill",
 			"description": "八件工程上的老规矩，写成 agent 能照着执行的流程：出方案、审代码、查故障、做界面、读材料、写稿子、做研究、体检配置。",
 			"category": "工程",
 			"author": "Tw93",
@@ -29,6 +30,7 @@
 		{
 			"id": "anthropic-skills",
 			"name": "Anthropic Skills",
+			"kind": "skill",
 			"description": "官方那套：文档协作、前端设计、品牌规范、canvas 作图、MCP 构建、Office 文档读写。",
 			"category": "官方",
 			"author": "Anthropic",
@@ -61,6 +63,7 @@
 		{
 			"id": "superpowers",
 			"name": "Superpowers",
+			"kind": "skill",
 			"description": "一整套开发方法：头脑风暴、并行派活、执行计划、收尾分支、请求与接收代码评审、系统化排错。",
 			"category": "方法论",
 			"author": "obra",

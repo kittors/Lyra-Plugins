@@ -74,6 +74,8 @@ for (const source of sources.sources) {
 	collections.push({
 		id: source.id,
 		name: source.name,
+		// Stated, not inferred: a collection has no field that distinguishes it from a plugin.
+		kind: "skill",
 		description: source.description,
 		category: source.category,
 		author: source.author,
