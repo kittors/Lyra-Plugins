@@ -3,17 +3,6 @@
 	"name": "Lyra Skills",
 	"sources": [
 		{
-			"id": "waza",
-			"name": "Waza",
-			"author": "Tw93",
-			"category": "工程",
-			"repository": "https://github.com/tw93/Waza.git",
-			"homepage": "https://github.com/tw93/Waza",
-			"path": "skills",
-			"brandColor": "#111827",
-			"description": "八件工程上的老规矩，写成 agent 能照着执行的流程：出方案、审代码、查故障、做界面、读材料、写稿子、做研究、体检配置。"
-		},
-		{
 			"id": "anthropic-skills",
 			"name": "Anthropic Skills",
 			"author": "Anthropic",
@@ -34,6 +23,28 @@
 			"path": "skills",
 			"brandColor": "#7c3aed",
 			"description": "一整套开发方法：头脑风暴、并行派活、执行计划、收尾分支、请求与接收代码评审、系统化排错。"
+		},
+		{
+			"id": "design-skills",
+			"name": "Design Skills",
+			"author": "Bergside",
+			"category": "设计",
+			"repository": "https://github.com/bergside/awesome-design-skills.git",
+			"homepage": "https://github.com/bergside/awesome-design-skills",
+			"path": "skills",
+			"brandColor": "#6366f1",
+			"description": "67 份设计风格的说明书：从极简、粗野主义到蒸汽波，每一份写清楚这种风格的排版、配色和间距该怎么定。"
+		},
+		{
+			"id": "ok-skills",
+			"name": "OK Skills",
+			"author": "mxyhi",
+			"category": "工程",
+			"repository": "https://github.com/mxyhi/ok-skills.git",
+			"homepage": "https://github.com/mxyhi/ok-skills",
+			"path": "",
+			"brandColor": "#059669",
+			"description": "给写代码的 agent 攒的一套零碎手艺：浏览器操作、组件库用法、调研流程、发布检查，一个目录一件事。"
 		}
 	]
 }

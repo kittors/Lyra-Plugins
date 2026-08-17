@@ -33,14 +33,37 @@ function repoSlug(homepage) {
 async function listSkills(source) {
 	const slug = repoSlug(source.homepage);
 	if (!slug) return null;
-	const response = await fetch(`https://api.github.com/repos/${slug}/contents/${source.path}`, { headers });
+	/*
+	 * The tree, not the directory listing.
+	 *
+	 * A directory is not a skill — it is a skill only if it holds a `SKILL.md`, which is the rule
+	 * the installer applies and therefore the only count that predicts what actually arrives. A
+	 * collection kept at the repository root proves the point: 31 directories, 29 of them skills,
+	 * the other two `.github` and `docs`. Listing directories put a number on the card that was
+	 * two too high, which is the exact failure this listing exists to prevent.
+	 */
+	const branch = await defaultBranch(slug);
+	const response = await fetch(`https://api.github.com/repos/${slug}/git/trees/${branch}?recursive=1`, { headers });
 	if (!response.ok) throw new Error(`${response.status}`);
-	const items = await response.json();
-	return items
-		// A skill is a directory; loose files beside them are the collection's own notes.
-		.filter((item) => item.type === "dir")
-		.map((item) => item.name)
+	const tree = await response.json();
+	if (tree.truncated) throw new Error("仓库太大，树被截断了");
+
+	const prefix = source.path ? `${source.path.replace(/\/+$/, "")}/` : "";
+	const pattern = new RegExp(`^${escapeRe(prefix)}([^/]+)/SKILL\\.md$`);
+	return (tree.tree ?? [])
+		.map((item) => pattern.exec(item.path)?.[1])
+		.filter((name) => name !== undefined)
 		.sort();
+}
+
+function escapeRe(text) {
+	return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+async function defaultBranch(slug) {
+	const response = await fetch(`https://api.github.com/repos/${slug}`, { headers });
+	if (!response.ok) throw new Error(`${response.status}`);
+	return (await response.json()).default_branch ?? "main";
 }
 
 async function upstreamVersion(source) {
