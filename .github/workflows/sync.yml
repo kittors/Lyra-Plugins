@@ -9,7 +9,9 @@ on:
     branches: [main]
     paths:
       - sources.json
+      - skills-sources.json
       - scripts/sync.mjs
+      - scripts/sync-skills.mjs
       - .github/workflows/sync.yml
 
 # 一次只跑一个：两个 job 同时改 registry.json 会互相覆盖。
@@ -35,6 +37,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/sync.mjs
 
+      # 技能集合走另一条路：没有包要装，要读的是仓库里那一层目录本身。
+      - name: 生成技能索引
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-skills.mjs
+
       - name: 有变化就提交
         run: |
           if git diff --quiet; then
@@ -48,6 +56,8 @@ jobs:
           git commit -m "同步上游：$(node -e "
             const r = require('./registry.json');
             const v = r.plugins.filter(p => p.version).map(p => p.name + ' ' + p.version);
-            console.log(v.join('、'));
+            const s = require('./skills.json');
+            const n = s.collections.reduce((t, c) => t + c.skills.length, 0);
+            console.log([v.join('、'), n + ' 个技能'].filter(Boolean).join('；'));
           ")"
           git push

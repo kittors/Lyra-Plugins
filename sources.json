@@ -1,173 +1,204 @@
 {
-  "$comment": "手写的上游清单。registry.json 和 plugins/ 都由 scripts/sync.mjs 从这里生成——不要直接改那两处。字段说明见 README。",
-  "name": "Lyra Plugins",
-  "sources": [
-    {
-      "id": "agent-browser-cli",
-      "name": "Agent Browser",
-      "category": "浏览器",
-      "brandColor": "#f97316",
-      "kind": "npm-cli",
-      "package": "@sleepinsummer/agent-browser-cli",
-      "homepage": "https://github.com/sleepinginsummer/agent-browser-cli",
-      "author": "sleepinginsummer",
-      "description": "控制你自己那个 Chrome：开标签页、点按钮、读页面、跑 JS。登录态和 Cookie 都还在。",
-      "longDescription": "底层是一个 Rust daemon 加一个 Chrome 扩展桥，驱动的是你日常在用的那个浏览器，不是另起一个干净的实例。\n\n这是它和 Playwright 那类工具的根本差别：需要登录才能看到的页面、挂着插件的页面、你正开着的那个标签页，它都够得着。代价是它只能控制这一台机器上的这个 Chrome。\n\n装完插件还要装 CLI 本身：\n\n    npm i -g @sleepinsummer/agent-browser-cli\n\n然后按它的 README 装上 Chrome 扩展。daemon 是按需拉起的，不用常驻。",
-      "prompts": [
-        "打开 github.com/trending，把今天前十个仓库的名字和简介列给我",
-        "在当前这个标签页里把所有外链找出来，标出哪些是 404",
-        "登录态下把我的订单页截图存到桌面"
-      ]
-    },
-    {
-      "id": "playwright",
-      "name": "Playwright",
-      "category": "浏览器",
-      "brandColor": "#2ead33",
-      "kind": "npm-mcp",
-      "package": "@playwright/mcp",
-      "command": "npx",
-      "args": ["-y", "@playwright/mcp@latest"],
-      "homepage": "https://github.com/microsoft/playwright-mcp",
-      "author": "Microsoft",
-      "description": "用无障碍树而不是截图来驱动浏览器，所以它读到的是结构，不是像素。",
-      "longDescription": "微软官方出的 Playwright MCP。它给模型的是页面的无障碍树——元素、角色、可见文本——而不是一张要去认的图。\n\n这意味着两件事：不需要视觉模型也能精确点到第五行第二列那个按钮，以及同一段脚本在不同分辨率下行为一致。\n\n浏览器是它自己起的干净实例，没有你的登录态。要操作需要登录的页面，用 Agent Browser。",
-      "prompts": [
-        "打开这个站点，把注册流程从头走一遍，遇到报错停下来告诉我",
-        "对比这个页面在手机和桌面宽度下的布局差异",
-        "把这个表单的所有校验规则试出来"
-      ]
-    },
-    {
-      "id": "chrome-devtools",
-      "name": "Chrome DevTools",
-      "category": "浏览器",
-      "brandColor": "#4285f4",
-      "kind": "npm-mcp",
-      "package": "chrome-devtools-mcp",
-      "command": "npx",
-      "args": ["-y", "chrome-devtools-mcp@latest"],
-      "homepage": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-      "author": "Google Chrome",
-      "description": "性能追踪、网络请求、控制台——把 DevTools 里那几个面板交给 agent 读。",
-      "longDescription": "Chrome 团队官方出的。它接的是 DevTools 协议，能拿到的东西和你按 F12 看到的是同一批：性能录制、每一条网络请求和它的响应、控制台的报错、DOM 和样式的计算结果。\n\n用来查「为什么这页这么慢」和「这个请求到底发了什么」比截图有效得多——那两个问题的答案本来就不在画面上。",
-      "prompts": [
-        "录一段这个页面的加载性能，告诉我最大的三个瓶颈在哪",
-        "把这次提交前后的首屏时间对比一下",
-        "这个页面控制台报了什么错，源头在哪一行"
-      ]
-    },
-    {
-      "id": "desktop-commander",
-      "name": "Desktop Commander",
-      "category": "本机",
-      "brandColor": "#0ea5e9",
-      "kind": "npm-mcp",
-      "package": "@wonderwhy-er/desktop-commander",
-      "command": "npx",
-      "args": ["-y", "@wonderwhy-er/desktop-commander@latest"],
-      "homepage": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
-      "author": "Eduard Ruzga",
-      "description": "在本机跑命令、编辑文件、管进程。长任务在后台跑，不占着对话。",
-      "longDescription": "终端加文件编辑。和直接给 agent 一个 shell 的差别在于它把长任务放进后台会话——跑一个几分钟的构建不会把对话堵死，输出可以随时回来取。\n\n文件编辑是按块替换而不是整份重写，所以改一个大文件里的一行不用把整个文件读进来再吐出去。\n\n它能碰的东西和你自己在终端里能碰的一样多。装之前想清楚这一点。",
-      "prompts": [
-        "把这个项目跑起来，构建失败的话把错误贴给我",
-        "在后台跑测试，跑完告诉我哪些挂了",
-        "找出这台机器上占空间最大的十个目录"
-      ]
-    },
-    {
-      "id": "filesystem",
-      "name": "Filesystem",
-      "category": "本机",
-      "brandColor": "#eab308",
-      "kind": "npm-mcp",
-      "package": "@modelcontextprotocol/server-filesystem",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem@latest", "${HOME}/Documents"],
-      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
-      "author": "Model Context Protocol",
-      "description": "只在你点名的目录里读写。官方实现，边界是硬的。",
-      "longDescription": "MCP 官方的文件系统服务。关键不在于它能读写文件——那件事很多东西都能做——而在于它只能在启动时传给它的那几个目录里读写，越界的路径会被拒绝。\n\n默认配的是 ~/Documents。装完请去插件目录里改 .mcp.json 的最后一个参数，把它指向你真正想让 agent 碰的地方。多个目录就多写几个参数。",
-      "prompts": [
-        "把这个目录下所有 markdown 的标题列成一份目录",
-        "找出这批文件里重复的内容",
-        "按修改时间把这个文件夹整理成按月分的子目录"
-      ]
-    },
-    {
-      "id": "context7",
-      "name": "Context7",
-      "category": "开发",
-      "brandColor": "#8b5cf6",
-      "kind": "npm-mcp",
-      "package": "@upstash/context7-mcp",
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@latest"],
-      "homepage": "https://github.com/upstash/context7",
-      "author": "Upstash",
-      "description": "取库的当前文档，而不是模型记忆里那个版本的。",
-      "longDescription": "模型对一个库的印象停在训练截止那天。库不会停。于是你得到能跑但是过时的写法、被废弃三个版本的 API、以及听起来很有道理的编造。\n\nContext7 在回答之前去取这个库此刻的文档，塞进上下文。对着变化快的框架写代码时，这是「能跑」和「照着两年前的教程写」之间的差别。",
-      "prompts": [
-        "用 Next.js 最新的写法做一个带流式响应的路由",
-        "这个库的这个 API 在当前版本里改成什么了",
-        "按官方现在推荐的方式配置这个工具"
-      ]
-    },
-    {
-      "id": "waza",
-      "name": "Waza",
-      "category": "开发",
-      "brandColor": "#111827",
-      "kind": "git-skills",
-      "repository": "https://github.com/tw93/Waza.git",
-      "homepage": "https://github.com/tw93/Waza",
-      "author": "Tw93",
-      "description": "八件工程上的老规矩，写成了 agent 能照着执行的流程：出方案、审代码、查故障、做界面、读材料、写稿子、做研究、体检配置。",
-      "longDescription": "不是工具，是工作方法。每个技能是一份写清楚了的流程——think 要求先把方案讲通再动手，check 是一套评审清单，hunt 强制先定位根因再改，ui 管界面和排印，health 体检 agent 自己的配置。\n\n价值在于把「有经验的人会怎么做」变成 agent 每次都会走一遍的步骤，而不是靠每次提示词里临时想起来。\n\n技能是 markdown，装完可以自己改。",
-      "prompts": [
-        "用 think 帮我把这个需求捋成一个能执行的方案",
-        "用 check 审一遍这个分支的改动",
-        "用 hunt 查这个偶发的报错到底是什么引起的"
-      ]
-    },
-    {
-      "id": "sequential-thinking",
-      "name": "Sequential Thinking",
-      "category": "思考",
-      "brandColor": "#ec4899",
-      "kind": "npm-mcp",
-      "package": "@modelcontextprotocol/server-sequential-thinking",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking@latest"],
-      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
-      "author": "Model Context Protocol",
-      "description": "把一个难问题拆成能一步步走、并且允许走回头路的思考。",
-      "longDescription": "官方实现。它给模型一个显式的思考结构：一步一步地推进，可以修正前面某一步，可以分叉出另一条路再回来，可以在中途发现需要更多步骤。\n\n对付那种「一口气想不清楚，但拆开就清楚了」的问题——架构取舍、多个约束互相打架的设计、需要反复推翻假设的排查。简单问题上用它只是变慢。",
-      "prompts": [
-        "这个系统要同时满足这三个互相冲突的约束，一步步帮我想",
-        "把这个迁移方案的每一步风险单独评估一遍",
-        "我这个判断哪里可能是错的，逐条推翻看看"
-      ]
-    },
-    {
-      "id": "memory",
-      "name": "Memory",
-      "category": "思考",
-      "brandColor": "#14b8a6",
-      "kind": "npm-mcp",
-      "package": "@modelcontextprotocol/server-memory",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory@latest"],
-      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
-      "author": "Model Context Protocol",
-      "description": "把跨会话要记住的东西存成一张知识图谱，而不是每次重讲一遍。",
-      "longDescription": "官方实现。存的是实体和它们之间的关系——「这个服务依赖那个队列」「这个人负责这块」——而不是一段流水账，所以取的时候能顺着关系找过去。\n\n适合放长期成立的事实：架构里的固定关系、团队的约定、踩过并且确认过的坑。不适合放这次对话的上下文，那些下次就不成立了。",
-      "prompts": [
-        "记住这个项目的部署流程，下次直接照着做",
-        "我之前说过的关于这套架构的约束，还记得哪些",
-        "把这次排查的根因记下来，关联到那个服务"
-      ]
-    }
-  ]
+	"$comment": "手写的上游清单。registry.json 和 plugins/ 都由 scripts/sync.mjs 从这里生成——不要直接改那两处。字段说明见 README。",
+	"name": "Lyra Plugins",
+	"sources": [
+		{
+			"id": "agent-browser-cli",
+			"name": "Agent Browser",
+			"category": "浏览器",
+			"brandColor": "#f97316",
+			"kind": "npm-cli",
+			"package": "@sleepinsummer/agent-browser-cli",
+			"homepage": "https://github.com/sleepinginsummer/agent-browser-cli",
+			"author": "sleepinginsummer",
+			"description": "控制你自己那个 Chrome：开标签页、点按钮、读页面、跑 JS。登录态和 Cookie 都还在。",
+			"longDescription": "底层是一个 Rust daemon 加一个 Chrome 扩展桥，驱动的是你日常在用的那个浏览器，不是另起一个干净的实例。\n\n这是它和 Playwright 那类工具的根本差别：需要登录才能看到的页面、挂着插件的页面、你正开着的那个标签页，它都够得着。代价是它只能控制这一台机器上的这个 Chrome。\n\n装完插件还要装 CLI 本身：\n\n    npm i -g @sleepinsummer/agent-browser-cli\n\n然后按它的 README 装上 Chrome 扩展。daemon 是按需拉起的，不用常驻。",
+			"prompts": [
+				"打开 github.com/trending，把今天前十个仓库的名字和简介列给我",
+				"在当前这个标签页里把所有外链找出来，标出哪些是 404",
+				"登录态下把我的订单页截图存到桌面"
+			],
+			"logo": "https://github.com/sleepinginsummer.png?size=128"
+		},
+		{
+			"id": "playwright",
+			"name": "Playwright",
+			"category": "浏览器",
+			"brandColor": "#2ead33",
+			"kind": "npm-mcp",
+			"package": "@playwright/mcp",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@playwright/mcp@latest"
+			],
+			"homepage": "https://github.com/microsoft/playwright-mcp",
+			"author": "Microsoft",
+			"description": "用无障碍树而不是截图来驱动浏览器，所以它读到的是结构，不是像素。",
+			"longDescription": "微软官方出的 Playwright MCP。它给模型的是页面的无障碍树——元素、角色、可见文本——而不是一张要去认的图。\n\n这意味着两件事：不需要视觉模型也能精确点到第五行第二列那个按钮，以及同一段脚本在不同分辨率下行为一致。\n\n浏览器是它自己起的干净实例，没有你的登录态。要操作需要登录的页面，用 Agent Browser。",
+			"prompts": [
+				"打开这个站点，把注册流程从头走一遍，遇到报错停下来告诉我",
+				"对比这个页面在手机和桌面宽度下的布局差异",
+				"把这个表单的所有校验规则试出来"
+			],
+			"logo": "https://github.com/microsoft.png?size=128"
+		},
+		{
+			"id": "chrome-devtools",
+			"name": "Chrome DevTools",
+			"category": "浏览器",
+			"brandColor": "#4285f4",
+			"kind": "npm-mcp",
+			"package": "chrome-devtools-mcp",
+			"command": "npx",
+			"args": [
+				"-y",
+				"chrome-devtools-mcp@latest"
+			],
+			"homepage": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+			"author": "Google Chrome",
+			"description": "性能追踪、网络请求、控制台——把 DevTools 里那几个面板交给 agent 读。",
+			"longDescription": "Chrome 团队官方出的。它接的是 DevTools 协议，能拿到的东西和你按 F12 看到的是同一批：性能录制、每一条网络请求和它的响应、控制台的报错、DOM 和样式的计算结果。\n\n用来查「为什么这页这么慢」和「这个请求到底发了什么」比截图有效得多——那两个问题的答案本来就不在画面上。",
+			"prompts": [
+				"录一段这个页面的加载性能，告诉我最大的三个瓶颈在哪",
+				"把这次提交前后的首屏时间对比一下",
+				"这个页面控制台报了什么错，源头在哪一行"
+			],
+			"logo": "https://github.com/ChromeDevTools.png?size=128"
+		},
+		{
+			"id": "desktop-commander",
+			"name": "Desktop Commander",
+			"category": "本机",
+			"brandColor": "#0ea5e9",
+			"kind": "npm-mcp",
+			"package": "@wonderwhy-er/desktop-commander",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@wonderwhy-er/desktop-commander@latest"
+			],
+			"homepage": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+			"author": "Eduard Ruzga",
+			"description": "在本机跑命令、编辑文件、管进程。长任务在后台跑，不占着对话。",
+			"longDescription": "终端加文件编辑。和直接给 agent 一个 shell 的差别在于它把长任务放进后台会话——跑一个几分钟的构建不会把对话堵死，输出可以随时回来取。\n\n文件编辑是按块替换而不是整份重写，所以改一个大文件里的一行不用把整个文件读进来再吐出去。\n\n它能碰的东西和你自己在终端里能碰的一样多。装之前想清楚这一点。",
+			"prompts": [
+				"把这个项目跑起来，构建失败的话把错误贴给我",
+				"在后台跑测试，跑完告诉我哪些挂了",
+				"找出这台机器上占空间最大的十个目录"
+			],
+			"logo": "https://github.com/wonderwhy-er.png?size=128"
+		},
+		{
+			"id": "filesystem",
+			"name": "Filesystem",
+			"category": "本机",
+			"brandColor": "#eab308",
+			"kind": "npm-mcp",
+			"package": "@modelcontextprotocol/server-filesystem",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-filesystem@latest",
+				"${HOME}/Documents"
+			],
+			"homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+			"author": "Model Context Protocol",
+			"description": "只在你点名的目录里读写。官方实现，边界是硬的。",
+			"longDescription": "MCP 官方的文件系统服务。关键不在于它能读写文件——那件事很多东西都能做——而在于它只能在启动时传给它的那几个目录里读写，越界的路径会被拒绝。\n\n默认配的是 ~/Documents。装完请去插件目录里改 .mcp.json 的最后一个参数，把它指向你真正想让 agent 碰的地方。多个目录就多写几个参数。",
+			"prompts": [
+				"把这个目录下所有 markdown 的标题列成一份目录",
+				"找出这批文件里重复的内容",
+				"按修改时间把这个文件夹整理成按月分的子目录"
+			],
+			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+		},
+		{
+			"id": "context7",
+			"name": "Context7",
+			"category": "开发",
+			"brandColor": "#8b5cf6",
+			"kind": "npm-mcp",
+			"package": "@upstash/context7-mcp",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@upstash/context7-mcp@latest"
+			],
+			"homepage": "https://github.com/upstash/context7",
+			"author": "Upstash",
+			"description": "取库的当前文档，而不是模型记忆里那个版本的。",
+			"longDescription": "模型对一个库的印象停在训练截止那天。库不会停。于是你得到能跑但是过时的写法、被废弃三个版本的 API、以及听起来很有道理的编造。\n\nContext7 在回答之前去取这个库此刻的文档，塞进上下文。对着变化快的框架写代码时，这是「能跑」和「照着两年前的教程写」之间的差别。",
+			"prompts": [
+				"用 Next.js 最新的写法做一个带流式响应的路由",
+				"这个库的这个 API 在当前版本里改成什么了",
+				"按官方现在推荐的方式配置这个工具"
+			],
+			"logo": "https://github.com/upstash.png?size=128"
+		},
+		{
+			"id": "waza",
+			"name": "Waza",
+			"category": "开发",
+			"brandColor": "#111827",
+			"kind": "git-skills",
+			"repository": "https://github.com/tw93/Waza.git",
+			"homepage": "https://github.com/tw93/Waza",
+			"author": "Tw93",
+			"description": "八件工程上的老规矩，写成了 agent 能照着执行的流程：出方案、审代码、查故障、做界面、读材料、写稿子、做研究、体检配置。",
+			"longDescription": "不是工具，是工作方法。每个技能是一份写清楚了的流程——think 要求先把方案讲通再动手，check 是一套评审清单，hunt 强制先定位根因再改，ui 管界面和排印，health 体检 agent 自己的配置。\n\n价值在于把「有经验的人会怎么做」变成 agent 每次都会走一遍的步骤，而不是靠每次提示词里临时想起来。\n\n技能是 markdown，装完可以自己改。",
+			"prompts": [
+				"用 think 帮我把这个需求捋成一个能执行的方案",
+				"用 check 审一遍这个分支的改动",
+				"用 hunt 查这个偶发的报错到底是什么引起的"
+			],
+			"logo": "https://github.com/tw93.png?size=128"
+		},
+		{
+			"id": "sequential-thinking",
+			"name": "Sequential Thinking",
+			"category": "思考",
+			"brandColor": "#ec4899",
+			"kind": "npm-mcp",
+			"package": "@modelcontextprotocol/server-sequential-thinking",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-sequential-thinking@latest"
+			],
+			"homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+			"author": "Model Context Protocol",
+			"description": "把一个难问题拆成能一步步走、并且允许走回头路的思考。",
+			"longDescription": "官方实现。它给模型一个显式的思考结构：一步一步地推进，可以修正前面某一步，可以分叉出另一条路再回来，可以在中途发现需要更多步骤。\n\n对付那种「一口气想不清楚，但拆开就清楚了」的问题——架构取舍、多个约束互相打架的设计、需要反复推翻假设的排查。简单问题上用它只是变慢。",
+			"prompts": [
+				"这个系统要同时满足这三个互相冲突的约束，一步步帮我想",
+				"把这个迁移方案的每一步风险单独评估一遍",
+				"我这个判断哪里可能是错的，逐条推翻看看"
+			],
+			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+		},
+		{
+			"id": "memory",
+			"name": "Memory",
+			"category": "思考",
+			"brandColor": "#14b8a6",
+			"kind": "npm-mcp",
+			"package": "@modelcontextprotocol/server-memory",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-memory@latest"
+			],
+			"homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+			"author": "Model Context Protocol",
+			"description": "把跨会话要记住的东西存成一张知识图谱，而不是每次重讲一遍。",
+			"longDescription": "官方实现。存的是实体和它们之间的关系——「这个服务依赖那个队列」「这个人负责这块」——而不是一段流水账，所以取的时候能顺着关系找过去。\n\n适合放长期成立的事实：架构里的固定关系、团队的约定、踩过并且确认过的坑。不适合放这次对话的上下文，那些下次就不成立了。",
+			"prompts": [
+				"记住这个项目的部署流程，下次直接照着做",
+				"我之前说过的关于这套架构的约束，还记得哪些",
+				"把这次排查的根因记下来，关联到那个服务"
+			],
+			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+		}
+	]
 }

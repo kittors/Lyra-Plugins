@@ -1,0 +1,91 @@
+{
+	"$comment": "由 scripts/sync-skills.mjs 生成，改 skills-sources.json 而不是这里。",
+	"name": "Lyra Skills",
+	"updatedAt": "2026-08-17",
+	"collections": [
+		{
+			"id": "waza",
+			"name": "Waza",
+			"description": "八件工程上的老规矩，写成 agent 能照着执行的流程：出方案、审代码、查故障、做界面、读材料、写稿子、做研究、体检配置。",
+			"category": "工程",
+			"author": "Tw93",
+			"repository": "https://github.com/tw93/Waza.git",
+			"homepage": "https://github.com/tw93/Waza",
+			"path": "skills",
+			"logo": "https://github.com/tw93.png?size=128",
+			"brandColor": "#111827",
+			"version": "3.34.0",
+			"skills": [
+				"check",
+				"health",
+				"hunt",
+				"learn",
+				"read",
+				"think",
+				"ui",
+				"write"
+			]
+		},
+		{
+			"id": "anthropic-skills",
+			"name": "Anthropic Skills",
+			"description": "官方那套：文档协作、前端设计、品牌规范、canvas 作图、MCP 构建、Office 文档读写。",
+			"category": "官方",
+			"author": "Anthropic",
+			"repository": "https://github.com/anthropics/skills.git",
+			"homepage": "https://github.com/anthropics/skills",
+			"path": "skills",
+			"logo": "https://github.com/anthropics.png?size=128",
+			"brandColor": "#d97757",
+			"skills": [
+				"algorithmic-art",
+				"brand-guidelines",
+				"canvas-design",
+				"claude-academy-guide",
+				"claude-api",
+				"doc-coauthoring",
+				"docx",
+				"frontend-design",
+				"internal-comms",
+				"mcp-builder",
+				"pdf",
+				"pptx",
+				"skill-creator",
+				"slack-gif-creator",
+				"theme-factory",
+				"web-artifacts-builder",
+				"webapp-testing",
+				"xlsx"
+			]
+		},
+		{
+			"id": "superpowers",
+			"name": "Superpowers",
+			"description": "一整套开发方法：头脑风暴、并行派活、执行计划、收尾分支、请求与接收代码评审、系统化排错。",
+			"category": "方法论",
+			"author": "obra",
+			"repository": "https://github.com/obra/superpowers.git",
+			"homepage": "https://github.com/obra/superpowers",
+			"path": "skills",
+			"logo": "https://github.com/obra.png?size=128",
+			"brandColor": "#7c3aed",
+			"version": "6.3.0",
+			"skills": [
+				"brainstorming",
+				"dispatching-parallel-agents",
+				"executing-plans",
+				"finishing-a-development-branch",
+				"receiving-code-review",
+				"requesting-code-review",
+				"subagent-driven-development",
+				"systematic-debugging",
+				"test-driven-development",
+				"using-git-worktrees",
+				"using-superpowers",
+				"verification-before-completion",
+				"writing-plans",
+				"writing-skills"
+			]
+		}
+	]
+}

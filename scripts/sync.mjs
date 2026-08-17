@@ -135,15 +135,30 @@ async function fromGitHub(source) {
 	return { version: String(data.tag_name ?? "").replace(/^v/, "") || undefined };
 }
 
+/**
+ * What the app calls this kind of thing.
+ *
+ * The `kind` in sources.json says how the upstream is *distributed* — an npm package, a git
+ * repository of skills — which is this script's concern and nobody else's. The app asks a different
+ * question: is this a bundle of skills it loads, or a server declaration it has to write into
+ * settings and start. Answering it here means the index states it rather than leaving the window to
+ * infer it from whether a `package` field happens to be present.
+ */
+function bundleKind(kind) {
+	return kind === "git-skills" ? "plugin" : "mcp";
+}
+
 function buildEntry(source, upstream) {
 	const entry = {
 		id: source.id,
 		name: source.name,
 		description: source.description,
 		category: source.category,
+		kind: bundleKind(source.kind),
 		repository: source.kind === "git-skills" ? source.repository : REPOSITORY,
 		homepage: source.homepage,
 		author: source.author,
+		logo: source.logo,
 		brandColor: source.brandColor,
 	};
 	if (source.kind !== "git-skills") entry.path = `plugins/${source.id}`;
