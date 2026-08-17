@@ -132,7 +132,22 @@ async function fromGitHub(source) {
 	if (release.status === 404) return {};
 	if (!release.ok) throw new Error(`GitHub 返回 ${release.status}`);
 	const data = await release.json();
-	return { version: String(data.tag_name ?? "").replace(/^v/, "") || undefined };
+	return { version: cleanTag(String(data.tag_name ?? "")) };
+}
+
+/**
+ * A release tag reduced to the version inside it.
+ *
+ * A repository that publishes more than one thing tags them `<name>-v3.22.1`, and a card that
+ * repeats the plugin's own name in the version field is showing an identifier, not a version. The
+ * prefix is only stripped when a version-looking remainder is left, so a tag that happens not to
+ * carry one is passed through rather than mangled into nothing.
+ */
+function cleanTag(tag) {
+	const trimmed = tag.trim();
+	const match = /(?:^|-)v?(\d+(?:\.\d+)*(?:[-+][0-9A-Za-z.-]+)?)$/.exec(trimmed);
+	if (match) return match[1];
+	return trimmed.replace(/^v/, "") || undefined;
 }
 
 /**

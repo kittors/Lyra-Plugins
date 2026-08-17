@@ -135,6 +135,94 @@
       "path": "plugins/memory",
       "version": "2026.7.4",
       "package": "@modelcontextprotocol/server-memory"
+    },
+    {
+      "id": "compound-engineering",
+      "name": "Compound Engineering",
+      "description": "33 个把工程流程写成步骤的技能：出方案、评审、调试、提交、发 PR，每走一遍都往下一遍里攒经验。",
+      "category": "开发",
+      "kind": "plugin",
+      "repository": "https://github.com/EveryInc/compound-engineering-plugin.git",
+      "homepage": "https://github.com/EveryInc/compound-engineering-plugin",
+      "author": "Every",
+      "logo": "https://github.com/EveryInc.png?size=128",
+      "brandColor": "#0f766e",
+      "version": "3.22.1"
+    },
+    {
+      "id": "ponytail",
+      "name": "Ponytail",
+      "description": "逼 agent 少写代码。同一个需求，它交出来的实现明显更短，也更容易看懂。",
+      "category": "评审",
+      "kind": "plugin",
+      "repository": "https://github.com/DietrichGebert/ponytail.git",
+      "homepage": "https://github.com/DietrichGebert/ponytail",
+      "author": "Dietrich Gebert",
+      "logo": "https://github.com/DietrichGebert.png?size=128",
+      "brandColor": "#334155",
+      "version": "4.9.0"
+    },
+    {
+      "id": "claude-octopus",
+      "name": "Claude Octopus",
+      "description": "把同一个问题同时交给多个模型，意见不一致的地方会被标出来，而不是等你上线之后才发现。",
+      "category": "评审",
+      "kind": "plugin",
+      "repository": "https://github.com/nyldn/claude-octopus.git",
+      "homepage": "https://github.com/nyldn/claude-octopus",
+      "author": "nyldn",
+      "logo": "https://github.com/nyldn.png?size=128",
+      "brandColor": "#7c3aed",
+      "version": "9.65.0"
+    },
+    {
+      "id": "planning-with-files",
+      "name": "Planning with Files",
+      "description": "把计划写进文件而不是留在上下文里，所以清空对话、崩溃、上下文被压缩之后，它还在。",
+      "category": "思考",
+      "kind": "plugin",
+      "repository": "https://github.com/OthmanAdi/planning-with-files.git",
+      "homepage": "https://github.com/OthmanAdi/planning-with-files",
+      "author": "Othman Adi",
+      "logo": "https://github.com/OthmanAdi.png?size=128",
+      "brandColor": "#ea580c",
+      "version": "3.10.1"
+    },
+    {
+      "id": "harness",
+      "name": "Harness",
+      "description": "对着一个项目说一句「给它搭一套」，它生成这个项目专用的 agent 团队和技能定义。",
+      "category": "开发",
+      "kind": "plugin",
+      "repository": "https://github.com/revfactory/harness.git",
+      "homepage": "https://github.com/revfactory/harness",
+      "author": "Robin Moon",
+      "logo": "https://github.com/revfactory.png?size=128",
+      "brandColor": "#0891b2"
+    },
+    {
+      "id": "arscontexta",
+      "name": "Ars Contexta",
+      "description": "跟它讲清楚你平时怎么想、怎么做事，它给你生成一套配套的笔记与上下文体系。",
+      "category": "思考",
+      "kind": "plugin",
+      "repository": "https://github.com/agenticnotetaking/arscontexta.git",
+      "homepage": "https://github.com/agenticnotetaking/arscontexta",
+      "author": "Agentic Notetaking",
+      "logo": "https://github.com/agenticnotetaking.png?size=128",
+      "brandColor": "#b45309"
+    },
+    {
+      "id": "i-have-adhd",
+      "name": "I Have ADHD",
+      "description": "答案先给，理由后说。治的是 agent 把结论埋在三段铺垫下面的老毛病。",
+      "category": "思考",
+      "kind": "plugin",
+      "repository": "https://github.com/ayghri/i-have-adhd.git",
+      "homepage": "https://github.com/ayghri/i-have-adhd",
+      "author": "ayghri",
+      "logo": "https://github.com/ayghri.png?size=128",
+      "brandColor": "#db2777"
     }
   ]
 }

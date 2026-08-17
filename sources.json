@@ -199,6 +199,132 @@
 				"把这次排查的根因记下来，关联到那个服务"
 			],
 			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+		},
+		{
+			"id": "compound-engineering",
+			"name": "Compound Engineering",
+			"category": "开发",
+			"brandColor": "#0f766e",
+			"kind": "git-skills",
+			"repository": "https://github.com/EveryInc/compound-engineering-plugin.git",
+			"homepage": "https://github.com/EveryInc/compound-engineering-plugin",
+			"author": "Every",
+			"description": "33 个把工程流程写成步骤的技能：出方案、评审、调试、提交、发 PR，每走一遍都往下一遍里攒经验。",
+			"longDescription": "它的立意是「复利」——每一次工程工作应该让下一次更容易，而不是从零重来。所以技能不止是执行动作，还负责把这次学到的东西沉淀下来给下次用。\n\n覆盖面很宽：brainstorm 出方案、code-review 评审、debug 排障、commit 与 commit-push-pr 走提交流程、babysit-pr 盯着 PR 直到合并。全套走下来是一条完整的开发链路，也可以只挑其中几个用。\n\n技能多是它的优点也是代价：33 个全装上，agent 每次要在更多选项里挑。只想要评审和调试的话，装完删掉其余目录即可。",
+			"prompts": [
+				"用 compound 的方式帮我把这个需求想清楚再动手",
+				"按 code-review 的流程审一遍我这个分支",
+				"这个 PR 帮我盯到能合并为止"
+			],
+			"logo": "https://github.com/EveryInc.png?size=128"
+		},
+		{
+			"id": "ponytail",
+			"name": "Ponytail",
+			"category": "评审",
+			"brandColor": "#334155",
+			"kind": "git-skills",
+			"repository": "https://github.com/DietrichGebert/ponytail.git",
+			"homepage": "https://github.com/DietrichGebert/ponytail",
+			"author": "Dietrich Gebert",
+			"description": "逼 agent 少写代码。同一个需求，它交出来的实现明显更短，也更容易看懂。",
+			"longDescription": "针对的是 agent 一个非常具体的毛病：过度设计。让它加一个日期选择器，它给你一套配置系统、三层抽象和一份 README。这套技能的立场是资深工程师那种懒——能不写就不写，能一行就不写十行。\n\n作者在真实仓库（FastAPI + React）上做过对比：12 个任务平均少写约 54% 的代码，在过度设计最严重的场景（日期选择器）能少 94%，而在本来就已经很精简的地方几乎没有差别。\n\n除了写，还有 review 和 audit 两个方向——拿它回头看已有代码，找出能删掉的部分。",
+			"prompts": [
+				"用 ponytail 的标准实现这个功能，别过度设计",
+				"audit 一下这个模块，哪些是可以直接删掉的",
+				"这段代码能不能更短，同时不丢掉任何一个安全检查"
+			],
+			"logo": "https://github.com/DietrichGebert.png?size=128"
+		},
+		{
+			"id": "claude-octopus",
+			"name": "Claude Octopus",
+			"category": "评审",
+			"brandColor": "#7c3aed",
+			"kind": "git-skills",
+			"repository": "https://github.com/nyldn/claude-octopus.git",
+			"homepage": "https://github.com/nyldn/claude-octopus",
+			"author": "nyldn",
+			"description": "把同一个问题同时交给多个模型，意见不一致的地方会被标出来，而不是等你上线之后才发现。",
+			"longDescription": "出发点是每个模型都有自己的盲区。它接了十个外部模型（Codex、Copilot、Qwen、Ollama、Perplexity、OpenRouter、Grok 等），在评审和交付前设一道共识关卡：几个模型看法一致就放行，分歧会明确地摆出来。\n\n作者自己的建议是别一上来就用——普通改动 Claude 自己就够了，它是留给那些「错了代价很大」的场合：架构决策、安全相关的改动、要对抗式评审的地方。\n\n注意它要调用外部模型，那些 provider 的配置和费用是你自己的。",
+			"prompts": [
+				"这个架构决策，让几个模型都看一遍再给我结论",
+				"对抗式地审一遍这次改动，重点找安全问题",
+				"这两种实现哪个更好，我想听到不一致的意见"
+			],
+			"logo": "https://github.com/nyldn.png?size=128"
+		},
+		{
+			"id": "planning-with-files",
+			"name": "Planning with Files",
+			"category": "思考",
+			"brandColor": "#ea580c",
+			"kind": "git-skills",
+			"repository": "https://github.com/OthmanAdi/planning-with-files.git",
+			"homepage": "https://github.com/OthmanAdi/planning-with-files",
+			"author": "Othman Adi",
+			"description": "把计划写进文件而不是留在上下文里，所以清空对话、崩溃、上下文被压缩之后，它还在。",
+			"longDescription": "解决的是长任务里最恼人的一件事：上下文窗口是有限的，而任务不是。聊到一半被压缩掉，agent 就忘了三小时前定下的方案，然后开始重做已经做完的部分。\n\n做法很朴素：task_plan.md、findings.md、progress.md 三个文件落在磁盘上，每一轮重新读进去。计划、发现、进度分开存，因为它们过期的速度不一样。还有一个可选的完成关卡，不让它在没做完的时候宣布做完。\n\n适合跑几个小时以上的任务；十分钟能做完的事情用它只是多几个文件。",
+			"prompts": [
+				"这个迁移要做很久，先把计划写成文件再开始",
+				"接着 task_plan.md 往下做，做完一步更新 progress",
+				"把这次排查的发现记进 findings，别丢了"
+			],
+			"logo": "https://github.com/OthmanAdi.png?size=128"
+		},
+		{
+			"id": "harness",
+			"name": "Harness",
+			"category": "开发",
+			"brandColor": "#0891b2",
+			"kind": "git-skills",
+			"repository": "https://github.com/revfactory/harness.git",
+			"homepage": "https://github.com/revfactory/harness",
+			"author": "Robin Moon",
+			"description": "对着一个项目说一句「给它搭一套」，它生成这个项目专用的 agent 团队和技能定义。",
+			"longDescription": "它本身几乎不干活，干的是生成干活的东西——读你的项目，推断这个领域需要哪几种角色，然后写出 `.claude/agents/` 和技能定义。\n\n这类「元」工具的价值在于起步：从零手写一套 agent 定义，难的不是格式而是想清楚该有哪些角色。它给一份能跑的初稿，你在上面改。\n\n生成的东西是文本，务必自己读一遍再用——它对你项目的理解只来自它看到的那些文件。",
+			"prompts": [
+				"给这个项目搭一套 agent 团队",
+				"这套生成出来的角色划分合理吗，帮我调一下",
+				"再加一个专门管数据库迁移的 agent"
+			],
+			"logo": "https://github.com/revfactory.png?size=128"
+		},
+		{
+			"id": "arscontexta",
+			"name": "Ars Contexta",
+			"category": "思考",
+			"brandColor": "#b45309",
+			"kind": "git-skills",
+			"repository": "https://github.com/agenticnotetaking/arscontexta.git",
+			"homepage": "https://github.com/agenticnotetaking/arscontexta",
+			"author": "Agentic Notetaking",
+			"description": "跟它讲清楚你平时怎么想、怎么做事，它给你生成一套配套的笔记与上下文体系。",
+			"longDescription": "不是给你一个现成的笔记模板，而是先问你怎么工作，再据此推导出目录结构、上下文文件、处理流程、导航索引和笔记模板。理由是别人的组织方式往往不适合你——不合手的模板，最后都会被弃用。\n\n生成的是一整套文件，装完先看它给的结构说明，再决定要不要按它的方式改造现有笔记。\n\n它对已有大量笔记的人价值更明确：从零开始的话，你自己还没有「怎么想」这件事可供它推导。",
+			"prompts": [
+				"我平时是这样整理东西的，帮我生成一套配套的笔记体系",
+				"按这套结构，把我现有的笔记重新组织一遍",
+				"给这个领域补一份上下文文件"
+			],
+			"logo": "https://github.com/agenticnotetaking.png?size=128"
+		},
+		{
+			"id": "i-have-adhd",
+			"name": "I Have ADHD",
+			"category": "思考",
+			"brandColor": "#db2777",
+			"kind": "git-skills",
+			"repository": "https://github.com/ayghri/i-have-adhd.git",
+			"homepage": "https://github.com/ayghri/i-have-adhd",
+			"author": "ayghri",
+			"description": "答案先给，理由后说。治的是 agent 把结论埋在三段铺垫下面的老毛病。",
+			"longDescription": "只有一个技能，改的是输出的组织方式：先说结论，再说为什么，细节放最后，你想看才往下翻。\n\n名字提到 ADHD，但它不针对任何诊断——任何人在读第四段才看到答案时都会烦。它尤其适合那种你只想确认一件事、却收到一篇文章的场合。\n\n它只管怎么说，不管说得对不对。",
+			"prompts": [
+				"直接说结论，理由放后面",
+				"这个问题一句话回答我，需要展开我再问",
+				"把这段解释压成先答后证的结构"
+			],
+			"logo": "https://github.com/ayghri.png?size=128"
 		}
 	]
 }
