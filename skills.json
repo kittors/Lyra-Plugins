@@ -1,7 +1,7 @@
 {
 	"$comment": "由 scripts/sync-skills.mjs 生成，改 skills-sources.json 而不是这里。",
 	"name": "Lyra Skills",
-	"updatedAt": "2026-08-17",
+	"updatedAt": "2026-08-18",
 	"collections": [
 		{
 			"id": "anthropic-skills",
@@ -21,6 +21,7 @@
 				"canvas-design",
 				"claude-academy-guide",
 				"claude-api",
+				"discernment-nudge",
 				"doc-coauthoring",
 				"docx",
 				"frontend-design",
