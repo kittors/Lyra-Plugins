@@ -1,7 +1,7 @@
 {
 	"$comment": "由 scripts/sync-skills.mjs 生成，改 skills-sources.json 而不是这里。",
 	"name": "Lyra Skills",
-	"updatedAt": "2026-08-18",
+	"updatedAt": "2026-08-19",
 	"collections": [
 		{
 			"id": "anthropic-skills",
@@ -16,10 +16,10 @@
 			"logo": "https://github.com/anthropics.png?size=128",
 			"brandColor": "#d97757",
 			"skills": [
+				"academy-guide",
 				"algorithmic-art",
 				"brand-guidelines",
 				"canvas-design",
-				"claude-academy-guide",
 				"claude-api",
 				"discernment-nudge",
 				"doc-coauthoring",
