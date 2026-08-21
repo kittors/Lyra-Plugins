@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-08-20",
+  "updatedAt": "2026-08-21",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -186,7 +186,7 @@
       "author": "Othman Adi",
       "logo": "https://github.com/OthmanAdi.png?size=128",
       "brandColor": "#ea580c",
-      "version": "3.10.2"
+      "version": "3.11.0"
     },
     {
       "id": "harness",
