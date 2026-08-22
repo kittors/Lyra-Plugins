@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-08-21",
+  "updatedAt": "2026-08-22",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -90,7 +90,7 @@
       "logo": "https://github.com/upstash.png?size=128",
       "brandColor": "#8b5cf6",
       "path": "plugins/context7",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -173,7 +173,7 @@
       "author": "nyldn",
       "logo": "https://github.com/nyldn.png?size=128",
       "brandColor": "#7c3aed",
-      "version": "9.65.0"
+      "version": "9.66.1"
     },
     {
       "id": "planning-with-files",
@@ -186,7 +186,7 @@
       "author": "Othman Adi",
       "logo": "https://github.com/OthmanAdi.png?size=128",
       "brandColor": "#ea580c",
-      "version": "3.11.0"
+      "version": "3.11.1"
     },
     {
       "id": "harness",
