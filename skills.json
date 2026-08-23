@@ -1,7 +1,7 @@
 {
 	"$comment": "由 scripts/sync-skills.mjs 生成，改 skills-sources.json 而不是这里。",
 	"name": "Lyra Skills",
-	"updatedAt": "2026-08-22",
+	"updatedAt": "2026-08-23",
 	"collections": [
 		{
 			"id": "anthropic-skills",
