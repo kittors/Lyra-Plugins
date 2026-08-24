@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-08-23",
+  "updatedAt": "2026-08-24",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -104,7 +104,7 @@
       "author": "Tw93",
       "logo": "https://github.com/tw93.png?size=128",
       "brandColor": "#111827",
-      "version": "3.34.0"
+      "version": "3.34.1"
     },
     {
       "id": "sequential-thinking",
@@ -147,7 +147,7 @@
       "author": "Every",
       "logo": "https://github.com/EveryInc.png?size=128",
       "brandColor": "#0f766e",
-      "version": "3.23.1"
+      "version": "3.23.2"
     },
     {
       "id": "ponytail",
