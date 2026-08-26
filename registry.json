@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-08-25",
+  "updatedAt": "2026-08-26",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -45,7 +45,7 @@
       "logo": "https://github.com/ChromeDevTools.png?size=128",
       "brandColor": "#4285f4",
       "path": "plugins/chrome-devtools",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "package": "chrome-devtools-mcp"
     },
     {
@@ -147,7 +147,7 @@
       "author": "Every",
       "logo": "https://github.com/EveryInc.png?size=128",
       "brandColor": "#0f766e",
-      "version": "3.23.3"
+      "version": "3.23.4"
     },
     {
       "id": "ponytail",

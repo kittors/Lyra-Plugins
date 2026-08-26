@@ -1,6 +1,6 @@
 {
   "name": "chrome-devtools",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "性能追踪、网络请求、控制台——把 DevTools 里那几个面板交给 agent 读。",
   "author": {
     "name": "Google Chrome"
