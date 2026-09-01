@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-08-31",
+  "updatedAt": "2026-09-01",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -30,7 +30,7 @@
       "logo": "https://github.com/microsoft.png?size=128",
       "brandColor": "#2ead33",
       "path": "plugins/playwright",
-      "version": "0.0.79",
+      "version": "0.0.80",
       "package": "@playwright/mcp"
     },
     {
@@ -75,7 +75,7 @@
       "logo": "https://github.com/modelcontextprotocol.png?size=128",
       "brandColor": "#eab308",
       "path": "plugins/filesystem",
-      "version": "2026.7.10",
+      "version": "2026.8.31",
       "package": "@modelcontextprotocol/server-filesystem"
     },
     {
@@ -118,7 +118,7 @@
       "logo": "https://github.com/modelcontextprotocol.png?size=128",
       "brandColor": "#ec4899",
       "path": "plugins/sequential-thinking",
-      "version": "2026.7.4",
+      "version": "2026.8.31",
       "package": "@modelcontextprotocol/server-sequential-thinking"
     },
     {
@@ -133,7 +133,7 @@
       "logo": "https://github.com/modelcontextprotocol.png?size=128",
       "brandColor": "#14b8a6",
       "path": "plugins/memory",
-      "version": "2026.7.4",
+      "version": "2026.8.31",
       "package": "@modelcontextprotocol/server-memory"
     },
     {
@@ -147,7 +147,7 @@
       "author": "Every",
       "logo": "https://github.com/EveryInc.png?size=128",
       "brandColor": "#0f766e",
-      "version": "3.23.4"
+      "version": "3.24.0"
     },
     {
       "id": "ponytail",
@@ -186,7 +186,7 @@
       "author": "Othman Adi",
       "logo": "https://github.com/OthmanAdi.png?size=128",
       "brandColor": "#ea580c",
-      "version": "3.12.0"
+      "version": "3.12.1"
     },
     {
       "id": "harness",

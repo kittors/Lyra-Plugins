@@ -1,6 +1,6 @@
 {
   "name": "playwright",
-  "version": "0.0.79",
+  "version": "0.0.80",
   "description": "用无障碍树而不是截图来驱动浏览器，所以它读到的是结构，不是像素。",
   "author": {
     "name": "Microsoft"

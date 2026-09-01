@@ -1,6 +1,6 @@
 {
   "name": "filesystem",
-  "version": "2026.7.10",
+  "version": "2026.8.31",
   "description": "只在你点名的目录里读写。官方实现，边界是硬的。",
   "author": {
     "name": "Model Context Protocol"
