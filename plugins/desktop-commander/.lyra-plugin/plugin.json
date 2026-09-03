@@ -1,6 +1,6 @@
 {
   "name": "desktop-commander",
-  "version": "0.2.47",
+  "version": "0.2.48",
   "description": "在本机跑命令、编辑文件、管进程。长任务在后台跑，不占着对话。",
   "author": {
     "name": "Eduard Ruzga"
