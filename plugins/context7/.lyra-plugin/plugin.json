@@ -1,6 +1,6 @@
 {
   "name": "context7",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "取库的当前文档，而不是模型记忆里那个版本的。",
   "author": {
     "name": "Upstash"

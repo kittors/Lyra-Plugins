@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-09-04",
+  "updatedAt": "2026-09-05",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -90,7 +90,7 @@
       "logo": "https://github.com/upstash.png?size=128",
       "brandColor": "#8b5cf6",
       "path": "plugins/context7",
-      "version": "4.0.4",
+      "version": "4.0.5",
       "package": "@upstash/context7-mcp"
     },
     {
