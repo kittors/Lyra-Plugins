@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-09-05",
+  "updatedAt": "2026-09-06",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -104,7 +104,7 @@
       "author": "Tw93",
       "logo": "https://github.com/tw93.png?size=128",
       "brandColor": "#111827",
-      "version": "3.35.0"
+      "version": "3.36.0"
     },
     {
       "id": "sequential-thinking",
@@ -173,7 +173,7 @@
       "author": "nyldn",
       "logo": "https://github.com/nyldn.png?size=128",
       "brandColor": "#7c3aed",
-      "version": "10.1.0"
+      "version": "11.0.1"
     },
     {
       "id": "planning-with-files",
@@ -186,7 +186,7 @@
       "author": "Othman Adi",
       "logo": "https://github.com/OthmanAdi.png?size=128",
       "brandColor": "#ea580c",
-      "version": "3.16.0"
+      "version": "3.16.1"
     },
     {
       "id": "harness",
