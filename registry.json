@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-09-08",
+  "updatedAt": "2026-09-09",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -45,7 +45,7 @@
       "logo": "https://github.com/ChromeDevTools.png?size=128",
       "brandColor": "#4285f4",
       "path": "plugins/chrome-devtools",
-      "version": "1.8.0",
+      "version": "1.9.0",
       "package": "chrome-devtools-mcp"
     },
     {
@@ -90,7 +90,7 @@
       "logo": "https://github.com/upstash.png?size=128",
       "brandColor": "#8b5cf6",
       "path": "plugins/context7",
-      "version": "4.0.5",
+      "version": "4.0.6",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -186,7 +186,7 @@
       "author": "Othman Adi",
       "logo": "https://github.com/OthmanAdi.png?size=128",
       "brandColor": "#ea580c",
-      "version": "3.17.0"
+      "version": "3.17.2"
     },
     {
       "id": "harness",
