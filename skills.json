@@ -1,7 +1,7 @@
 {
 	"$comment": "由 scripts/sync-skills.mjs 生成，改 skills-sources.json 而不是这里。",
 	"name": "Lyra Skills",
-	"updatedAt": "2026-09-11",
+	"updatedAt": "2026-09-12",
 	"collections": [
 		{
 			"id": "anthropic-skills",
@@ -187,6 +187,7 @@
 				"migrate-to-shoehorn",
 				"ontoly-software-graph",
 				"planning-with-files",
+				"ponytail",
 				"product-decision-agent",
 				"prototype",
 				"tdd",
