@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-09-12",
+  "updatedAt": "2026-09-13",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -147,7 +147,7 @@
       "author": "Every",
       "logo": "https://github.com/EveryInc.png?size=128",
       "brandColor": "#0f766e",
-      "version": "3.24.0"
+      "version": "3.25.0"
     },
     {
       "id": "ponytail",
@@ -173,7 +173,7 @@
       "author": "nyldn",
       "logo": "https://github.com/nyldn.png?size=128",
       "brandColor": "#7c3aed",
-      "version": "11.4.2"
+      "version": "11.5.0"
     },
     {
       "id": "planning-with-files",
