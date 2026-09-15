@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-09-14",
+  "updatedAt": "2026-09-15",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -30,7 +30,7 @@
       "logo": "https://github.com/microsoft.png?size=128",
       "brandColor": "#2ead33",
       "path": "plugins/playwright",
-      "version": "0.0.80",
+      "version": "0.0.81",
       "package": "@playwright/mcp"
     },
     {
@@ -90,7 +90,7 @@
       "logo": "https://github.com/upstash.png?size=128",
       "brandColor": "#8b5cf6",
       "path": "plugins/context7",
-      "version": "4.1.0",
+      "version": "4.1.1",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -147,7 +147,7 @@
       "author": "Every",
       "logo": "https://github.com/EveryInc.png?size=128",
       "brandColor": "#0f766e",
-      "version": "3.25.0"
+      "version": "3.26.2"
     },
     {
       "id": "ponytail",
@@ -160,7 +160,7 @@
       "author": "Dietrich Gebert",
       "logo": "https://github.com/DietrichGebert.png?size=128",
       "brandColor": "#334155",
-      "version": "4.9.0"
+      "version": "4.10.0"
     },
     {
       "id": "claude-octopus",
