@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-09-17",
+  "updatedAt": "2026-09-18",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -60,7 +60,7 @@
       "logo": "https://github.com/wonderwhy-er.png?size=128",
       "brandColor": "#0ea5e9",
       "path": "plugins/desktop-commander",
-      "version": "0.2.50",
+      "version": "0.2.51",
       "package": "@wonderwhy-er/desktop-commander"
     },
     {
@@ -186,7 +186,7 @@
       "author": "Othman Adi",
       "logo": "https://github.com/OthmanAdi.png?size=128",
       "brandColor": "#ea580c",
-      "version": "3.19.0"
+      "version": "3.20.0"
     },
     {
       "id": "harness",
