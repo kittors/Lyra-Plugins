@@ -1,7 +1,7 @@
 {
 	"$comment": "由 scripts/sync-skills.mjs 生成，改 skills-sources.json 而不是这里。",
 	"name": "Lyra Skills",
-	"updatedAt": "2026-09-18",
+	"updatedAt": "2026-09-19",
 	"collections": [
 		{
 			"id": "anthropic-skills",
@@ -49,9 +49,10 @@
 			"path": "skills",
 			"logo": "https://github.com/obra.png?size=128",
 			"brandColor": "#7c3aed",
-			"version": "6.3.0",
+			"version": "6.4.1",
 			"skills": [
 				"brainstorming",
+				"diagnosing-superpowers",
 				"dispatching-parallel-agents",
 				"executing-plans",
 				"finishing-a-development-branch",
