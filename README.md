@@ -2,9 +2,11 @@
 
 [Lyra](https://github.com/kittors/Lyra) 的插件市场。每小时从上游同步一次版本。
 
-## 加到 Lyra 里
+## 在 Lyra 里用
 
-侧边栏 →「插件」→ 右上角「添加」→「添加插件市场」，填：
+不用配置：Lyra 默认就接着[插件市场](https://market.07230805.xyz)，这里的每一条都在上面。打开侧边栏的「插件」就能看到、安装。
+
+想绕过市场、直接读这个仓库的索引，在「插件」页把下面这个地址添加为插件来源：
 
 ```
 https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/registry.json
