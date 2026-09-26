@@ -943,8 +943,7 @@
       "logo": "https://github.com/vercel-labs.png?size=128",
       "brandColor": "#111111",
       "license": "MIT",
-      "path": "skills",
-      "version": "agent-skills-063bee94c3f4df8453406c830b0a7df0f2860278"
+      "path": "skills"
     },
     {
       "id": "cloudflare",
@@ -1021,8 +1020,7 @@
       "logo": "https://github.com/nextlevelbuilder.png?size=128",
       "brandColor": "#6366f1",
       "license": "MIT",
-      "path": ".claude/skills",
-      "version": "2.15.0"
+      "path": ".claude/skills"
     },
     {
       "id": "obsidian-skills",
@@ -1048,8 +1046,7 @@
       "logo": "https://github.com/OthmanAdi.png?size=128",
       "brandColor": "#ea580c",
       "license": "MIT",
-      "path": "skills",
-      "version": "3.20.8"
+      "path": "skills"
     },
     {
       "id": "i-have-adhd",
@@ -1075,8 +1072,7 @@
       "logo": "https://github.com/muratcankoylan.png?size=128",
       "brandColor": "#0891b2",
       "license": "MIT",
-      "path": "skills",
-      "version": "2.3.0"
+      "path": "skills"
     },
     {
       "id": "marketing-skills",
@@ -1088,8 +1084,7 @@
       "author": "Corey Haines",
       "logo": "https://github.com/coreyhaines31.png?size=128",
       "brandColor": "#16a34a",
-      "license": "MIT",
-      "version": "2.11.1"
+      "license": "MIT"
     },
     {
       "id": "anthropic-data",
@@ -1115,8 +1110,7 @@
       "logo": "https://github.com/supabase.png?size=128",
       "brandColor": "#3ecf8e",
       "license": "MIT",
-      "path": "skills",
-      "version": "0.1.8"
+      "path": "skills"
     },
     {
       "id": "huggingface-skills",
@@ -1181,8 +1175,7 @@
       "logo": "https://github.com/JimLiu.png?size=128",
       "brandColor": "#dc2626",
       "license": "MIT",
-      "path": "skills",
-      "version": "2.5.2"
+      "path": "skills"
     },
     {
       "id": "khazix-skills",
