@@ -99,11 +99,12 @@ async function placeIcon(session, source) {
 	const detail = await call(session, "GET", `/v1/entries/${encodeURIComponent(source.id)}`);
 	const now = (detail.data?.entry ?? detail.data)?.iconSource ?? "?";
 	if (now !== "none" && now !== "uploaded") return now;
-	const found = ["svg", "png"].map((extension) => join(ROOT, "icons", `${source.id}.${extension}`)).find((file) => existsSync(file));
+	const found = ["svg", "webp", "png"].map((extension) => join(ROOT, "icons", `${source.id}.${extension}`)).find((file) => existsSync(file));
 	if (!found) return now;
+	const type = found.endsWith(".svg") ? "image/svg+xml" : found.endsWith(".webp") ? "image/webp" : "image/png";
 	const response = await fetch(`${MARKET}/v1/admin/entries/${encodeURIComponent(source.id)}/icon`, {
 		method: "PUT",
-		headers: { authorization: `Bearer ${session}`, "content-type": found.endsWith(".svg") ? "image/svg+xml" : "image/png" },
+		headers: { authorization: `Bearer ${session}`, "content-type": type },
 		body: readFileSync(found),
 	});
 	return response.ok ? "uploaded（已换成官方 logo）" : `上传失败 ${response.status}`;

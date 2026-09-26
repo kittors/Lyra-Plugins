@@ -101,7 +101,7 @@ https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/registry.json
 - **`remote-mcp`** — 别人托管的远程 MCP（Streamable HTTP / SSE），包装里只有一个 URL，没有包可装，也就没有版本号。
 - **`skill-collection`** — 一个仓库里的一层技能目录（`path` 指到它），Lyra 整个装成一个包，技能之间的相对引用原样保留。
 
-每一条都用它**官方的 logo**：项目自己的标志、所属品牌的标志，或者组织头像；作者个人的项目没有 logo 时用作者头像。包装的随包发布（`plugins/<id>/.lyra-plugin/icon.svg` 或 `icon.png`）；直接列出的上游仓库没法往里放文件，放在 `icons/<id>.*`，由维护者上传到市场平台。每张图的来源见 [`icons/SOURCES.md`](icons/SOURCES.md)。这些标志属于各自的所有者，这里只用来指明是哪个产品。
+每一条都用它**官方的 logo**：项目自己的标志、所属品牌的标志，或者组织头像；作者个人的项目没有 logo 时用作者头像。包装的随包发布（`plugins/<id>/.lyra-plugin/icon.svg` 或 `icon.webp`）；直接列出的上游仓库没法往里放文件，放在 `icons/<id>.*`，由维护者上传到市场平台。位图统一 256×256 的 WebP（界面上最大也就画 88px，512px 的 PNG 一张能有三百多 KB，七十张就是一个页面要等二十秒）。每张图的来源见 [`icons/SOURCES.md`](icons/SOURCES.md)。这些标志属于各自的所有者，这里只用来指明是哪个产品。
 
 `keywords` 是搜索用的词，中文英文都写：有人搜「数据库」，描述里没出现这三个字的 DBHub、Redis 也该被找到。包装的写进 manifest，随包发布；直接列出的上游由维护者在平台上填。
 
