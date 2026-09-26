@@ -1075,7 +1075,8 @@
       "logo": "https://github.com/muratcankoylan.png?size=128",
       "brandColor": "#0891b2",
       "license": "MIT",
-      "path": "skills"
+      "path": "skills",
+      "version": "2.3.0"
     },
     {
       "id": "marketing-skills",
@@ -1087,7 +1088,8 @@
       "author": "Corey Haines",
       "logo": "https://github.com/coreyhaines31.png?size=128",
       "brandColor": "#16a34a",
-      "license": "MIT"
+      "license": "MIT",
+      "version": "2.11.1"
     },
     {
       "id": "anthropic-data",
@@ -1113,7 +1115,8 @@
       "logo": "https://github.com/supabase.png?size=128",
       "brandColor": "#3ecf8e",
       "license": "MIT",
-      "path": "skills"
+      "path": "skills",
+      "version": "0.1.8"
     },
     {
       "id": "huggingface-skills",
@@ -1178,7 +1181,8 @@
       "logo": "https://github.com/JimLiu.png?size=128",
       "brandColor": "#dc2626",
       "license": "MIT",
-      "path": "skills"
+      "path": "skills",
+      "version": "2.5.2"
     },
     {
       "id": "khazix-skills",
