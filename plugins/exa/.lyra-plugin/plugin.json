@@ -21,6 +21,14 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "搜索",
+    "语义搜索",
+    "网页搜索",
+    "调研",
+    "search",
+    "semantic search"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

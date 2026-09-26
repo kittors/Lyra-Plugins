@@ -21,6 +21,15 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "设计",
+    "设计稿",
+    "UI",
+    "界面",
+    "前端",
+    "Figma",
+    "design"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

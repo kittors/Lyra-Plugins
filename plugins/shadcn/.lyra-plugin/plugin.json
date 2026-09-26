@@ -21,5 +21,13 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "组件",
+    "UI",
+    "React",
+    "前端",
+    "Tailwind",
+    "component"
+  ],
   "mcpServers": ".mcp.json"
 }

@@ -21,6 +21,13 @@
     ]
   },
   "license": "Apache-2.0",
+  "keywords": [
+    "数据库",
+    "MongoDB",
+    "NoSQL",
+    "文档数据库",
+    "database"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

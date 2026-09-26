@@ -21,6 +21,15 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "模型",
+    "数据集",
+    "AI",
+    "机器学习",
+    "Hugging Face",
+    "model",
+    "dataset"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

@@ -103,6 +103,8 @@ https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/registry.json
 
 每一条都有自己的图标：包装的放在 `plugins/<id>/.lyra-plugin/icon.svg`，随包一起发布；直接列出的上游仓库没法往里放文件，图标放在 `icons/<id>.svg`，由维护者上传到市场平台。画法统一：品牌色圆角方块加一个线条图形（图形取自 [Lucide](https://lucide.dev)，ISC 许可）。不用作者的 GitHub 头像——那是人的脸，不是产品的标志，而且同一个作者的几条会长得一模一样。
 
+`keywords` 是搜索用的词，中文英文都写：有人搜「数据库」，描述里没出现这三个字的 DBHub、Redis 也该被找到。包装的写进 manifest，随包发布；直接列出的上游由维护者在平台上填。
+
 要密钥的服务在条目里写 `env`：每个值一行，名字、一句说明、去哪里申请（`url`）、能不能不填（`optional`）。包装里在该放值的地方写 `${NAME}`（本地服务是一个同名环境变量，远程服务是请求头），manifest 里带上这些说明；Lyra 装好后在界面上请人填，填的值加密存在本机，不写进任何文件。可选的值没填就不传。
 
 ## 改这里

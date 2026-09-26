@@ -21,5 +21,14 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "文献",
+    "论文",
+    "引用",
+    "参考文献",
+    "学术",
+    "Zotero",
+    "citation"
+  ],
   "mcpServers": ".mcp.json"
 }

@@ -20,5 +20,14 @@
       "把这个表单的所有校验规则试出来"
     ]
   },
+  "keywords": [
+    "浏览器",
+    "自动化",
+    "端到端测试",
+    "E2E",
+    "网页操作",
+    "browser",
+    "testing"
+  ],
   "mcpServers": ".mcp.json"
 }

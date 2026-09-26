@@ -21,6 +21,16 @@
     ]
   },
   "license": "Apache-2.0",
+  "keywords": [
+    "监控",
+    "仪表盘",
+    "指标",
+    "日志",
+    "告警",
+    "Prometheus",
+    "Loki",
+    "observability"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

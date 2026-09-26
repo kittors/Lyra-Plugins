@@ -21,5 +21,13 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "网页",
+    "抓取",
+    "网址",
+    "Markdown",
+    "fetch",
+    "URL"
+  ],
   "mcpServers": ".mcp.json"
 }

@@ -21,5 +21,13 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "Git",
+    "版本控制",
+    "提交",
+    "分支",
+    "diff",
+    "commit"
+  ],
   "mcpServers": ".mcp.json"
 }

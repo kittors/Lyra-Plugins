@@ -20,5 +20,15 @@
       "这个页面控制台报了什么错，源头在哪一行"
     ]
   },
+  "keywords": [
+    "浏览器",
+    "调试",
+    "性能分析",
+    "网络请求",
+    "控制台",
+    "Chrome",
+    "debug",
+    "performance"
+  ],
   "mcpServers": ".mcp.json"
 }

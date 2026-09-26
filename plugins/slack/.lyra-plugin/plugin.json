@@ -21,6 +21,15 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "聊天",
+    "消息",
+    "团队沟通",
+    "协作",
+    "Slack",
+    "chat",
+    "IM"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

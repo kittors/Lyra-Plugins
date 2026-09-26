@@ -20,5 +20,13 @@
       "把这次排查的根因记下来，关联到那个服务"
     ]
   },
+  "keywords": [
+    "记忆",
+    "知识图谱",
+    "长期记忆",
+    "跨会话",
+    "memory",
+    "knowledge graph"
+  ],
   "mcpServers": ".mcp.json"
 }

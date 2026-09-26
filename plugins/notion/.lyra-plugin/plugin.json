@@ -21,6 +21,15 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "笔记",
+    "文档",
+    "知识库",
+    "数据库",
+    "Notion",
+    "notes",
+    "wiki"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

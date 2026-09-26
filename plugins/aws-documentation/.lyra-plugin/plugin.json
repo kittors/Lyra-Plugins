@@ -21,5 +21,13 @@
     ]
   },
   "license": "Apache-2.0",
+  "keywords": [
+    "文档",
+    "AWS",
+    "亚马逊云",
+    "云服务",
+    "docs",
+    "cloud"
+  ],
   "mcpServers": ".mcp.json"
 }

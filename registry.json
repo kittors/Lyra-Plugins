@@ -14,6 +14,15 @@
       "author": "sleepinginsummer",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/agent-browser-cli/.lyra-plugin/icon.svg",
       "brandColor": "#f97316",
+      "keywords": [
+        "浏览器",
+        "Chrome",
+        "自动化",
+        "网页操作",
+        "登录态",
+        "browser",
+        "automation"
+      ],
       "path": "plugins/agent-browser-cli",
       "version": "0.3.7",
       "package": "@sleepinsummer/agent-browser-cli"
@@ -29,6 +38,15 @@
       "author": "Microsoft",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/playwright/.lyra-plugin/icon.svg",
       "brandColor": "#2ead33",
+      "keywords": [
+        "浏览器",
+        "自动化",
+        "端到端测试",
+        "E2E",
+        "网页操作",
+        "browser",
+        "testing"
+      ],
       "path": "plugins/playwright",
       "version": "0.0.82",
       "package": "@playwright/mcp"
@@ -44,6 +62,16 @@
       "author": "Google Chrome",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/chrome-devtools/.lyra-plugin/icon.svg",
       "brandColor": "#4285f4",
+      "keywords": [
+        "浏览器",
+        "调试",
+        "性能分析",
+        "网络请求",
+        "控制台",
+        "Chrome",
+        "debug",
+        "performance"
+      ],
       "path": "plugins/chrome-devtools",
       "version": "1.10.1",
       "package": "chrome-devtools-mcp"
@@ -59,6 +87,15 @@
       "author": "Eduard Ruzga",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/desktop-commander/.lyra-plugin/icon.svg",
       "brandColor": "#0ea5e9",
+      "keywords": [
+        "终端",
+        "命令行",
+        "文件",
+        "进程",
+        "本机",
+        "shell",
+        "terminal"
+      ],
       "path": "plugins/desktop-commander",
       "version": "0.2.51",
       "package": "@wonderwhy-er/desktop-commander"
@@ -74,6 +111,14 @@
       "author": "Model Context Protocol",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/filesystem/.lyra-plugin/icon.svg",
       "brandColor": "#eab308",
+      "keywords": [
+        "文件",
+        "读写文件",
+        "目录",
+        "本机",
+        "file",
+        "fs"
+      ],
       "path": "plugins/filesystem",
       "version": "2026.8.31",
       "package": "@modelcontextprotocol/server-filesystem"
@@ -89,6 +134,15 @@
       "author": "Upstash",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/context7/.lyra-plugin/icon.svg",
       "brandColor": "#8b5cf6",
+      "keywords": [
+        "文档",
+        "API 文档",
+        "库",
+        "框架",
+        "最新文档",
+        "docs",
+        "library"
+      ],
       "path": "plugins/context7",
       "version": "4.1.1",
       "package": "@upstash/context7-mcp"
@@ -104,6 +158,15 @@
       "author": "Tw93",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/waza.svg",
       "brandColor": "#111827",
+      "keywords": [
+        "工程",
+        "代码评审",
+        "排查故障",
+        "流程",
+        "code review",
+        "debug",
+        "workflow"
+      ],
       "path": "skills",
       "version": "3.38.0"
     },
@@ -118,6 +181,14 @@
       "author": "Model Context Protocol",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/sequential-thinking/.lyra-plugin/icon.svg",
       "brandColor": "#ec4899",
+      "keywords": [
+        "推理",
+        "思考",
+        "拆解问题",
+        "规划",
+        "reasoning",
+        "planning"
+      ],
       "path": "plugins/sequential-thinking",
       "version": "2026.8.31",
       "package": "@modelcontextprotocol/server-sequential-thinking"
@@ -133,6 +204,14 @@
       "author": "Model Context Protocol",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/memory/.lyra-plugin/icon.svg",
       "brandColor": "#14b8a6",
+      "keywords": [
+        "记忆",
+        "知识图谱",
+        "长期记忆",
+        "跨会话",
+        "memory",
+        "knowledge graph"
+      ],
       "path": "plugins/memory",
       "version": "2026.8.31",
       "package": "@modelcontextprotocol/server-memory"
@@ -148,6 +227,14 @@
       "author": "Model Context Protocol",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/time/.lyra-plugin/icon.svg",
       "brandColor": "#d97706",
+      "keywords": [
+        "时间",
+        "时区",
+        "日期",
+        "换算",
+        "time",
+        "timezone"
+      ],
       "license": "MIT",
       "path": "plugins/time",
       "version": "2026.8.18",
@@ -164,6 +251,15 @@
       "author": "GitHub",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/github/.lyra-plugin/icon.svg",
       "brandColor": "#181717",
+      "keywords": [
+        "GitHub",
+        "代码仓库",
+        "仓库",
+        "issue",
+        "PR",
+        "代码评审",
+        "pull request"
+      ],
       "license": "MIT",
       "path": "plugins/github",
       "needs": [
@@ -185,6 +281,14 @@
       "author": "Model Context Protocol",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/git/.lyra-plugin/icon.svg",
       "brandColor": "#f03c2e",
+      "keywords": [
+        "Git",
+        "版本控制",
+        "提交",
+        "分支",
+        "diff",
+        "commit"
+      ],
       "license": "MIT",
       "path": "plugins/git",
       "version": "2026.8.18",
@@ -201,6 +305,14 @@
       "author": "Kazuki Yamada",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/repomix/.lyra-plugin/icon.svg",
       "brandColor": "#f97316",
+      "keywords": [
+        "代码库",
+        "打包",
+        "上下文",
+        "仓库",
+        "codebase",
+        "context"
+      ],
       "license": "MIT",
       "path": "plugins/repomix",
       "version": "1.18.1",
@@ -217,6 +329,14 @@
       "author": "shadcn",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/shadcn/.lyra-plugin/icon.svg",
       "brandColor": "#000000",
+      "keywords": [
+        "组件",
+        "UI",
+        "React",
+        "前端",
+        "Tailwind",
+        "component"
+      ],
       "license": "MIT",
       "path": "plugins/shadcn",
       "version": "4.21.0",
@@ -233,6 +353,15 @@
       "author": "Stripe",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/stripe/.lyra-plugin/icon.svg",
       "brandColor": "#635bff",
+      "keywords": [
+        "支付",
+        "订阅",
+        "账单",
+        "发票",
+        "退款",
+        "payment",
+        "billing"
+      ],
       "path": "plugins/stripe",
       "needs": [
         {
@@ -253,6 +382,14 @@
       "author": "Model Context Protocol",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/fetch/.lyra-plugin/icon.svg",
       "brandColor": "#4f46e5",
+      "keywords": [
+        "网页",
+        "抓取",
+        "网址",
+        "Markdown",
+        "fetch",
+        "URL"
+      ],
       "license": "MIT",
       "path": "plugins/fetch",
       "version": "2026.8.18",
@@ -269,6 +406,14 @@
       "author": "Nick Clyde",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/duckduckgo/.lyra-plugin/icon.svg",
       "brandColor": "#de5833",
+      "keywords": [
+        "搜索",
+        "网页搜索",
+        "免费",
+        "免密钥",
+        "search",
+        "web search"
+      ],
       "license": "MIT",
       "path": "plugins/duckduckgo",
       "version": "0.7.0",
@@ -292,6 +437,14 @@
       "author": "Brave",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/brave-search/.lyra-plugin/icon.svg",
       "brandColor": "#fb542b",
+      "keywords": [
+        "搜索",
+        "网页搜索",
+        "新闻",
+        "图片搜索",
+        "search",
+        "news"
+      ],
       "license": "MIT",
       "path": "plugins/brave-search",
       "version": "2.1.4",
@@ -315,6 +468,14 @@
       "author": "Exa",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/exa/.lyra-plugin/icon.svg",
       "brandColor": "#0143d9",
+      "keywords": [
+        "搜索",
+        "语义搜索",
+        "网页搜索",
+        "调研",
+        "search",
+        "semantic search"
+      ],
       "license": "MIT",
       "path": "plugins/exa",
       "package": "exa-mcp-server",
@@ -338,6 +499,15 @@
       "author": "Tavily",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/tavily/.lyra-plugin/icon.svg",
       "brandColor": "#0b0907",
+      "keywords": [
+        "搜索",
+        "网页搜索",
+        "爬取",
+        "调研",
+        "search",
+        "crawl",
+        "research"
+      ],
       "license": "MIT",
       "path": "plugins/tavily",
       "version": "0.2.22",
@@ -361,6 +531,15 @@
       "author": "Firecrawl",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/firecrawl/.lyra-plugin/icon.svg",
       "brandColor": "#fa5d19",
+      "keywords": [
+        "爬虫",
+        "网页抓取",
+        "爬取",
+        "结构化抽取",
+        "Markdown",
+        "scrape",
+        "crawl"
+      ],
       "license": "MIT",
       "path": "plugins/firecrawl",
       "package": "firecrawl-mcp",
@@ -384,6 +563,15 @@
       "author": "Cognition",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/deepwiki/.lyra-plugin/icon.svg",
       "brandColor": "#353535",
+      "keywords": [
+        "文档",
+        "GitHub",
+        "代码库",
+        "架构",
+        "问答",
+        "docs",
+        "wiki"
+      ],
       "path": "plugins/deepwiki"
     },
     {
@@ -397,6 +585,13 @@
       "author": "Ido Salomon",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/gitmcp/.lyra-plugin/icon.svg",
       "brandColor": "#2563eb",
+      "keywords": [
+        "文档",
+        "GitHub",
+        "代码库",
+        "开源",
+        "docs"
+      ],
       "license": "Apache-2.0",
       "path": "plugins/gitmcp"
     },
@@ -411,6 +606,15 @@
       "author": "Microsoft",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/microsoft-learn/.lyra-plugin/icon.svg",
       "brandColor": "#0078d4",
+      "keywords": [
+        "文档",
+        "微软",
+        "Azure",
+        ".NET",
+        "Windows",
+        "Microsoft",
+        "docs"
+      ],
       "path": "plugins/microsoft-learn"
     },
     {
@@ -424,6 +628,14 @@
       "author": "Cloudflare",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/cloudflare-docs/.lyra-plugin/icon.svg",
       "brandColor": "#f38020",
+      "keywords": [
+        "文档",
+        "Cloudflare",
+        "Workers",
+        "边缘",
+        "CDN",
+        "docs"
+      ],
       "license": "Apache-2.0",
       "path": "plugins/cloudflare-docs"
     },
@@ -438,6 +650,14 @@
       "author": "AWS Labs",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/aws-documentation/.lyra-plugin/icon.svg",
       "brandColor": "#ff9900",
+      "keywords": [
+        "文档",
+        "AWS",
+        "亚马逊云",
+        "云服务",
+        "docs",
+        "cloud"
+      ],
       "license": "Apache-2.0",
       "path": "plugins/aws-documentation",
       "version": "1.2.1",
@@ -454,6 +674,15 @@
       "author": "Bytebase",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/dbhub/.lyra-plugin/icon.svg",
       "brandColor": "#335dff",
+      "keywords": [
+        "数据库",
+        "SQL",
+        "PostgreSQL",
+        "MySQL",
+        "SQLite",
+        "SQL Server",
+        "database"
+      ],
       "license": "MIT",
       "path": "plugins/dbhub",
       "version": "1.3.1",
@@ -477,6 +706,14 @@
       "author": "Redis",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/redis/.lyra-plugin/icon.svg",
       "brandColor": "#ff4438",
+      "keywords": [
+        "数据库",
+        "缓存",
+        "Redis",
+        "键值",
+        "cache",
+        "database"
+      ],
       "license": "MIT",
       "path": "plugins/redis",
       "version": "0.5.1",
@@ -499,6 +736,13 @@
       "author": "MongoDB",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/mongodb/.lyra-plugin/icon.svg",
       "brandColor": "#47a248",
+      "keywords": [
+        "数据库",
+        "MongoDB",
+        "NoSQL",
+        "文档数据库",
+        "database"
+      ],
       "license": "Apache-2.0",
       "path": "plugins/mongodb",
       "version": "3.0.4",
@@ -522,6 +766,15 @@
       "author": "Supabase",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/supabase/.lyra-plugin/icon.svg",
       "brandColor": "#3fcf8e",
+      "keywords": [
+        "数据库",
+        "Postgres",
+        "后端",
+        "SQL",
+        "Supabase",
+        "database",
+        "backend"
+      ],
       "license": "Apache-2.0",
       "path": "plugins/supabase",
       "package": "@supabase/mcp-server-supabase",
@@ -544,6 +797,15 @@
       "author": "Framelink",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/figma/.lyra-plugin/icon.svg",
       "brandColor": "#f24e1e",
+      "keywords": [
+        "设计",
+        "设计稿",
+        "UI",
+        "界面",
+        "前端",
+        "Figma",
+        "design"
+      ],
       "license": "MIT",
       "path": "plugins/figma",
       "version": "0.13.2",
@@ -567,6 +829,15 @@
       "author": "draw.io",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/drawio/.lyra-plugin/icon.svg",
       "brandColor": "#f08705",
+      "keywords": [
+        "画图",
+        "流程图",
+        "架构图",
+        "时序图",
+        "图表",
+        "diagram",
+        "draw.io"
+      ],
       "license": "Apache-2.0",
       "path": "plugins/drawio",
       "version": "1.6.1",
@@ -583,6 +854,15 @@
       "author": "Microsoft",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/markitdown/.lyra-plugin/icon.svg",
       "brandColor": "#2b579a",
+      "keywords": [
+        "文档转换",
+        "PDF",
+        "Word",
+        "Excel",
+        "PPT",
+        "Markdown",
+        "convert"
+      ],
       "license": "MIT",
       "path": "plugins/markitdown",
       "version": "0.0.1a7",
@@ -599,6 +879,14 @@
       "author": "Haris Musa",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/excel/.lyra-plugin/icon.svg",
       "brandColor": "#217346",
+      "keywords": [
+        "Excel",
+        "表格",
+        "电子表格",
+        "xlsx",
+        "数据透视表",
+        "spreadsheet"
+      ],
       "license": "MIT",
       "path": "plugins/excel",
       "version": "0.1.8",
@@ -615,6 +903,15 @@
       "author": "Notion",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/notion/.lyra-plugin/icon.svg",
       "brandColor": "#000000",
+      "keywords": [
+        "笔记",
+        "文档",
+        "知识库",
+        "数据库",
+        "Notion",
+        "notes",
+        "wiki"
+      ],
       "license": "MIT",
       "path": "plugins/notion",
       "version": "2.5.2",
@@ -638,6 +935,14 @@
       "author": "Markus Pfundstein",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/obsidian/.lyra-plugin/icon.svg",
       "brandColor": "#7c3aed",
+      "keywords": [
+        "笔记",
+        "知识库",
+        "双链",
+        "Markdown",
+        "Obsidian",
+        "notes"
+      ],
       "license": "MIT",
       "path": "plugins/obsidian",
       "version": "0.2.3",
@@ -661,6 +966,15 @@
       "author": "Dmitrii Korotovskii",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/slack/.lyra-plugin/icon.svg",
       "brandColor": "#4a154b",
+      "keywords": [
+        "聊天",
+        "消息",
+        "团队沟通",
+        "协作",
+        "Slack",
+        "chat",
+        "IM"
+      ],
       "license": "MIT",
       "path": "plugins/slack",
       "version": "1.3.0",
@@ -689,6 +1003,15 @@
       "author": "sooperset",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/atlassian/.lyra-plugin/icon.svg",
       "brandColor": "#0052cc",
+      "keywords": [
+        "Jira",
+        "Confluence",
+        "项目管理",
+        "工单",
+        "协作",
+        "Atlassian",
+        "issue"
+      ],
       "license": "MIT",
       "path": "plugins/atlassian",
       "version": "0.23.1",
@@ -749,6 +1072,15 @@
       "author": "Suyog Sonwalkar",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/kubernetes/.lyra-plugin/icon.svg",
       "brandColor": "#326ce5",
+      "keywords": [
+        "Kubernetes",
+        "K8s",
+        "容器",
+        "集群",
+        "运维",
+        "kubectl",
+        "DevOps"
+      ],
       "license": "MIT",
       "path": "plugins/kubernetes",
       "version": "4.1.7",
@@ -772,6 +1104,16 @@
       "author": "Grafana Labs",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/grafana/.lyra-plugin/icon.svg",
       "brandColor": "#f46800",
+      "keywords": [
+        "监控",
+        "仪表盘",
+        "指标",
+        "日志",
+        "告警",
+        "Prometheus",
+        "Loki",
+        "observability"
+      ],
       "license": "Apache-2.0",
       "path": "plugins/grafana",
       "version": "1.6.0",
@@ -799,6 +1141,15 @@
       "author": "Sentry",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/sentry/.lyra-plugin/icon.svg",
       "brandColor": "#362d59",
+      "keywords": [
+        "报错",
+        "错误监控",
+        "异常",
+        "堆栈",
+        "Sentry",
+        "error tracking",
+        "debug"
+      ],
       "license": "FSL-1.1-ALv2",
       "path": "plugins/sentry",
       "package": "@sentry/mcp-server",
@@ -821,6 +1172,15 @@
       "author": "Joe Blazick",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/arxiv/.lyra-plugin/icon.svg",
       "brandColor": "#b31b1b",
+      "keywords": [
+        "论文",
+        "学术",
+        "arXiv",
+        "科研",
+        "文献",
+        "paper",
+        "research"
+      ],
       "license": "Apache-2.0",
       "path": "plugins/arxiv",
       "version": "0.7.2",
@@ -837,6 +1197,15 @@
       "author": "Hugging Face",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/hugging-face/.lyra-plugin/icon.svg",
       "brandColor": "#ffd21e",
+      "keywords": [
+        "模型",
+        "数据集",
+        "AI",
+        "机器学习",
+        "Hugging Face",
+        "model",
+        "dataset"
+      ],
       "license": "MIT",
       "path": "plugins/hugging-face",
       "needs": [
@@ -859,6 +1228,15 @@
       "author": "Steven Yu",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/zotero/.lyra-plugin/icon.svg",
       "brandColor": "#cc2936",
+      "keywords": [
+        "文献",
+        "论文",
+        "引用",
+        "参考文献",
+        "学术",
+        "Zotero",
+        "citation"
+      ],
       "license": "MIT",
       "path": "plugins/zotero",
       "version": "0.13.1",
@@ -874,6 +1252,15 @@
       "author": "Jesse Vincent",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/superpowers.svg",
       "brandColor": "#7c3aed",
+      "keywords": [
+        "工程",
+        "TDD",
+        "测试驱动",
+        "计划",
+        "子 agent",
+        "工作流",
+        "workflow"
+      ],
       "license": "MIT",
       "version": "6.4.2"
     },
@@ -887,6 +1274,15 @@
       "author": "Every",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/compound-engineering.svg",
       "brandColor": "#0f766e",
+      "keywords": [
+        "工程",
+        "代码评审",
+        "调试",
+        "PR",
+        "工作流",
+        "workflow",
+        "review"
+      ],
       "license": "MIT",
       "path": "skills",
       "version": "3.29.0"
@@ -901,6 +1297,15 @@
       "author": "Addy Osmani",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/addy-agent-skills.svg",
       "brandColor": "#f59e0b",
+      "keywords": [
+        "工程",
+        "规划",
+        "构建",
+        "验证",
+        "评审",
+        "上线",
+        "workflow"
+      ],
       "license": "MIT",
       "version": "0.6.11"
     },
@@ -914,6 +1319,14 @@
       "author": "Matt Pocock",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/mattpocock-skills.svg",
       "brandColor": "#2563eb",
+      "keywords": [
+        "TypeScript",
+        "TS",
+        "TDD",
+        "调试",
+        "代码评审",
+        "工程"
+      ],
       "license": "MIT",
       "path": "skills/engineering",
       "version": "1.2.3"
@@ -928,6 +1341,14 @@
       "author": "Dietrich Gebert",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/ponytail.svg",
       "brandColor": "#334155",
+      "keywords": [
+        "精简代码",
+        "少写代码",
+        "依赖",
+        "简洁",
+        "minimal",
+        "simplify"
+      ],
       "license": "MIT",
       "path": "skills",
       "version": "4.10.0"
@@ -942,6 +1363,15 @@
       "author": "Vercel",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/vercel-skills.svg",
       "brandColor": "#111111",
+      "keywords": [
+        "React",
+        "Next.js",
+        "Vercel",
+        "性能",
+        "部署",
+        "前端",
+        "frontend"
+      ],
       "license": "MIT",
       "path": "skills",
       "version": "agent-skills-063bee94c3f4df8453406c830b0a7df0f2860278"
@@ -956,6 +1386,14 @@
       "author": "Cloudflare",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/cloudflare.svg",
       "brandColor": "#f38020",
+      "keywords": [
+        "Cloudflare",
+        "Workers",
+        "部署",
+        "边缘计算",
+        "Serverless",
+        "deploy"
+      ],
       "license": "Apache-2.0"
     },
     {
@@ -968,6 +1406,15 @@
       "author": "Expo",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/expo.svg",
       "brandColor": "#000020",
+      "keywords": [
+        "Expo",
+        "React Native",
+        "移动端",
+        "App",
+        "iOS",
+        "Android",
+        "mobile"
+      ],
       "license": "MIT",
       "path": "plugins/expo"
     },
@@ -981,6 +1428,14 @@
       "author": "Seth Hobson",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/wshobson-python.svg",
       "brandColor": "#3776ab",
+      "keywords": [
+        "Python",
+        "异步",
+        "测试",
+        "打包",
+        "类型",
+        "后端"
+      ],
       "license": "MIT",
       "path": "plugins/python-development"
     },
@@ -994,6 +1449,15 @@
       "author": "Leonxlnx",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/taste-skill.svg",
       "brandColor": "#be185d",
+      "keywords": [
+        "前端",
+        "设计",
+        "审美",
+        "界面",
+        "UI",
+        "design",
+        "frontend"
+      ],
       "license": "MIT",
       "path": "skills"
     },
@@ -1007,6 +1471,15 @@
       "author": "Emil Kowalski",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/emil-kowalski.svg",
       "brandColor": "#18181b",
+      "keywords": [
+        "动画",
+        "交互",
+        "动效",
+        "界面",
+        "UI",
+        "animation",
+        "motion"
+      ],
       "license": "MIT",
       "path": "skills"
     },
@@ -1020,6 +1493,15 @@
       "author": "NextLevelBuilder",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/ui-ux-pro-max.svg",
       "brandColor": "#6366f1",
+      "keywords": [
+        "设计",
+        "UI",
+        "UX",
+        "配色",
+        "字体",
+        "界面",
+        "design system"
+      ],
       "license": "MIT",
       "path": ".claude/skills",
       "version": "2.15.0"
@@ -1034,6 +1516,15 @@
       "author": "Steph Ango",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/obsidian-skills.svg",
       "brandColor": "#6c31e3",
+      "keywords": [
+        "笔记",
+        "Obsidian",
+        "双链",
+        "白板",
+        "Canvas",
+        "Markdown",
+        "notes"
+      ],
       "license": "MIT",
       "path": "skills"
     },
@@ -1047,6 +1538,14 @@
       "author": "Othman Adi",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/planning-with-files.svg",
       "brandColor": "#ea580c",
+      "keywords": [
+        "规划",
+        "计划",
+        "长任务",
+        "进度",
+        "上下文",
+        "planning"
+      ],
       "license": "MIT",
       "path": "skills",
       "version": "3.20.8"
@@ -1061,6 +1560,13 @@
       "author": "ayghri",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/i-have-adhd.svg",
       "brandColor": "#db2777",
+      "keywords": [
+        "简洁回答",
+        "步骤",
+        "直接",
+        "沟通风格",
+        "concise"
+      ],
       "license": "MIT",
       "path": "skills"
     },
@@ -1074,6 +1580,15 @@
       "author": "Muratcan Koylan",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/context-engineering.svg",
       "brandColor": "#0891b2",
+      "keywords": [
+        "上下文工程",
+        "上下文",
+        "记忆",
+        "多 agent",
+        "提示词",
+        "context",
+        "prompt"
+      ],
       "license": "MIT",
       "path": "skills",
       "version": "2.3.0"
@@ -1088,6 +1603,15 @@
       "author": "Corey Haines",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/marketing-skills.svg",
       "brandColor": "#16a34a",
+      "keywords": [
+        "营销",
+        "SEO",
+        "文案",
+        "广告",
+        "增长",
+        "落地页",
+        "marketing"
+      ],
       "license": "MIT",
       "version": "2.11.1"
     },
@@ -1101,6 +1625,15 @@
       "author": "Anthropic",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-data.svg",
       "brandColor": "#d97757",
+      "keywords": [
+        "数据分析",
+        "数据",
+        "SQL",
+        "统计",
+        "图表",
+        "仪表盘",
+        "analytics"
+      ],
       "license": "Apache-2.0",
       "path": "data"
     },
@@ -1114,6 +1647,14 @@
       "author": "Supabase",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/supabase-skills.svg",
       "brandColor": "#3ecf8e",
+      "keywords": [
+        "数据库",
+        "Postgres",
+        "Supabase",
+        "SQL",
+        "后端",
+        "database"
+      ],
       "license": "MIT",
       "path": "skills",
       "version": "0.1.8"
@@ -1128,6 +1669,15 @@
       "author": "Hugging Face",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/huggingface-skills.svg",
       "brandColor": "#ffd21e",
+      "keywords": [
+        "模型",
+        "训练",
+        "评测",
+        "数据集",
+        "机器学习",
+        "Hugging Face",
+        "ML"
+      ],
       "license": "Apache-2.0",
       "path": "skills"
     },
@@ -1141,6 +1691,14 @@
       "author": "Anthropic",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-bio-research.svg",
       "brandColor": "#d97757",
+      "keywords": [
+        "生物",
+        "生命科学",
+        "单细胞",
+        "基因",
+        "科研",
+        "bioinformatics"
+      ],
       "license": "Apache-2.0",
       "path": "bio-research"
     },
@@ -1154,6 +1712,14 @@
       "author": "Google",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/google-cloud-skills.svg",
       "brandColor": "#4285f4",
+      "keywords": [
+        "Google Cloud",
+        "GCP",
+        "云",
+        "部署",
+        "运维",
+        "cloud"
+      ],
       "license": "Apache-2.0",
       "path": "skills/cloud"
     },
@@ -1167,6 +1733,15 @@
       "author": "Trail of Bits",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/trailofbits-static-analysis.svg",
       "brandColor": "#1e3a8a",
+      "keywords": [
+        "安全",
+        "漏洞",
+        "静态分析",
+        "代码扫描",
+        "Semgrep",
+        "CodeQL",
+        "security"
+      ],
       "license": "CC-BY-SA-4.0",
       "path": "plugins/static-analysis"
     },
@@ -1180,6 +1755,15 @@
       "author": "宝玉",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/baoyu-skills.svg",
       "brandColor": "#dc2626",
+      "keywords": [
+        "配图",
+        "封面",
+        "信息图",
+        "翻译",
+        "公众号",
+        "微博",
+        "内容创作"
+      ],
       "license": "MIT",
       "path": "skills",
       "version": "2.5.2"
@@ -1194,6 +1778,14 @@
       "author": "数字生命卡兹克",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/khazix-skills.svg",
       "brandColor": "#9333ea",
+      "keywords": [
+        "写作",
+        "公众号",
+        "长文",
+        "任务书",
+        "AI 资讯",
+        "内容创作"
+      ],
       "license": "MIT"
     },
     {
@@ -1207,6 +1799,15 @@
       "author": "Anthropic",
       "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-skills.svg",
       "brandColor": "#d97757",
+      "keywords": [
+        "文档",
+        "设计",
+        "写作",
+        "演示",
+        "PPT",
+        "示例",
+        "官方"
+      ],
       "license": "Apache-2.0",
       "path": "skills"
     }

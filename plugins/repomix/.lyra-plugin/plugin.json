@@ -21,5 +21,13 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "代码库",
+    "打包",
+    "上下文",
+    "仓库",
+    "codebase",
+    "context"
+  ],
   "mcpServers": ".mcp.json"
 }

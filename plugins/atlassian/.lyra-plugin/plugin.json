@@ -21,6 +21,15 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "Jira",
+    "Confluence",
+    "项目管理",
+    "工单",
+    "协作",
+    "Atlassian",
+    "issue"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

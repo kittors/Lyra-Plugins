@@ -21,5 +21,13 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "Excel",
+    "表格",
+    "电子表格",
+    "xlsx",
+    "数据透视表",
+    "spreadsheet"
+  ],
   "mcpServers": ".mcp.json"
 }

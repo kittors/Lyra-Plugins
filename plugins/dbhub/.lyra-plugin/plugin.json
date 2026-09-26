@@ -21,6 +21,15 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "数据库",
+    "SQL",
+    "PostgreSQL",
+    "MySQL",
+    "SQLite",
+    "SQL Server",
+    "database"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

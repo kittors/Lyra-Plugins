@@ -21,6 +21,14 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "数据库",
+    "缓存",
+    "Redis",
+    "键值",
+    "cache",
+    "database"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

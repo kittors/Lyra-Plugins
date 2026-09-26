@@ -21,5 +21,14 @@
     ]
   },
   "license": "Apache-2.0",
+  "keywords": [
+    "画图",
+    "流程图",
+    "架构图",
+    "时序图",
+    "图表",
+    "diagram",
+    "draw.io"
+  ],
   "mcpServers": ".mcp.json"
 }

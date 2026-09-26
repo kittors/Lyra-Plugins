@@ -21,6 +21,15 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "GitHub",
+    "代码仓库",
+    "仓库",
+    "issue",
+    "PR",
+    "代码评审",
+    "pull request"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

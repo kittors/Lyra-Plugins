@@ -21,6 +21,15 @@
     ]
   },
   "license": "Apache-2.0",
+  "keywords": [
+    "数据库",
+    "Postgres",
+    "后端",
+    "SQL",
+    "Supabase",
+    "database",
+    "backend"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

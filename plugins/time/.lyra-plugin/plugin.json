@@ -21,5 +21,13 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "时间",
+    "时区",
+    "日期",
+    "换算",
+    "time",
+    "timezone"
+  ],
   "mcpServers": ".mcp.json"
 }

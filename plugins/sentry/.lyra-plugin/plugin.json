@@ -21,6 +21,15 @@
     ]
   },
   "license": "FSL-1.1-ALv2",
+  "keywords": [
+    "报错",
+    "错误监控",
+    "异常",
+    "堆栈",
+    "Sentry",
+    "error tracking",
+    "debug"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

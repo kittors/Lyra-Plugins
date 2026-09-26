@@ -21,5 +21,14 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "文档转换",
+    "PDF",
+    "Word",
+    "Excel",
+    "PPT",
+    "Markdown",
+    "convert"
+  ],
   "mcpServers": ".mcp.json"
 }

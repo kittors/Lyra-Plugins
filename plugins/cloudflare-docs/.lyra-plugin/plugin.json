@@ -21,5 +21,13 @@
     ]
   },
   "license": "Apache-2.0",
+  "keywords": [
+    "文档",
+    "Cloudflare",
+    "Workers",
+    "边缘",
+    "CDN",
+    "docs"
+  ],
   "mcpServers": ".mcp.json"
 }

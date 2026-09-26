@@ -21,5 +21,14 @@
     ]
   },
   "license": "Apache-2.0",
+  "keywords": [
+    "论文",
+    "学术",
+    "arXiv",
+    "科研",
+    "文献",
+    "paper",
+    "research"
+  ],
   "mcpServers": ".mcp.json"
 }

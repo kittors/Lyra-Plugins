@@ -21,6 +21,15 @@
     ]
   },
   "license": "MIT",
+  "keywords": [
+    "爬虫",
+    "网页抓取",
+    "爬取",
+    "结构化抽取",
+    "Markdown",
+    "scrape",
+    "crawl"
+  ],
   "mcpServers": ".mcp.json",
   "env": [
     {

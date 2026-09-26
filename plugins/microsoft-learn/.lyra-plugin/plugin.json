@@ -20,5 +20,14 @@
       ".NET 9 的 minimal API 要怎么生成 OpenAPI 文档"
     ]
   },
+  "keywords": [
+    "文档",
+    "微软",
+    "Azure",
+    ".NET",
+    "Windows",
+    "Microsoft",
+    "docs"
+  ],
   "mcpServers": ".mcp.json"
 }
