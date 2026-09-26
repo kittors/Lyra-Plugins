@@ -1,6 +1,6 @@
 /**
  * Put sources.json on the market platform: build each entry there, give it the Chinese name, line,
- * category and colour written here, approve it, and give it an icon if it has none of its own.
+ * category and colour written here, approve it, and give it its official logo from icons/.
  *
  * sync.mjs keeps this repository in step with upstream, and the platform refreshes what it already
  * lists every hour. Neither of them lists something new — a source added here reaches the platform
@@ -86,21 +86,27 @@ async function call(session, method, path, body) {
 }
 
 /**
- * An upstream listed directly that ships no icon gets the one kept in icons/. One that ships its own
- * keeps it — the author's picture wins over ours — and so does one a maintainer already replaced.
+ * The entry's official logo, from icons/ — for every entry the platform is not already showing an
+ * icon of the bundle's own for.
+ *
+ * A wrapper ships the same logo inside itself (`.lyra-plugin/icon.*`), which the platform reads at
+ * build time, so it arrives here as `bundled` and is left alone. So is an upstream that ships its
+ * own, like Superpowers: the author's picture wins over ours. An entry showing nothing, or showing a
+ * maintainer upload, gets the file in icons/ — uploading again when one was uploaded before is what
+ * lets a better logo committed here replace the old one on the next run.
  */
 async function placeIcon(session, source) {
 	const detail = await call(session, "GET", `/v1/entries/${encodeURIComponent(source.id)}`);
 	const now = (detail.data?.entry ?? detail.data)?.iconSource ?? "?";
-	if (now !== "none") return now;
-	const file = join(ROOT, "icons", `${source.id}.svg`);
-	if (!existsSync(file)) return "none";
+	if (now !== "none" && now !== "uploaded") return now;
+	const found = ["svg", "png"].map((extension) => join(ROOT, "icons", `${source.id}.${extension}`)).find((file) => existsSync(file));
+	if (!found) return now;
 	const response = await fetch(`${MARKET}/v1/admin/entries/${encodeURIComponent(source.id)}/icon`, {
 		method: "PUT",
-		headers: { authorization: `Bearer ${session}`, "content-type": "image/svg+xml" },
-		body: readFileSync(file),
+		headers: { authorization: `Bearer ${session}`, "content-type": found.endsWith(".svg") ? "image/svg+xml" : "image/png" },
+		body: readFileSync(found),
 	});
-	return response.ok ? "uploaded（新传）" : `上传失败 ${response.status}`;
+	return response.ok ? "uploaded（已换成官方 logo）" : `上传失败 ${response.status}`;
 }
 
 const sources = JSON.parse(readFileSync(join(ROOT, "sources.json"), "utf8")).sources.filter((source) => !only || only.has(source.id));

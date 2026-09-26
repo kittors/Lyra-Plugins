@@ -221,13 +221,16 @@ function buildEntry(source, upstream) {
 }
 
 /**
- * The entry's picture, as a URL — the wrapper's own `icon.svg`, or for an upstream listed directly
- * the one kept in `icons/`. Never `github.com/<owner>.png`: that is a person's face offered as a
+ * The entry's picture, as a URL — the wrapper's own `icon.svg`/`icon.png`, or for an upstream listed
+ * directly the one kept in `icons/`. Never `github.com/<owner>.png`: that is a person's face offered as a
  * product's mark, and it makes every entry from one owner look the same.
  */
 function logoFor(source, direct) {
-	const own = direct ? `icons/${source.id}.svg` : `plugins/${source.id}/.lyra-plugin/icon.svg`;
-	return existsSync(join(ROOT, own)) ? `https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/${own}` : undefined;
+	for (const extension of ["svg", "png"]) {
+		const own = direct ? `icons/${source.id}.${extension}` : `plugins/${source.id}/.lyra-plugin/icon.${extension}`;
+		if (existsSync(join(ROOT, own))) return `https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/${own}`;
+	}
+	return undefined;
 }
 
 /** This repository, as the place wrapped bundles are cloned from. */

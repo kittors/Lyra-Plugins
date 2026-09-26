@@ -12,7 +12,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/sleepinginsummer/agent-browser-cli",
       "author": "sleepinginsummer",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/agent-browser-cli/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/agent-browser-cli/.lyra-plugin/icon.png",
       "brandColor": "#f97316",
       "keywords": [
         "浏览器",
@@ -60,7 +60,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
       "author": "Google Chrome",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/chrome-devtools/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/chrome-devtools/.lyra-plugin/icon.png",
       "brandColor": "#4285f4",
       "keywords": [
         "浏览器",
@@ -85,7 +85,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
       "author": "Eduard Ruzga",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/desktop-commander/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/desktop-commander/.lyra-plugin/icon.png",
       "brandColor": "#0ea5e9",
       "keywords": [
         "终端",
@@ -327,7 +327,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://ui.shadcn.com/docs/mcp",
       "author": "shadcn",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/shadcn/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/shadcn/.lyra-plugin/icon.png",
       "brandColor": "#000000",
       "keywords": [
         "组件",
@@ -466,7 +466,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/exa-labs/exa-mcp-server",
       "author": "Exa",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/exa/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/exa/.lyra-plugin/icon.png",
       "brandColor": "#0143d9",
       "keywords": [
         "搜索",
@@ -497,7 +497,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/tavily-ai/tavily-mcp",
       "author": "Tavily",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/tavily/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/tavily/.lyra-plugin/icon.png",
       "brandColor": "#0b0907",
       "keywords": [
         "搜索",
@@ -529,7 +529,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/firecrawl/firecrawl-mcp-server",
       "author": "Firecrawl",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/firecrawl/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/firecrawl/.lyra-plugin/icon.png",
       "brandColor": "#fa5d19",
       "keywords": [
         "爬虫",
@@ -583,7 +583,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/idosal/git-mcp",
       "author": "Ido Salomon",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/gitmcp/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/gitmcp/.lyra-plugin/icon.png",
       "brandColor": "#2563eb",
       "keywords": [
         "文档",
@@ -626,7 +626,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/cloudflare/mcp-server-cloudflare/tree/main/apps/docs-ai-search",
       "author": "Cloudflare",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/cloudflare-docs/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/cloudflare-docs/.lyra-plugin/icon.png",
       "brandColor": "#f38020",
       "keywords": [
         "文档",
@@ -704,7 +704,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/redis/mcp-redis",
       "author": "Redis",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/redis/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/redis/.lyra-plugin/icon.png",
       "brandColor": "#ff4438",
       "keywords": [
         "数据库",
@@ -734,7 +734,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/mongodb-js/mongodb-mcp-server",
       "author": "MongoDB",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/mongodb/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/mongodb/.lyra-plugin/icon.png",
       "brandColor": "#47a248",
       "keywords": [
         "数据库",
@@ -764,7 +764,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/supabase/mcp",
       "author": "Supabase",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/supabase/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/supabase/.lyra-plugin/icon.png",
       "brandColor": "#3fcf8e",
       "keywords": [
         "数据库",
@@ -901,7 +901,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/makenotion/notion-mcp-server",
       "author": "Notion",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/notion/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/notion/.lyra-plugin/icon.png",
       "brandColor": "#000000",
       "keywords": [
         "笔记",
@@ -964,7 +964,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/korotovsky/slack-mcp-server",
       "author": "Dmitrii Korotovskii",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/slack/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/slack/.lyra-plugin/icon.png",
       "brandColor": "#4a154b",
       "keywords": [
         "聊天",
@@ -1070,7 +1070,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/Flux159/mcp-server-kubernetes",
       "author": "Suyog Sonwalkar",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/kubernetes/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/kubernetes/.lyra-plugin/icon.png",
       "brandColor": "#326ce5",
       "keywords": [
         "Kubernetes",
@@ -1102,7 +1102,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/grafana/mcp-grafana",
       "author": "Grafana Labs",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/grafana/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/grafana/.lyra-plugin/icon.png",
       "brandColor": "#f46800",
       "keywords": [
         "监控",
@@ -1139,7 +1139,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/getsentry/sentry-mcp",
       "author": "Sentry",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/sentry/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/sentry/.lyra-plugin/icon.png",
       "brandColor": "#362d59",
       "keywords": [
         "报错",
@@ -1170,7 +1170,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/blazickjp/arxiv-mcp-server",
       "author": "Joe Blazick",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/arxiv/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/arxiv/.lyra-plugin/icon.png",
       "brandColor": "#b31b1b",
       "keywords": [
         "论文",
@@ -1226,7 +1226,7 @@
       "repository": "https://github.com/kittors/Lyra-Plugins.git",
       "homepage": "https://github.com/54yyyu/zotero-mcp",
       "author": "Steven Yu",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/zotero/.lyra-plugin/icon.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/plugins/zotero/.lyra-plugin/icon.png",
       "brandColor": "#cc2936",
       "keywords": [
         "文献",
@@ -1272,7 +1272,7 @@
       "kind": "skill",
       "repository": "https://github.com/EveryInc/compound-engineering-plugin.git",
       "author": "Every",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/compound-engineering.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/compound-engineering.png",
       "brandColor": "#0f766e",
       "keywords": [
         "工程",
@@ -1339,7 +1339,7 @@
       "kind": "skill",
       "repository": "https://github.com/DietrichGebert/ponytail.git",
       "author": "Dietrich Gebert",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/ponytail.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/ponytail.png",
       "brandColor": "#334155",
       "keywords": [
         "精简代码",
@@ -1361,7 +1361,7 @@
       "kind": "skill",
       "repository": "https://github.com/vercel-labs/agent-skills.git",
       "author": "Vercel",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/vercel-skills.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/vercel-skills.png",
       "brandColor": "#111111",
       "keywords": [
         "React",
@@ -1384,7 +1384,7 @@
       "kind": "plugin",
       "repository": "https://github.com/cloudflare/skills.git",
       "author": "Cloudflare",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/cloudflare.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/cloudflare.png",
       "brandColor": "#f38020",
       "keywords": [
         "Cloudflare",
@@ -1404,7 +1404,7 @@
       "kind": "plugin",
       "repository": "https://github.com/expo/skills.git",
       "author": "Expo",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/expo.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/expo.png",
       "brandColor": "#000020",
       "keywords": [
         "Expo",
@@ -1426,7 +1426,7 @@
       "kind": "plugin",
       "repository": "https://github.com/wshobson/agents.git",
       "author": "Seth Hobson",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/wshobson-python.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/wshobson-python.png",
       "brandColor": "#3776ab",
       "keywords": [
         "Python",
@@ -1447,7 +1447,7 @@
       "kind": "skill",
       "repository": "https://github.com/Leonxlnx/taste-skill.git",
       "author": "Leonxlnx",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/taste-skill.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/taste-skill.png",
       "brandColor": "#be185d",
       "keywords": [
         "前端",
@@ -1469,7 +1469,7 @@
       "kind": "skill",
       "repository": "https://github.com/emilkowalski/skills.git",
       "author": "Emil Kowalski",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/emil-kowalski.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/emil-kowalski.png",
       "brandColor": "#18181b",
       "keywords": [
         "动画",
@@ -1536,7 +1536,7 @@
       "kind": "skill",
       "repository": "https://github.com/OthmanAdi/planning-with-files.git",
       "author": "Othman Adi",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/planning-with-files.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/planning-with-files.png",
       "brandColor": "#ea580c",
       "keywords": [
         "规划",
@@ -1558,7 +1558,7 @@
       "kind": "skill",
       "repository": "https://github.com/ayghri/i-have-adhd.git",
       "author": "ayghri",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/i-have-adhd.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/i-have-adhd.png",
       "brandColor": "#db2777",
       "keywords": [
         "简洁回答",
@@ -1578,7 +1578,7 @@
       "kind": "skill",
       "repository": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering.git",
       "author": "Muratcan Koylan",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/context-engineering.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/context-engineering.png",
       "brandColor": "#0891b2",
       "keywords": [
         "上下文工程",
@@ -1623,7 +1623,7 @@
       "kind": "plugin",
       "repository": "https://github.com/anthropics/knowledge-work-plugins.git",
       "author": "Anthropic",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-data.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-data.png",
       "brandColor": "#d97757",
       "keywords": [
         "数据分析",
@@ -1645,7 +1645,7 @@
       "kind": "skill",
       "repository": "https://github.com/supabase/agent-skills.git",
       "author": "Supabase",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/supabase-skills.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/supabase-skills.png",
       "brandColor": "#3ecf8e",
       "keywords": [
         "数据库",
@@ -1689,7 +1689,7 @@
       "kind": "plugin",
       "repository": "https://github.com/anthropics/knowledge-work-plugins.git",
       "author": "Anthropic",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-bio-research.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-bio-research.png",
       "brandColor": "#d97757",
       "keywords": [
         "生物",
@@ -1710,7 +1710,7 @@
       "kind": "skill",
       "repository": "https://github.com/google/skills.git",
       "author": "Google",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/google-cloud-skills.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/google-cloud-skills.png",
       "brandColor": "#4285f4",
       "keywords": [
         "Google Cloud",
@@ -1731,7 +1731,7 @@
       "kind": "plugin",
       "repository": "https://github.com/trailofbits/skills.git",
       "author": "Trail of Bits",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/trailofbits-static-analysis.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/trailofbits-static-analysis.png",
       "brandColor": "#1e3a8a",
       "keywords": [
         "安全",
@@ -1753,7 +1753,7 @@
       "kind": "skill",
       "repository": "https://github.com/JimLiu/baoyu-skills.git",
       "author": "宝玉",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/baoyu-skills.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/baoyu-skills.png",
       "brandColor": "#dc2626",
       "keywords": [
         "配图",
@@ -1776,7 +1776,7 @@
       "kind": "skill",
       "repository": "https://github.com/KKKKhazix/khazix-skills.git",
       "author": "数字生命卡兹克",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/khazix-skills.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/khazix-skills.png",
       "brandColor": "#9333ea",
       "keywords": [
         "写作",
@@ -1797,7 +1797,7 @@
       "repository": "https://github.com/anthropics/skills.git",
       "homepage": "https://github.com/anthropics/skills",
       "author": "Anthropic",
-      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-skills.svg",
+      "logo": "https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/icons/anthropic-skills.png",
       "brandColor": "#d97757",
       "keywords": [
         "文档",

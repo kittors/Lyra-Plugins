@@ -1,8 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-	<rect width="32" height="32" rx="7.5" fill="#0078d4"/>
-	<g transform="translate(5.2 5.2) scale(0.9)" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-		<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
-		<path d="M22 10v6"/>
-		<path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg width="512" height="512" viewBox="-7.902 -7.902 87.805 87.805" version="1.1" id="MS-symbol" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 style="enable-background:new 0 0 72 72;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F25022;}
+	.st1{fill:#7FBA00;}
+	.st2{fill:#00A4EF;}
+	.st3{fill:#FFB900;}
+</style>
+<g>
+	<g>
+		<rect class="st0" width="34.2" height="34.2"/>
+		<rect x="37.8" class="st1" width="34.2" height="34.2"/>
+		<rect y="37.8" class="st2" width="34.2" height="34.2"/>
+		<rect x="37.8" y="37.8" class="st3" width="34.2" height="34.2"/>
 	</g>
+</g>
 </svg>
