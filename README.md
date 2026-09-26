@@ -116,6 +116,14 @@ node scripts/sync.mjs           # 重新生成
 node scripts/sync.mjs --check   # 只检查是否同步，CI 用
 ```
 
+新加的条目还要上架到[市场平台](https://market.07230805.xyz)——平台每小时刷新它已经列着的条目，但不会自己发现新条目：
+
+```bash
+node scripts/publish.mjs --only <id>   # 构建、写上中文名称和介绍、审核上架、没图标的补图标
+```
+
+要管理员口令（放在 `~/.config/lyra-registry/admin-token`）。
+
 ## 提一个插件
 
 开 PR，往 `sources.json` 的 `sources` 里加一条。会看这几件事：
