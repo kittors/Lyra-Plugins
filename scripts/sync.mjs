@@ -43,6 +43,7 @@
  */
 
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -205,7 +206,7 @@ function buildEntry(source, upstream) {
 		repository: direct ? source.repository : REPOSITORY,
 		homepage: source.homepage,
 		author: source.author,
-		logo: source.logo,
+		logo: logoFor(source, direct),
 		brandColor: source.brandColor,
 	};
 	if (source.tagline) entry.tagline = source.tagline;
@@ -217,6 +218,16 @@ function buildEntry(source, upstream) {
 	if (!direct && source.package) entry.package = source.package;
 	if (source.env?.length) entry.needs = source.env.map((need) => ({ name: need.name, description: need.description, url: need.url, ...(isOptional(need) ? { optional: true } : {}) }));
 	return entry;
+}
+
+/**
+ * The entry's picture, as a URL — the wrapper's own `icon.svg`, or for an upstream listed directly
+ * the one kept in `icons/`. Never `github.com/<owner>.png`: that is a person's face offered as a
+ * product's mark, and it makes every entry from one owner look the same.
+ */
+function logoFor(source, direct) {
+	const own = direct ? `icons/${source.id}.svg` : `plugins/${source.id}/.lyra-plugin/icon.svg`;
+	return existsSync(join(ROOT, own)) ? `https://raw.githubusercontent.com/kittors/Lyra-Plugins/main/${own}` : undefined;
 }
 
 /** This repository, as the place wrapped bundles are cloned from. */

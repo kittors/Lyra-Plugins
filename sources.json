@@ -17,8 +17,7 @@
 				"打开 github.com/trending，把今天前十个仓库的名字和简介列给我",
 				"在当前这个标签页里把所有外链找出来，标出哪些是 404",
 				"登录态下把我的订单页截图存到桌面"
-			],
-			"logo": "https://github.com/sleepinginsummer.png?size=128"
+			]
 		},
 		{
 			"id": "playwright",
@@ -40,8 +39,7 @@
 				"打开这个站点，把注册流程从头走一遍，遇到报错停下来告诉我",
 				"对比这个页面在手机和桌面宽度下的布局差异",
 				"把这个表单的所有校验规则试出来"
-			],
-			"logo": "https://github.com/microsoft.png?size=128"
+			]
 		},
 		{
 			"id": "chrome-devtools",
@@ -63,8 +61,7 @@
 				"录一段这个页面的加载性能，告诉我最大的三个瓶颈在哪",
 				"把这次提交前后的首屏时间对比一下",
 				"这个页面控制台报了什么错，源头在哪一行"
-			],
-			"logo": "https://github.com/ChromeDevTools.png?size=128"
+			]
 		},
 		{
 			"id": "desktop-commander",
@@ -87,8 +84,7 @@
 				"把这个项目跑起来，构建失败的话把错误贴给我",
 				"在后台跑测试，跑完告诉我哪些挂了",
 				"找出这台机器上占空间最大的十个目录"
-			],
-			"logo": "https://github.com/wonderwhy-er.png?size=128"
+			]
 		},
 		{
 			"id": "filesystem",
@@ -111,8 +107,7 @@
 				"把这个目录下所有 markdown 的标题列成一份目录",
 				"找出这批文件里重复的内容",
 				"按修改时间把这个文件夹整理成按月分的子目录"
-			],
-			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+			]
 		},
 		{
 			"id": "context7",
@@ -134,8 +129,7 @@
 				"用 Next.js 最新的写法做一个带流式响应的路由",
 				"这个库的这个 API 在当前版本里改成什么了",
 				"按官方现在推荐的方式配置这个工具"
-			],
-			"logo": "https://github.com/upstash.png?size=128"
+			]
 		},
 		{
 			"id": "waza",
@@ -153,7 +147,6 @@
 				"用 check 审一遍这个分支的改动",
 				"用 hunt 查这个偶发的报错到底是什么引起的"
 			],
-			"logo": "https://github.com/tw93.png?size=128",
 			"path": "skills"
 		},
 		{
@@ -176,8 +169,7 @@
 				"这个系统要同时满足这三个互相冲突的约束，一步步帮我想",
 				"把这个迁移方案的每一步风险单独评估一遍",
 				"我这个判断哪里可能是错的，逐条推翻看看"
-			],
-			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+			]
 		},
 		{
 			"id": "memory",
@@ -199,8 +191,7 @@
 				"记住这个项目的部署流程，下次直接照着做",
 				"我之前说过的关于这套架构的约束，还记得哪些",
 				"把这次排查的根因记下来，关联到那个服务"
-			],
-			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+			]
 		},
 		{
 			"id": "time",
@@ -222,8 +213,7 @@
 				"现在旧金山是几点，那边还在上班时间吗",
 				"北京时间周三上午十点，对应伦敦和纽约是几点",
 				"按现在的时间算，离这个截止日期还剩几个工作日"
-			],
-			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+			]
 		},
 		{
 			"id": "github",
@@ -253,8 +243,7 @@
 				"列出我参与的仓库里所有在等我评审的 PR",
 				"把这个 PR 的改动读一遍，按风险高低给出评审意见",
 				"在这个仓库的 issue 里找所有关于内存泄漏的报告，按版本归类"
-			],
-			"logo": "https://github.com/github.png?size=128"
+			]
 		},
 		{
 			"id": "git",
@@ -276,8 +265,7 @@
 				"看看这个仓库现在有哪些改动，按文件说说都改了什么",
 				"把最近两周的提交整理成一份更新说明",
 				"把已暂存的改动提交了，提交信息按改动内容写"
-			],
-			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+			]
 		},
 		{
 			"id": "repomix",
@@ -301,8 +289,7 @@
 				"把这个项目打包，告诉我整体架构和每个模块管什么",
 				"打包 honojs/hono 这个仓库，看看它的路由匹配是怎么实现的",
 				"在打包结果里搜一下所有读取环境变量的地方"
-			],
-			"logo": "https://github.com/yamadashy.png?size=128"
+			]
 		},
 		{
 			"id": "shadcn",
@@ -326,8 +313,7 @@
 				"用 shadcn 的组件搭一个登录页，先看看有哪些能用",
 				"找一个带搜索和分页的数据表格，把它的示例代码给我看",
 				"把 dialog、form 和 sonner 这几个组件装到项目里"
-			],
-			"logo": "https://github.com/shadcn-ui.png?size=128"
+			]
 		},
 		{
 			"id": "stripe",
@@ -356,8 +342,7 @@
 				"在沙盒里建一个每月 20 美元的订阅价格，再生成一个支付链接",
 				"查一下这个客户最近三个月的发票和付款情况",
 				"列出本周所有失败的付款，按失败原因归类"
-			],
-			"logo": "https://github.com/stripe.png?size=128"
+			]
 		},
 		{
 			"id": "fetch",
@@ -379,8 +364,7 @@
 				"把这篇文章取回来，总结成五条要点",
 				"读一下这个库的 CHANGELOG 页面，找出上个大版本的破坏性变更",
 				"对比这两个产品的定价页，把差异列成表"
-			],
-			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+			]
 		},
 		{
 			"id": "duckduckgo",
@@ -411,8 +395,7 @@
 				"搜一下这个报错信息，看看别人是怎么解决的",
 				"找三篇对比 Tauri 和 Electron 的文章，读完给我结论",
 				"查一下这个开源项目最近有没有安全公告"
-			],
-			"logo": "https://github.com/nickclyde.png?size=128"
+			]
 		},
 		{
 			"id": "brave-search",
@@ -444,8 +427,7 @@
 				"搜一下这周关于 WebGPU 的新闻，按时间排",
 				"找 Tauri 2 官方的迁移指南，读完告诉我要改哪些地方",
 				"搜几张适合做博客封面的山景图片，给我链接和来源"
-			],
-			"logo": "https://github.com/brave.png?size=128"
+			]
 		},
 		{
 			"id": "exa",
@@ -477,8 +459,7 @@
 				"找几篇讲 CRDT 在协同编辑器里怎么落地的工程博客",
 				"搜一下最近半年关于小模型蒸馏的论文和解读文章",
 				"找和这个项目定位相近的开源替代品，列出各自的差异"
-			],
-			"logo": "https://github.com/exa-labs.png?size=128"
+			]
 		},
 		{
 			"id": "tavily",
@@ -510,8 +491,7 @@
 				"搜一下 Kubernetes 最新一个版本的主要变化",
 				"把这个文档站的页面爬下来，整理出全部 API 的清单",
 				"调研一下几家托管向量数据库的定价和部署方式，给出对比"
-			],
-			"logo": "https://github.com/tavily-ai.png?size=128"
+			]
 		},
 		{
 			"id": "firecrawl",
@@ -543,8 +523,7 @@
 				"把这个页面抓下来转成 Markdown，表格要保留",
 				"搜一下今年的前端构建工具横评，把前三篇的要点整理出来",
 				"把这份 PDF 白皮书解析出来，列出里面所有的性能数据"
-			],
-			"logo": "https://github.com/firecrawl.png?size=128"
+			]
 		},
 		{
 			"id": "deepwiki",
@@ -561,8 +540,7 @@
 				"vercel/next.js 的 App Router 渲染流程是怎么组织的",
 				"看看 facebook/react 里 useEffect 的调度是在哪几个文件里实现的",
 				"这个仓库的插件机制是怎么设计的，理一条从注册到调用的链路"
-			],
-			"logo": "https://github.com/CognitionAI.png?size=128"
+			]
 		},
 		{
 			"id": "gitmcp",
@@ -580,8 +558,7 @@
 				"查一下 honojs/hono 的中间件应该怎么写",
 				"这个库的 README 里对 Windows 的支持是怎么说的",
 				"在 astral-sh/uv 的代码里找一下 uvx 是怎么决定用哪个缓存版本的"
-			],
-			"logo": "https://github.com/idosal.png?size=128"
+			]
 		},
 		{
 			"id": "microsoft-learn",
@@ -598,8 +575,7 @@
 				"查一下 Azure Functions 现在的超时上限，以及怎么配置",
 				"找一个用 Microsoft Graph 读取日历事件的 C# 官方示例",
 				".NET 9 的 minimal API 要怎么生成 OpenAPI 文档"
-			],
-			"logo": "https://github.com/MicrosoftDocs.png?size=128"
+			]
 		},
 		{
 			"id": "cloudflare-docs",
@@ -617,8 +593,7 @@
 				"Workers 里怎么绑定 D1 数据库，wrangler 配置要怎么写",
 				"R2 的预签名 URL 最长能设多久有效期",
 				"按官方步骤把这个 Pages 项目迁到 Workers"
-			],
-			"logo": "https://github.com/cloudflare.png?size=128"
+			]
 		},
 		{
 			"id": "aws-documentation",
@@ -640,8 +615,7 @@
 				"Lambda 函数现在的最长执行时间和内存上限是多少",
 				"S3 跨区域复制要怎么配，有哪些前提条件",
 				"在 EC2 的实例类型表里找出所有带 GPU 的型号"
-			],
-			"logo": "https://github.com/awslabs.png?size=128"
+			]
 		},
 		{
 			"id": "dbhub",
@@ -673,8 +647,7 @@
 				"看看这个库里有哪些表，找出和订单相关的",
 				"查一下上个月每天的新增用户数",
 				"这条查询为什么慢，看看执行计划和相关的索引"
-			],
-			"logo": "https://github.com/bytebase.png?size=128"
+			]
 		},
 		{
 			"id": "redis",
@@ -708,8 +681,7 @@
 				"看看这个 Redis 里的 key 都有哪些前缀，各有多少",
 				"把 orders 这个 Stream 里最近的 20 条消息读出来",
 				"看看这台 Redis 现在的内存占用和客户端连接情况"
-			],
-			"logo": "https://github.com/redis.png?size=128"
+			]
 		},
 		{
 			"id": "mongodb",
@@ -742,8 +714,7 @@
 				"看看 orders 集合的字段结构，哪些常用字段没有索引",
 				"统计每个城市上个月的订单数和金额，按金额排序",
 				"这条查询为什么慢，给我看 explain 的结果"
-			],
-			"logo": "https://github.com/mongodb-js.png?size=128"
+			]
 		},
 		{
 			"id": "supabase",
@@ -774,8 +745,7 @@
 				"看看这个项目有哪些表，有没有表忘了开 RLS",
 				"查一下过去一小时 API 的报错日志",
 				"根据当前的表结构生成 TypeScript 类型定义"
-			],
-			"logo": "https://github.com/supabase.png?size=128"
+			]
 		},
 		{
 			"id": "figma",
@@ -808,8 +778,7 @@
 				"照着这个 Figma 链接把登录页做出来，间距和颜色按稿子来",
 				"把这个设计稿里的图标都导出到 src/assets/icons",
 				"对比设计稿和现在的页面实现，列出不一致的地方"
-			],
-			"logo": "https://github.com/GLips.png?size=128"
+			]
 		},
 		{
 			"id": "drawio",
@@ -832,8 +801,7 @@
 				"把这个服务的部署架构画成图，用 AWS 的标准图标",
 				"根据这段登录代码画一张时序图",
 				"把 docs/architecture.drawio 第二页里的数据库换成 PostgreSQL 的图标"
-			],
-			"logo": "https://github.com/jgraph.png?size=128"
+			]
 		},
 		{
 			"id": "markitdown",
@@ -855,8 +823,7 @@
 				"把这份 PDF 合同转成 Markdown，列出所有付款条款",
 				"读一下这个 Excel 的第二张表，按部门汇总金额",
 				"把这个 PPT 的内容整理成一份讲稿"
-			],
-			"logo": "https://github.com/microsoft.png?size=128"
+			]
 		},
 		{
 			"id": "excel",
@@ -879,8 +846,7 @@
 				"读一下 sales.xlsx，按月份和地区做一张数据透视表",
 				"给这张表的金额列加上千分位格式，超过一万的标红",
 				"根据这份数据生成一张按季度的柱状图，放在新的工作表里"
-			],
-			"logo": "https://github.com/haris-musa.png?size=128"
+			]
 		},
 		{
 			"id": "notion",
@@ -912,8 +878,7 @@
 				"在 Notion 里找到上周的周会记录，整理出待办事项",
 				"把这份需求写进「产品需求」数据库，状态设为草稿",
 				"查一下任务库里所有已经逾期还没完成的任务"
-			],
-			"logo": "https://github.com/makenotion.png?size=128"
+			]
 		},
 		{
 			"id": "obsidian",
@@ -944,8 +909,7 @@
 				"找出我最近一周改过的笔记，整理成一份周报",
 				"在「项目 A」这篇笔记的「待办」标题下面加三条新任务",
 				"找所有带 #idea 标签的笔记，按主题归类"
-			],
-			"logo": "https://github.com/MarkusPfundstein.png?size=128"
+			]
 		},
 		{
 			"id": "slack",
@@ -986,8 +950,7 @@
 				"把 #incident 频道今天的讨论整理成一份事故时间线",
 				"搜一下最近一个月谁提到过「数据库迁移」，列出链接",
 				"我有哪些未读的私信和 @ 我的消息"
-			],
-			"logo": "https://github.com/korotovsky.png?size=128"
+			]
 		},
 		{
 			"id": "atlassian",
@@ -1069,8 +1032,7 @@
 				"列出当前 Sprint 里还没完成、分给我的 issue",
 				"把这个 bug 的复现步骤建成一个 Jira 单，优先级设为高",
 				"在 Confluence 里找一下新人入职文档，总结成十条"
-			],
-			"logo": "https://github.com/sooperset.png?size=128"
+			]
 		},
 		{
 			"id": "kubernetes",
@@ -1102,8 +1064,7 @@
 				"看看 default 命名空间里哪些 Pod 在反复重启，把最近的日志摘出来",
 				"把 web 这个 Deployment 扩到 5 个副本，等滚动更新完告诉我",
 				"列出所有没有设置资源限制的容器"
-			],
-			"logo": "https://github.com/Flux159.png?size=128"
+			]
 		},
 		{
 			"id": "grafana",
@@ -1140,8 +1101,7 @@
 				"过去一小时 checkout 服务的错误率和 P99 延迟是多少",
 				"在 Loki 里找今天 payment 服务的错误日志，归纳出最常见的几类",
 				"现在有哪些告警在响，分别是什么时候开始的"
-			],
-			"logo": "https://github.com/grafana.png?size=128"
+			]
 		},
 		{
 			"id": "sentry",
@@ -1172,8 +1132,7 @@
 				"看看这个项目最近 24 小时出现最多的三个错误，定位到代码",
 				"这个 issue 的堆栈指向哪里，帮我写个修复",
 				"这次发版之后新冒出来的错误有哪些"
-			],
-			"logo": "https://github.com/getsentry.png?size=128"
+			]
 		},
 		{
 			"id": "arxiv",
@@ -1195,8 +1154,7 @@
 				"搜一下最近三个月关于长上下文检索的论文，挑五篇最相关的讲讲",
 				"下载 1706.03762，逐节读，把方法部分讲清楚",
 				"把这几篇论文的 BibTeX 导出来，放进 refs.bib"
-			],
-			"logo": "https://github.com/blazickjp.png?size=128"
+			]
 		},
 		{
 			"id": "hugging-face",
@@ -1227,8 +1185,7 @@
 				"找几个能在 16G 显存上跑的中文 embedding 模型，按下载量排",
 				"看看这个数据集有哪些字段、多大、许可证是什么",
 				"今天 Hub 上有哪些热门的新论文，挑和检索相关的讲讲"
-			],
-			"logo": "https://github.com/huggingface.png?size=128"
+			]
 		},
 		{
 			"id": "zotero",
@@ -1255,8 +1212,7 @@
 				"在我的 Zotero 里找所有关于对比学习的论文，按年份列出来",
 				"把这篇论文里我做的高亮和批注汇总成一份读书笔记",
 				"把「毕业论文」这个集合导出成 GB/T 7714 格式的参考文献"
-			],
-			"logo": "https://github.com/54yyyu.png?size=128"
+			]
 		},
 		{
 			"id": "superpowers",
@@ -1271,7 +1227,6 @@
 				"按 docs/plans 里那份计划逐项实现，每一项先写测试",
 				"这个测试时好时坏，按 systematic-debugging 的步骤找根因"
 			],
-			"logo": "https://github.com/obra.png?size=128",
 			"brandColor": "#7c3aed",
 			"license": "MIT",
 			"kind": "git-skills"
@@ -1289,7 +1244,6 @@
 				"用 ce-code-review 审一下这个分支相对 main 的改动",
 				"这个 PR 用 ce-babysit-pr 盯到能合并为止"
 			],
-			"logo": "https://github.com/EveryInc.png?size=128",
 			"brandColor": "#0f766e",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1308,7 +1262,6 @@
 				"按 code-review-and-quality 审一遍这次改动，检查单逐项过",
 				"上线前用 shipping-and-launch 看看还缺什么"
 			],
-			"logo": "https://github.com/addyosmani.png?size=128",
 			"brandColor": "#f59e0b",
 			"license": "MIT",
 			"kind": "git-skills"
@@ -1326,7 +1279,6 @@
 				"这个 bug 是偶发的，用 diagnosing-bugs 先做出稳定复现",
 				"把刚才的讨论用 to-tickets 拆成工单"
 			],
-			"logo": "https://github.com/mattpocock.png?size=128",
 			"brandColor": "#2563eb",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1345,7 +1297,6 @@
 				"用 ponytail-review 看看这次改动里哪些可以删",
 				"用 ponytail-audit 扫一遍仓库，列出最该简化的地方"
 			],
-			"logo": "https://github.com/DietrichGebert.png?size=128",
 			"brandColor": "#334155",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1364,7 +1315,6 @@
 				"把这个 Next.js 项目部署到 Vercel，给我预览链接",
 				"用 web-design-guidelines 检查一下这个表单的可访问性"
 			],
-			"logo": "https://github.com/vercel-labs.png?size=128",
 			"brandColor": "#111111",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1383,7 +1333,6 @@
 				"把这个 Next.js 应用改成能部署到 Cloudflare Workers",
 				"按 workers-best-practices 审一遍这个 Worker"
 			],
-			"logo": "https://github.com/cloudflare.png?size=128",
 			"brandColor": "#f38020",
 			"license": "Apache-2.0",
 			"kind": "git-skills"
@@ -1401,7 +1350,6 @@
 				"把项目升到最新的 Expo SDK，先列出要改的地方",
 				"配一个 EAS Workflow，合并到 main 时自动出 iOS 预览包"
 			],
-			"logo": "https://github.com/expo.png?size=128",
 			"brandColor": "#000020",
 			"license": "MIT",
 			"kind": "git-skills",
@@ -1420,7 +1368,6 @@
 				"用 uv 把这个脚本整理成可以安装的包",
 				"用 async-python-patterns 看看这段并发代码有没有问题"
 			],
-			"logo": "https://github.com/wshobson.png?size=128",
 			"brandColor": "#3776ab",
 			"license": "MIT",
 			"kind": "git-skills",
@@ -1439,7 +1386,6 @@
 				"按 redesign-existing-projects 改一下这个页面，功能别动",
 				"这个页面太像 AI 做的了，按 minimalist-ui 重做视觉"
 			],
-			"logo": "https://github.com/Leonxlnx.png?size=128",
 			"brandColor": "#be185d",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1458,7 +1404,6 @@
 				"用 animate 给这个列表的增删加上过渡",
 				"按 mobile-native 让这个网页在手机上更像原生应用"
 			],
-			"logo": "https://github.com/emilkowalski.png?size=128",
 			"brandColor": "#18181b",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1477,7 +1422,6 @@
 				"按 ui-ux-pro-max 的建议重做这个仪表盘的配色和字体",
 				"用 slides 把这份方案做成一套 HTML 演示稿"
 			],
-			"logo": "https://github.com/nextlevelbuilder.png?size=128",
 			"brandColor": "#6366f1",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1496,7 +1440,6 @@
 				"给我的读书笔记建一个按作者和评分分组的 Bases 视图",
 				"把这个项目的模块关系画成一张 JSON Canvas"
 			],
-			"logo": "https://github.com/kepano.png?size=128",
 			"brandColor": "#6c31e3",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1515,7 +1458,6 @@
 				"接着 task_plan.md 往下做，每做完一步更新 progress.md",
 				"把这次排查的发现记进 findings.md，别丢了"
 			],
-			"logo": "https://github.com/OthmanAdi.png?size=128",
 			"brandColor": "#ea580c",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1534,7 +1476,6 @@
 				"/i-have-adhd 把部署流程压成一张编号清单",
 				"stop adhd mode，接下来正常解释"
 			],
-			"logo": "https://github.com/ayghri.png?size=128",
 			"brandColor": "#db2777",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1553,7 +1494,6 @@
 				"用 tool-design 的标准改写这几个工具的描述",
 				"给这个长任务流程设计一套上下文压缩策略"
 			],
-			"logo": "https://github.com/muratcankoylan.png?size=128",
 			"brandColor": "#0891b2",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1572,7 +1512,6 @@
 				"给这个开发者工具写一组冷启动邮件序列",
 				"按 seo-audit 查一遍这个站点的 SEO 问题"
 			],
-			"logo": "https://github.com/coreyhaines31.png?size=128",
 			"brandColor": "#16a34a",
 			"license": "MIT",
 			"kind": "git-skills"
@@ -1590,7 +1529,6 @@
 				"把这个查询改写成 BigQuery 方言，并解释每个 CTE",
 				"用这些结果做一个带筛选的 HTML 仪表盘"
 			],
-			"logo": "https://github.com/anthropics.png?size=128",
 			"brandColor": "#d97757",
 			"license": "Apache-2.0",
 			"kind": "git-skills",
@@ -1609,7 +1547,6 @@
 				"这张表查询很慢，按 Postgres 最佳实践看看该加什么索引",
 				"在 Next.js App Router 里用 @supabase/ssr 接好登录"
 			],
-			"logo": "https://github.com/supabase.png?size=128",
 			"brandColor": "#3ecf8e",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1628,7 +1565,6 @@
 				"帮我挑一个能在 32G 内存的 Mac 上跑的代码模型",
 				"把这个 Gradio 演示部署成一个 Space"
 			],
-			"logo": "https://github.com/huggingface.png?size=128",
 			"brandColor": "#ffd21e",
 			"license": "Apache-2.0",
 			"kind": "skill-collection",
@@ -1647,7 +1583,6 @@
 				"用 scvi-tools 把这三个批次的数据整合起来",
 				"在本机用 nf-core/rnaseq 跑一遍这些 fastq"
 			],
-			"logo": "https://github.com/anthropics.png?size=128",
 			"brandColor": "#d97757",
 			"license": "Apache-2.0",
 			"kind": "git-skills",
@@ -1666,7 +1601,6 @@
 				"这个 GKE 节点一直 NotReady，帮我排查",
 				"把这句需求写成 Cloud Logging 的查询语句"
 			],
-			"logo": "https://github.com/google.png?size=128",
 			"brandColor": "#4285f4",
 			"license": "Apache-2.0",
 			"kind": "skill-collection",
@@ -1685,7 +1619,6 @@
 				"给这个 Go 项目建 CodeQL 数据库，查有没有注入类漏洞",
 				"把这几份 SARIF 结果合并去重，按严重程度排好"
 			],
-			"logo": "https://github.com/trailofbits.png?size=128",
 			"brandColor": "#1e3a8a",
 			"license": "CC-BY-SA-4.0",
 			"kind": "git-skills",
@@ -1704,7 +1637,6 @@
 				"把这篇英文博客精翻成中文，代码块保持原样",
 				"把 article.md 排好版，发到公众号草稿箱"
 			],
-			"logo": "https://github.com/JimLiu.png?size=128",
 			"brandColor": "#dc2626",
 			"license": "MIT",
 			"kind": "skill-collection",
@@ -1723,7 +1655,6 @@
 				"用横纵分析法研究一下 Cursor 这家公司",
 				"这一阶段做完了，用 neat-freak 把文档和代码对齐"
 			],
-			"logo": "https://github.com/KKKKhazix.png?size=128",
 			"brandColor": "#9333ea",
 			"license": "MIT",
 			"kind": "skill-collection"
@@ -1739,7 +1670,6 @@
 			"license": "Apache-2.0",
 			"homepage": "https://github.com/anthropics/skills",
 			"description": "Anthropic 官方的一组示例技能：文档处理之外的设计、写作、做演示、调 MCP 等。",
-			"logo": "https://github.com/anthropics.png?size=128",
 			"brandColor": "#d97757"
 		}
 	]
