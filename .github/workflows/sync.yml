@@ -2,8 +2,8 @@ name: 同步上游
 
 on:
   schedule:
-    # 每天 03:00 UTC，也就是北京时间中午 11 点。错开整点，避开 GitHub 定时任务最挤的那几分钟。
-    - cron: "17 3 * * *"
+    # 每小时第 17 分钟：市场要跟得上上游，一天一次太慢。错开整点，避开 GitHub 定时任务最挤的那几分钟。
+    - cron: "17 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
