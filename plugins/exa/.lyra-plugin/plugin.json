@@ -1,0 +1,34 @@
+{
+  "name": "exa",
+  "version": "0.0.0",
+  "description": "按意思而不是关键词找网页，结果直接带着清理好的正文。",
+  "author": {
+    "name": "Exa"
+  },
+  "homepage": "https://github.com/exa-labs/exa-mcp-server",
+  "interface": {
+    "displayName": "Exa",
+    "shortDescription": "按意思而不是关键词找网页，结果直接带着清理好的正文。",
+    "longDescription": "Exa 官方托管的服务，直接连，本机不用跑任何东西。默认两个工具：web_search_exa 搜索并返回清理过的正文，web_fetch_exa 读指定网址的全文。\n\n它按语义匹配：「讲 CRDT 在协同编辑器里怎么落地的工程博客」这种描述性的问题，它比关键词搜索找得准。结果本身就带着正文，模型不用再一个个点开。\n\n不填密钥也能用，有速率限制；填了 EXA_API_KEY 额度更高。按域名、日期过滤的高级搜索和多步调研不在默认工具里，要在地址后面加 ?tools= 参数打开，见它的 README。",
+    "developerName": "Exa",
+    "category": "搜索",
+    "brandColor": "#0143d9",
+    "websiteURL": "https://github.com/exa-labs/exa-mcp-server",
+    "defaultPrompt": [
+      "找几篇讲 CRDT 在协同编辑器里怎么落地的工程博客",
+      "搜一下最近半年关于小模型蒸馏的论文和解读文章",
+      "找和这个项目定位相近的开源替代品，列出各自的差异"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "EXA_API_KEY",
+      "description": "Exa 的 API 密钥；不填也能用，只是有速率限制",
+      "url": "https://dashboard.exa.ai/api-keys",
+      "secret": true,
+      "optional": true
+    }
+  ]
+}

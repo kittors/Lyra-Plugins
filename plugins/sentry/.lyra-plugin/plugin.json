@@ -1,0 +1,33 @@
+{
+  "name": "sentry",
+  "version": "0.0.0",
+  "description": "查 Sentry 里的报错和事件，读完整堆栈，让 Seer 分析根因，顺手改 issue 状态。",
+  "author": {
+    "name": "Sentry"
+  },
+  "homepage": "https://github.com/getsentry/sentry-mcp",
+  "interface": {
+    "displayName": "Sentry",
+    "shortDescription": "查 Sentry 里的报错和事件，读完整堆栈，让 Seer 分析根因，顺手改 issue 状态。",
+    "longDescription": "Sentry 官方托管的服务。能列组织和项目，用自然语言或 Sentry 的查询语法搜 issue 和事件，按链接取回 issue、事件、Trace 的详情和完整堆栈，调 Sentry 自己的 Seer 分析根因并给出修复建议，以及把 issue 标成已解决、忽略或指派给人。不常用的操作不直接摆出来，而是先用 search_sentry_tools 查、再用 execute_sentry_tool 调，省上下文。\n\n这里用显式令牌：请求头写的是 Sentry-Bearer 而不是 Bearer，这是 Sentry 的约定，改了就连不上。\n\n自建的 Sentry 连不了这个托管地址，要改用 npm 包 @sentry/mcp-server 在本机跑，并传 --host。它的许可证是 FSL，源码公开，但不是 OSI 意义上的开源。",
+    "developerName": "Sentry",
+    "category": "云与运维",
+    "brandColor": "#362d59",
+    "websiteURL": "https://github.com/getsentry/sentry-mcp",
+    "defaultPrompt": [
+      "看看这个项目最近 24 小时出现最多的三个错误，定位到代码",
+      "这个 issue 的堆栈指向哪里，帮我写个修复",
+      "这次发版之后新冒出来的错误有哪些"
+    ]
+  },
+  "license": "FSL-1.1-ALv2",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "SENTRY_ACCESS_TOKEN",
+      "description": "Sentry 用户令牌，需要 org:read、project:read、project:write、team:read、team:write、event:write 权限",
+      "url": "https://sentry.io/settings/account/api/auth-tokens/",
+      "secret": true
+    }
+  ]
+}

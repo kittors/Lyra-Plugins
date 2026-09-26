@@ -1,0 +1,25 @@
+{
+  "name": "drawio",
+  "version": "1.6.1",
+  "description": "让 agent 画流程图、架构图、时序图，在 draw.io 编辑器里打开接着改。",
+  "author": {
+    "name": "draw.io"
+  },
+  "homepage": "https://github.com/jgraph/drawio-mcp",
+  "interface": {
+    "displayName": "draw.io",
+    "shortDescription": "让 agent 画流程图、架构图、时序图，在 draw.io 编辑器里打开接着改。",
+    "longDescription": "draw.io 官方（JGraph）出的。模型写出图的内容——draw.io XML、CSV 或 Mermaid——它在浏览器里用 draw.io 编辑器打开，你可以接着拖拽修改、导出成图片或 PDF。search_shapes 能在上万个图形里找到 AWS、Azure、Kubernetes、UML、BPMN 这些标准图标的准确样式；另外三个工具读写本地 .drawio 文件里的单页。\n\n和让模型直接吐一段 Mermaid 相比，得到的是一张能继续编辑的正式图，而不是一段还要找地方渲染的文本。\n\n图的数据放在网址 # 后面的片段里，浏览器不会把它发给 draw.io 的服务器。",
+    "developerName": "draw.io",
+    "category": "设计",
+    "brandColor": "#f08705",
+    "websiteURL": "https://github.com/jgraph/drawio-mcp",
+    "defaultPrompt": [
+      "把这个服务的部署架构画成图，用 AWS 的标准图标",
+      "根据这段登录代码画一张时序图",
+      "把 docs/architecture.drawio 第二页里的数据库换成 PostgreSQL 的图标"
+    ]
+  },
+  "license": "Apache-2.0",
+  "mcpServers": ".mcp.json"
+}

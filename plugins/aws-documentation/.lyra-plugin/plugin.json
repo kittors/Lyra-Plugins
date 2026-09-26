@@ -1,0 +1,25 @@
+{
+  "name": "aws-documentation",
+  "version": "1.2.1",
+  "description": "搜索和阅读 AWS 官方文档，在大表格里只取需要的行，推荐相关页面。",
+  "author": {
+    "name": "AWS Labs"
+  },
+  "homepage": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server",
+  "interface": {
+    "displayName": "AWS Documentation",
+    "shortDescription": "搜索和阅读 AWS 官方文档，在大表格里只取需要的行，推荐相关页面。",
+    "longDescription": "AWS Labs 出的，不需要 AWS 账号和凭证。五个工具：search_documentation 搜索，read_documentation 把文档页转成 Markdown 分段读，read_sections 只取指定标题下的章节，search_table 在很长的文档表格里只取匹配的行，recommend 给出与某页相关的其他文档。\n\nAWS 的服务多，配额和参数常改，模型凭记忆给的数字经常过时。先查文档再回答，至少答案有出处。search_table 对配额表、实例规格表这类几百行的表格尤其有用，不用整页读进来。\n\n默认查全球区的文档。AWS 中国区（北京、宁夏）的服务和功能不完全一样，要查中国区，在登录 shell 里 export AWS_DOCUMENTATION_PARTITION=aws-cn 再启动。",
+    "developerName": "AWS Labs",
+    "category": "文档",
+    "brandColor": "#ff9900",
+    "websiteURL": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server",
+    "defaultPrompt": [
+      "Lambda 函数现在的最长执行时间和内存上限是多少",
+      "S3 跨区域复制要怎么配，有哪些前提条件",
+      "在 EC2 的实例类型表里找出所有带 GPU 的型号"
+    ]
+  },
+  "license": "Apache-2.0",
+  "mcpServers": ".mcp.json"
+}

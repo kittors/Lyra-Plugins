@@ -1,0 +1,34 @@
+{
+  "name": "hugging-face",
+  "version": "0.0.0",
+  "description": "在 Hugging Face Hub 上查模型、数据集、Space 和论文。",
+  "author": {
+    "name": "Hugging Face"
+  },
+  "homepage": "https://github.com/huggingface/hf-mcp-server",
+  "interface": {
+    "displayName": "Hugging Face",
+    "shortDescription": "在 Hugging Face Hub 上查模型、数据集、Space 和论文。",
+    "longDescription": "Hugging Face 官方托管。不登录也能用，这时有四个工具：搜索模型、数据集和 Space，看仓库详情（下载量、许可证、标签、模型卡），浏览 Hub 上的文件、论文和每日热门，以及查看当前身份。填了 HF_TOKEN 之后，还能按你在 huggingface.co/settings/mcp 里的选择开更多工具和 Space 应用。\n\n挑模型时它比网页搜索直接：下载量、许可证、参数规模、适用任务，查的都是 Hub 上此刻的数据，而不是模型记忆里的。\n\n令牌给只读权限就够了。",
+    "developerName": "Hugging Face",
+    "category": "科研",
+    "brandColor": "#ffd21e",
+    "websiteURL": "https://github.com/huggingface/hf-mcp-server",
+    "defaultPrompt": [
+      "找几个能在 16G 显存上跑的中文 embedding 模型，按下载量排",
+      "看看这个数据集有哪些字段、多大、许可证是什么",
+      "今天 Hub 上有哪些热门的新论文，挑和检索相关的讲讲"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "HF_TOKEN",
+      "description": "Hugging Face 访问令牌，只读权限即可；不填以匿名身份使用，工具少一些",
+      "url": "https://huggingface.co/settings/tokens",
+      "secret": true,
+      "optional": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "mongodb",
+  "version": "3.0.4",
+  "description": "查 MongoDB：列库和集合、看 schema 和索引、find、聚合、explain。默认只读。",
+  "author": {
+    "name": "MongoDB"
+  },
+  "homepage": "https://github.com/mongodb-js/mongodb-mcp-server",
+  "interface": {
+    "displayName": "MongoDB",
+    "shortDescription": "查 MongoDB：列库和集合、看 schema 和索引、find、聚合、explain。默认只读。",
+    "longDescription": "MongoDB 官方维护。这里默认带了 --readOnly，只开读的工具：列出库和集合、推断集合的 schema、看索引和存储大小、find、count、聚合、explain 执行计划、导出查询结果、看 mongod 的日志，还能查 MongoDB 官方的知识库。\n\n要写数据（插入、更新、删除、建索引），去掉参数里的 --readOnly。要管 Atlas 本身（建集群、管用户）得另配 Atlas 的服务账号，见它的 README。它默认会向 MongoDB 发匿名使用数据，参数里加 --telemetry disabled 可以关掉。\n\n它的依赖很多：在我们的实测里，第一次启动用了一分多钟，之后每次启动也要十几秒。第一次开启如果超时，稍等再开一次。",
+    "developerName": "MongoDB",
+    "category": "数据",
+    "brandColor": "#47a248",
+    "websiteURL": "https://github.com/mongodb-js/mongodb-mcp-server",
+    "defaultPrompt": [
+      "看看 orders 集合的字段结构，哪些常用字段没有索引",
+      "统计每个城市上个月的订单数和金额，按金额排序",
+      "这条查询为什么慢，给我看 explain 的结果"
+    ]
+  },
+  "license": "Apache-2.0",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "MDB_MCP_CONNECTION_STRING",
+      "description": "MongoDB 连接串，mongodb:// 或 mongodb+srv:// 开头",
+      "url": "https://www.mongodb.com/docs/manual/reference/connection-string/",
+      "secret": true
+    }
+  ]
+}

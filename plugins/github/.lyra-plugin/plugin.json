@@ -1,0 +1,33 @@
+{
+  "name": "github",
+  "version": "0.0.0",
+  "description": "GitHub 官方：读仓库和代码、查和改 issue、看和评审 PR。",
+  "author": {
+    "name": "GitHub"
+  },
+  "homepage": "https://github.com/github/github-mcp-server",
+  "interface": {
+    "displayName": "GitHub",
+    "shortDescription": "GitHub 官方：读仓库和代码、查和改 issue、看和评审 PR。",
+    "longDescription": "GitHub 官方托管的服务，连的是 api.githubcopilot.com，本机不用跑任何东西。默认工具集是仓库与文件、issue、PR 与评审、用户和当前上下文；Actions、代码扫描、Discussions、Projects、通知这些是另外的工具集，要用得自己开：在 .mcp.json 的请求头里加 X-MCP-Toolsets，比如 default,actions。\n\n用个人访问令牌认证，令牌能做什么它就能做什么。建议用 fine-grained 令牌，只给需要的仓库和权限；只想让它读、不让它写，把地址换成 https://api.githubcopilot.com/mcp/readonly。组织的仓库还可能受组织的 MCP 策略限制。\n\n和 Git 那条的分工：Git 管本机仓库里的提交和分支；这条管 GitHub 上的东西——别人的仓库、issue、PR 评审。",
+    "developerName": "GitHub",
+    "category": "开发",
+    "brandColor": "#181717",
+    "websiteURL": "https://github.com/github/github-mcp-server",
+    "defaultPrompt": [
+      "列出我参与的仓库里所有在等我评审的 PR",
+      "把这个 PR 的改动读一遍，按风险高低给出评审意见",
+      "在这个仓库的 issue 里找所有关于内存泄漏的报告，按版本归类"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+      "description": "GitHub 个人访问令牌，建议用 fine-grained 令牌，只勾需要的仓库和权限",
+      "url": "https://github.com/settings/personal-access-tokens/new",
+      "secret": true
+    }
+  ]
+}

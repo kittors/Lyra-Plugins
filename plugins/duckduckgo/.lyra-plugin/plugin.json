@@ -1,0 +1,33 @@
+{
+  "name": "duckduckgo",
+  "version": "0.7.0",
+  "description": "用 DuckDuckGo 搜网页、读网页。不用注册，不用密钥。",
+  "author": {
+    "name": "Nick Clyde"
+  },
+  "homepage": "https://github.com/nickclyde/duckduckgo-mcp-server",
+  "interface": {
+    "displayName": "DuckDuckGo",
+    "shortDescription": "用 DuckDuckGo 搜网页、读网页。不用注册，不用密钥。",
+    "longDescription": "社区实现，不是 DuckDuckGo 官方出的。三个工具：search 搜索，fetch_content 把网页正文抽出来，expand_link 把结果里缩短的链接还原成完整地址。\n\n它的好处是零配置，装上就能搜。代价是它抓的是 DuckDuckGo 的网页结果而不是正式 API：自带限速（默认每分钟 30 次搜索、20 次抓取），被风控时会失败，结果的质量和数量也比不上付费的搜索 API。\n\n想要稳定的额度和更多结果类型，用 Brave Search 或 Tavily。",
+    "developerName": "Nick Clyde",
+    "category": "搜索",
+    "brandColor": "#de5833",
+    "websiteURL": "https://github.com/nickclyde/duckduckgo-mcp-server",
+    "defaultPrompt": [
+      "搜一下这个报错信息，看看别人是怎么解决的",
+      "找三篇对比 Tauri 和 Electron 的文章，读完给我结论",
+      "查一下这个开源项目最近有没有安全公告"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "DDG_REGION",
+      "description": "默认搜索区域，比如 cn-zh、us-en；不填按 DuckDuckGo 的默认",
+      "secret": false,
+      "optional": true
+    }
+  ]
+}

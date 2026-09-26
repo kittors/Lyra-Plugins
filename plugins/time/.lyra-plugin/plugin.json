@@ -1,0 +1,25 @@
+{
+  "name": "time",
+  "version": "2026.8.18",
+  "description": "告诉模型现在几点，并在时区之间换算时间。",
+  "author": {
+    "name": "Model Context Protocol"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+  "interface": {
+    "displayName": "Time",
+    "shortDescription": "告诉模型现在几点，并在时区之间换算时间。",
+    "longDescription": "官方参考实现，两个工具：get_current_time 取某个时区的当前时间，convert_time 把一个时间从一个时区换算到另一个。时区用 IANA 名字，比如 Asia/Shanghai、America/New_York；不指定时按本机的系统时区。\n\n模型自己不知道现在是几点——它的「现在」停在训练截止那天。排期、算离截止还剩多久、对日志里的时间戳、约跨时区的会，都需要一个准的当前时间。\n\n想固定用某个时区、不跟着系统走，在参数里加 --local-timezone=Asia/Shanghai。",
+    "developerName": "Model Context Protocol",
+    "category": "本机",
+    "brandColor": "#d97706",
+    "websiteURL": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+    "defaultPrompt": [
+      "现在旧金山是几点，那边还在上班时间吗",
+      "北京时间周三上午十点，对应伦敦和纽约是几点",
+      "按现在的时间算，离这个截止日期还剩几个工作日"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json"
+}

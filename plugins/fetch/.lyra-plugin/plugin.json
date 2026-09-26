@@ -1,0 +1,25 @@
+{
+  "name": "fetch",
+  "version": "2026.8.18",
+  "description": "把一个网址取回来，转成 Markdown 给模型读。不开浏览器，不跑 JS。",
+  "author": {
+    "name": "Model Context Protocol"
+  },
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+  "interface": {
+    "displayName": "Fetch",
+    "shortDescription": "把一个网址取回来，转成 Markdown 给模型读。不开浏览器，不跑 JS。",
+    "longDescription": "官方参考实现，只有一个工具 fetch：给它一个 URL，它把网页的 HTML 抽成 Markdown。长页面会被截断，模型可以带着 start_index 接着往下读，直到找到需要的内容。\n\n它不开浏览器，也不执行 JavaScript，所以又快又轻；代价是靠脚本渲染出来的页面它读不到正文，要登录的页面也拿不到——那些交给 Firecrawl、Playwright 或 Agent Browser。\n\n默认遵守 robots.txt。它能访问本机和内网地址，官方 README 专门对此提了警告：内网里有不该让模型看到的东西时，装之前想一想。",
+    "developerName": "Model Context Protocol",
+    "category": "搜索",
+    "brandColor": "#4f46e5",
+    "websiteURL": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+    "defaultPrompt": [
+      "把这篇文章取回来，总结成五条要点",
+      "读一下这个库的 CHANGELOG 页面，找出上个大版本的破坏性变更",
+      "对比这两个产品的定价页，把差异列成表"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json"
+}

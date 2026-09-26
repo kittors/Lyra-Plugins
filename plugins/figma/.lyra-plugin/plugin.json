@@ -1,0 +1,33 @@
+{
+  "name": "figma",
+  "version": "0.13.2",
+  "description": "把 Figma 设计稿的布局、样式和图片交给 agent，照着稿子写界面。",
+  "author": {
+    "name": "Framelink"
+  },
+  "homepage": "https://github.com/GLips/Figma-Context-MCP",
+  "interface": {
+    "displayName": "Figma",
+    "shortDescription": "把 Figma 设计稿的布局、样式和图片交给 agent，照着稿子写界面。",
+    "longDescription": "社区项目 Framelink，不是 Figma 官方出的。两个工具：get_figma_data 按文件或节点的链接取回设计数据，download_figma_images 把稿子里的图片和图标下载到本地。\n\n它不是把截图丢给模型，而是通过 Figma API 取回结构化的设计数据，把布局、间距、颜色、字体、组件层级精简成模型读得动的格式。精确的数值比看图猜像素靠谱。\n\n只需要一个个人访问令牌，不用开着 Figma 桌面端。用法是把某个画板或组件的链接直接贴给 agent。",
+    "developerName": "Framelink",
+    "category": "设计",
+    "brandColor": "#f24e1e",
+    "websiteURL": "https://github.com/GLips/Figma-Context-MCP",
+    "defaultPrompt": [
+      "照着这个 Figma 链接把登录页做出来，间距和颜色按稿子来",
+      "把这个设计稿里的图标都导出到 src/assets/icons",
+      "对比设计稿和现在的页面实现，列出不一致的地方"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "FIGMA_API_KEY",
+      "description": "Figma 个人访问令牌，在 Figma 的设置 → 安全 → 个人访问令牌里生成，给文件内容读权限即可",
+      "url": "https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens",
+      "secret": true
+    }
+  ]
+}

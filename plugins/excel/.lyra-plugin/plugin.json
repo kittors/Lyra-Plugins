@@ -1,0 +1,25 @@
+{
+  "name": "excel",
+  "version": "0.1.8",
+  "description": "不用装 Excel，直接读写 .xlsx：数据、公式、格式、图表、数据透视表。",
+  "author": {
+    "name": "Haris Musa"
+  },
+  "homepage": "https://github.com/haris-musa/excel-mcp-server",
+  "interface": {
+    "displayName": "Excel",
+    "shortDescription": "不用装 Excel，直接读写 .xlsx：数据、公式、格式、图表、数据透视表。",
+    "longDescription": "社区项目，底层用 openpyxl 直接操作文件，所以机器上不需要装 Microsoft Excel。25 个工具：读写单元格、写公式并校验、设置数字格式和条件格式、合并单元格、插入删除行列、建工作表和复制重命名、建图表、建数据透视表和原生表格、读数据验证规则。\n\n它只认 .xlsx 这类新格式，老的 .xls 要先转换。每次调用都要给出文件路径，它能读写当前用户能碰到的任何文件。\n\n和 MarkItDown 的区别：那条只是把表格读成文本；这条能改文件本身，适合「按模板生成报表」「批量整理表格」这类要产出 xlsx 的活。",
+    "developerName": "Haris Musa",
+    "category": "办公",
+    "brandColor": "#217346",
+    "websiteURL": "https://github.com/haris-musa/excel-mcp-server",
+    "defaultPrompt": [
+      "读一下 sales.xlsx，按月份和地区做一张数据透视表",
+      "给这张表的金额列加上千分位格式，超过一万的标红",
+      "根据这份数据生成一张按季度的柱状图，放在新的工作表里"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json"
+}

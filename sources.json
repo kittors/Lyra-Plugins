@@ -139,9 +139,9 @@
 		{
 			"id": "waza",
 			"name": "Waza",
-			"category": "开发",
+			"category": "工作流",
 			"brandColor": "#111827",
-			"kind": "git-skills",
+			"kind": "skill-collection",
 			"repository": "https://github.com/tw93/Waza.git",
 			"homepage": "https://github.com/tw93/Waza",
 			"author": "Tw93",
@@ -152,7 +152,8 @@
 				"用 check 审一遍这个分支的改动",
 				"用 hunt 查这个偶发的报错到底是什么引起的"
 			],
-			"logo": "https://github.com/tw93.png?size=128"
+			"logo": "https://github.com/tw93.png?size=128",
+			"path": "skills"
 		},
 		{
 			"id": "sequential-thinking",
@@ -201,130 +202,1544 @@
 			"logo": "https://github.com/modelcontextprotocol.png?size=128"
 		},
 		{
+			"id": "time",
+			"name": "Time",
+			"category": "本机",
+			"brandColor": "#d97706",
+			"kind": "pypi-mcp",
+			"package": "mcp-server-time",
+			"command": "uvx",
+			"args": [
+				"mcp-server-time@latest"
+			],
+			"homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+			"author": "Model Context Protocol",
+			"license": "MIT",
+			"description": "告诉模型现在几点，并在时区之间换算时间。",
+			"longDescription": "官方参考实现，两个工具：get_current_time 取某个时区的当前时间，convert_time 把一个时间从一个时区换算到另一个。时区用 IANA 名字，比如 Asia/Shanghai、America/New_York；不指定时按本机的系统时区。\n\n模型自己不知道现在是几点——它的「现在」停在训练截止那天。排期、算离截止还剩多久、对日志里的时间戳、约跨时区的会，都需要一个准的当前时间。\n\n想固定用某个时区、不跟着系统走，在参数里加 --local-timezone=Asia/Shanghai。",
+			"prompts": [
+				"现在旧金山是几点，那边还在上班时间吗",
+				"北京时间周三上午十点，对应伦敦和纽约是几点",
+				"按现在的时间算，离这个截止日期还剩几个工作日"
+			],
+			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+		},
+		{
+			"id": "github",
+			"name": "GitHub",
+			"category": "开发",
+			"brandColor": "#181717",
+			"kind": "remote-mcp",
+			"url": "https://api.githubcopilot.com/mcp/",
+			"headers": {
+				"Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"
+			},
+			"env": [
+				{
+					"name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+					"required": true,
+					"secret": true,
+					"description": "GitHub 个人访问令牌，建议用 fine-grained 令牌，只勾需要的仓库和权限",
+					"url": "https://github.com/settings/personal-access-tokens/new"
+				}
+			],
+			"homepage": "https://github.com/github/github-mcp-server",
+			"author": "GitHub",
+			"license": "MIT",
+			"description": "GitHub 官方：读仓库和代码、查和改 issue、看和评审 PR。",
+			"longDescription": "GitHub 官方托管的服务，连的是 api.githubcopilot.com，本机不用跑任何东西。默认工具集是仓库与文件、issue、PR 与评审、用户和当前上下文；Actions、代码扫描、Discussions、Projects、通知这些是另外的工具集，要用得自己开：在 .mcp.json 的请求头里加 X-MCP-Toolsets，比如 default,actions。\n\n用个人访问令牌认证，令牌能做什么它就能做什么。建议用 fine-grained 令牌，只给需要的仓库和权限；只想让它读、不让它写，把地址换成 https://api.githubcopilot.com/mcp/readonly。组织的仓库还可能受组织的 MCP 策略限制。\n\n和 Git 那条的分工：Git 管本机仓库里的提交和分支；这条管 GitHub 上的东西——别人的仓库、issue、PR 评审。",
+			"prompts": [
+				"列出我参与的仓库里所有在等我评审的 PR",
+				"把这个 PR 的改动读一遍，按风险高低给出评审意见",
+				"在这个仓库的 issue 里找所有关于内存泄漏的报告，按版本归类"
+			],
+			"logo": "https://github.com/github.png?size=128"
+		},
+		{
+			"id": "git",
+			"name": "Git",
+			"category": "开发",
+			"brandColor": "#f03c2e",
+			"kind": "pypi-mcp",
+			"package": "mcp-server-git",
+			"command": "uvx",
+			"args": [
+				"mcp-server-git@latest"
+			],
+			"homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+			"author": "Model Context Protocol",
+			"license": "MIT",
+			"description": "在本机仓库里看状态、读 diff、翻日志、提交、建和切分支。不碰远端。",
+			"longDescription": "官方参考实现，12 个工具：status、三种 diff（未暂存、已暂存、任意两个分支或提交之间）、add、commit、reset、log、show、建分支、切分支、列分支。log 可以按时间范围过滤，比如「两周前」到「昨天」。\n\n它只动本机仓库，没有 push、pull、fetch，所以不会影响远端。每次调用都要带上仓库路径；想把它限定在一个仓库里，在参数末尾加上 --repository 和那个仓库的路径。\n\n和让 agent 直接在终端跑 git 的差别：输出是整理过的固定格式，而且能做的只有这十几件事。rebase、改历史、强推这些它一样都没有，这正是它的用处。",
+			"prompts": [
+				"看看这个仓库现在有哪些改动，按文件说说都改了什么",
+				"把最近两周的提交整理成一份更新说明",
+				"把已暂存的改动提交了，提交信息按改动内容写"
+			],
+			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+		},
+		{
+			"id": "repomix",
+			"name": "Repomix",
+			"category": "开发",
+			"brandColor": "#f97316",
+			"kind": "npm-mcp",
+			"package": "repomix",
+			"command": "npx",
+			"args": [
+				"-y",
+				"repomix@latest",
+				"--mcp"
+			],
+			"homepage": "https://github.com/yamadashy/repomix",
+			"author": "Kazuki Yamada",
+			"license": "MIT",
+			"description": "把整个代码仓库打包成一个模型好读的文件，本机目录和 GitHub 仓库都行。",
+			"longDescription": "Repomix 本身是个命令行工具，加上 --mcp 就是 MCP 服务。六个工具：pack_codebase 打包本机目录，pack_remote_repository 直接拉一个 GitHub 仓库来打包，read_repomix_output 和 grep_repomix_output 分段读、按正则搜打包结果，attach_packed_output 接上已有的打包文件，generate_skill 把一个代码库写成技能文档。\n\n打包时按 .gitignore 过滤，报告 token 数，可以用 Tree-sitter 压成只剩签名和结构的版本，还会用 Secretlint 扫一遍，免得把密钥一起打进去。适合「先让模型把整个项目看一遍」的场合，比一个文件一个文件地读省轮次。\n\n它能读当前用户能读的任何目录。想把它关在一个目录里，参数末尾加 --sandbox 和那个目录。需要 Node 22 以上。",
+			"prompts": [
+				"把这个项目打包，告诉我整体架构和每个模块管什么",
+				"打包 honojs/hono 这个仓库，看看它的路由匹配是怎么实现的",
+				"在打包结果里搜一下所有读取环境变量的地方"
+			],
+			"logo": "https://github.com/yamadashy.png?size=128"
+		},
+		{
+			"id": "shadcn",
+			"name": "shadcn/ui",
+			"category": "开发",
+			"brandColor": "#000000",
+			"kind": "npm-mcp",
+			"package": "shadcn",
+			"command": "npx",
+			"args": [
+				"-y",
+				"shadcn@latest",
+				"mcp"
+			],
+			"homepage": "https://ui.shadcn.com/docs/mcp",
+			"author": "shadcn",
+			"license": "MIT",
+			"description": "在 shadcn/ui 和第三方组件注册表里找组件、看源码和示例，给出安装命令。",
+			"longDescription": "shadcn 官方 CLI 自带的 MCP 服务。七个工具：读出项目配置了哪些注册表，列出、搜索、查看组件（含源码），找组件的用法示例，生成对应的 shadcn add 安装命令，以及一份写完界面后的自查清单。\n\n注册表写在项目的 components.json 里，除了官方的 shadcn/ui，也能接公司内部或第三方的注册表。所以它要在已经用 shadcn 初始化过的前端项目里才派得上用场——没有 components.json 时大部分工具会直接报错。\n\n它自己不改代码：查到组件、给出命令，由 agent 去执行安装。",
+			"prompts": [
+				"用 shadcn 的组件搭一个登录页，先看看有哪些能用",
+				"找一个带搜索和分页的数据表格，把它的示例代码给我看",
+				"把 dialog、form 和 sonner 这几个组件装到项目里"
+			],
+			"logo": "https://github.com/shadcn-ui.png?size=128"
+		},
+		{
+			"id": "stripe",
+			"name": "Stripe",
+			"category": "开发",
+			"brandColor": "#635bff",
+			"kind": "remote-mcp",
+			"url": "https://mcp.stripe.com",
+			"headers": {
+				"Authorization": "Bearer ${STRIPE_AGENT_API_KEY}"
+			},
+			"env": [
+				{
+					"name": "STRIPE_AGENT_API_KEY",
+					"required": true,
+					"secret": true,
+					"description": "Stripe 后台创建的 Agent API key（带 Agent 标记），先在沙盒里用，只给需要的权限",
+					"url": "https://docs.stripe.com/keys#agent-keys"
+				}
+			],
+			"homepage": "https://docs.stripe.com/mcp",
+			"author": "Stripe",
+			"description": "让 agent 查和改 Stripe 里的客户、价格、订阅、发票、退款，并能搜 Stripe 文档。",
+			"longDescription": "Stripe 官方托管的服务。核心是两个通用工具：stripe_api_read 调 Stripe API 的读接口，stripe_api_write 调写接口——只限 Stripe 文档里列出的那一百多个方法，包括建客户、建价格和支付链接、开和作废发票、改和取消订阅、退款。配合 stripe_api_search 和 stripe_api_details 先查方法和参数。另有账户信息、余额汇总、数据分析、文档搜索和集成方案规划。\n\n它动的是真实的钱：退款、改订阅、发发票都会真的发生。先在沙盒里用，密钥只开需要的权限。\n\nStripe 要求这里用带 Agent 标记的 Agent API key：从 2026 年 10 月 31 日起，完整权限的 secret key 和不带 Agent 标记的受限密钥都会被拒绝。npm 上的 @stripe/mcp 只是这个远程服务的本地转发，所以这里直接连远程。",
+			"prompts": [
+				"在沙盒里建一个每月 20 美元的订阅价格，再生成一个支付链接",
+				"查一下这个客户最近三个月的发票和付款情况",
+				"列出本周所有失败的付款，按失败原因归类"
+			],
+			"logo": "https://github.com/stripe.png?size=128"
+		},
+		{
+			"id": "fetch",
+			"name": "Fetch",
+			"category": "搜索",
+			"brandColor": "#4f46e5",
+			"kind": "pypi-mcp",
+			"package": "mcp-server-fetch",
+			"command": "uvx",
+			"args": [
+				"mcp-server-fetch@latest"
+			],
+			"homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+			"author": "Model Context Protocol",
+			"license": "MIT",
+			"description": "把一个网址取回来，转成 Markdown 给模型读。不开浏览器，不跑 JS。",
+			"longDescription": "官方参考实现，只有一个工具 fetch：给它一个 URL，它把网页的 HTML 抽成 Markdown。长页面会被截断，模型可以带着 start_index 接着往下读，直到找到需要的内容。\n\n它不开浏览器，也不执行 JavaScript，所以又快又轻；代价是靠脚本渲染出来的页面它读不到正文，要登录的页面也拿不到——那些交给 Firecrawl、Playwright 或 Agent Browser。\n\n默认遵守 robots.txt。它能访问本机和内网地址，官方 README 专门对此提了警告：内网里有不该让模型看到的东西时，装之前想一想。",
+			"prompts": [
+				"把这篇文章取回来，总结成五条要点",
+				"读一下这个库的 CHANGELOG 页面，找出上个大版本的破坏性变更",
+				"对比这两个产品的定价页，把差异列成表"
+			],
+			"logo": "https://github.com/modelcontextprotocol.png?size=128"
+		},
+		{
+			"id": "duckduckgo",
+			"name": "DuckDuckGo",
+			"category": "搜索",
+			"brandColor": "#de5833",
+			"kind": "pypi-mcp",
+			"package": "duckduckgo-mcp-server",
+			"command": "uvx",
+			"args": [
+				"duckduckgo-mcp-server@latest"
+			],
+			"env": [
+				{
+					"name": "DDG_REGION",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "默认搜索区域，比如 cn-zh、us-en；不填按 DuckDuckGo 的默认"
+				}
+			],
+			"homepage": "https://github.com/nickclyde/duckduckgo-mcp-server",
+			"author": "Nick Clyde",
+			"license": "MIT",
+			"description": "用 DuckDuckGo 搜网页、读网页。不用注册，不用密钥。",
+			"longDescription": "社区实现，不是 DuckDuckGo 官方出的。三个工具：search 搜索，fetch_content 把网页正文抽出来，expand_link 把结果里缩短的链接还原成完整地址。\n\n它的好处是零配置，装上就能搜。代价是它抓的是 DuckDuckGo 的网页结果而不是正式 API：自带限速（默认每分钟 30 次搜索、20 次抓取），被风控时会失败，结果的质量和数量也比不上付费的搜索 API。\n\n想要稳定的额度和更多结果类型，用 Brave Search 或 Tavily。",
+			"prompts": [
+				"搜一下这个报错信息，看看别人是怎么解决的",
+				"找三篇对比 Tauri 和 Electron 的文章，读完给我结论",
+				"查一下这个开源项目最近有没有安全公告"
+			],
+			"logo": "https://github.com/nickclyde.png?size=128"
+		},
+		{
+			"id": "brave-search",
+			"name": "Brave Search",
+			"category": "搜索",
+			"brandColor": "#fb542b",
+			"kind": "npm-mcp",
+			"package": "@brave/brave-search-mcp-server",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@brave/brave-search-mcp-server@latest"
+			],
+			"env": [
+				{
+					"name": "BRAVE_API_KEY",
+					"required": true,
+					"secret": true,
+					"description": "Brave Search API 的密钥，注册 API 账号、选好套餐后在控制台生成",
+					"url": "https://brave.com/search/api/"
+				}
+			],
+			"homepage": "https://github.com/brave/brave-search-mcp-server",
+			"author": "Brave",
+			"license": "MIT",
+			"description": "Brave 自建索引的搜索：网页、新闻、图片、视频、本地商户，外加结果摘要。",
+			"longDescription": "Brave 官方维护。背后是 Brave 自己爬取和维护的搜索索引，不是转卖别家的结果。八个工具：网页、新闻、图片、视频搜索，本地商户和地点搜索，把结果压成摘要的 summarizer，以及专门给模型整理上下文的 llm_context。\n\n需要 Brave Search API 的密钥，没有密钥时服务直接退出。有些能力跟套餐走：完整的本地商户搜索要 Pro 套餐，否则退回普通网页搜索；摘要属于另一类 Answers 套餐。\n\n和 DuckDuckGo 那条比：这里是正式 API，稳定、有额度保证、结果类型多；那条免费免注册，但会被限速。",
+			"prompts": [
+				"搜一下这周关于 WebGPU 的新闻，按时间排",
+				"找 Tauri 2 官方的迁移指南，读完告诉我要改哪些地方",
+				"搜几张适合做博客封面的山景图片，给我链接和来源"
+			],
+			"logo": "https://github.com/brave.png?size=128"
+		},
+		{
+			"id": "exa",
+			"name": "Exa",
+			"category": "搜索",
+			"brandColor": "#0143d9",
+			"kind": "remote-mcp",
+			"package": "exa-mcp-server",
+			"url": "https://mcp.exa.ai/mcp",
+			"headers": {
+				"x-api-key": "${EXA_API_KEY}"
+			},
+			"env": [
+				{
+					"name": "EXA_API_KEY",
+					"required": false,
+					"optional": true,
+					"secret": true,
+					"description": "Exa 的 API 密钥；不填也能用，只是有速率限制",
+					"url": "https://dashboard.exa.ai/api-keys"
+				}
+			],
+			"homepage": "https://github.com/exa-labs/exa-mcp-server",
+			"author": "Exa",
+			"license": "MIT",
+			"description": "按意思而不是关键词找网页，结果直接带着清理好的正文。",
+			"longDescription": "Exa 官方托管的服务，直接连，本机不用跑任何东西。默认两个工具：web_search_exa 搜索并返回清理过的正文，web_fetch_exa 读指定网址的全文。\n\n它按语义匹配：「讲 CRDT 在协同编辑器里怎么落地的工程博客」这种描述性的问题，它比关键词搜索找得准。结果本身就带着正文，模型不用再一个个点开。\n\n不填密钥也能用，有速率限制；填了 EXA_API_KEY 额度更高。按域名、日期过滤的高级搜索和多步调研不在默认工具里，要在地址后面加 ?tools= 参数打开，见它的 README。",
+			"prompts": [
+				"找几篇讲 CRDT 在协同编辑器里怎么落地的工程博客",
+				"搜一下最近半年关于小模型蒸馏的论文和解读文章",
+				"找和这个项目定位相近的开源替代品，列出各自的差异"
+			],
+			"logo": "https://github.com/exa-labs.png?size=128"
+		},
+		{
+			"id": "tavily",
+			"name": "Tavily",
+			"category": "搜索",
+			"brandColor": "#0b0907",
+			"kind": "npm-mcp",
+			"package": "tavily-mcp",
+			"command": "npx",
+			"args": [
+				"-y",
+				"tavily-mcp@latest"
+			],
+			"env": [
+				{
+					"name": "TAVILY_API_KEY",
+					"required": true,
+					"secret": true,
+					"description": "Tavily 的 API 密钥，注册后在控制台里拿",
+					"url": "https://app.tavily.com"
+				}
+			],
+			"homepage": "https://github.com/tavily-ai/tavily-mcp",
+			"author": "Tavily",
+			"license": "MIT",
+			"description": "给 agent 用的搜索 API，另带网页抽取、整站爬取、站点地图和多步调研。",
+			"longDescription": "Tavily 官方维护。五个工具：tavily_search 搜索，tavily_extract 从给定网址抽正文，tavily_crawl 从一个起点顺着链接爬一片页面，tavily_map 只列出站点的页面结构、不取内容，tavily_research 做多步调研并给出带来源的结论。\n\n搜索结果直接带着抽好的正文，模型不用再逐个打开链接。crawl 和 map 适合「把这个文档站整个读一遍」这类任务，只会搜索的工具做不到。\n\n需要 Tavily 的 API 密钥。不填密钥服务也能启动，但每次调用都会失败。",
+			"prompts": [
+				"搜一下 Kubernetes 最新一个版本的主要变化",
+				"把这个文档站的页面爬下来，整理出全部 API 的清单",
+				"调研一下几家托管向量数据库的定价和部署方式，给出对比"
+			],
+			"logo": "https://github.com/tavily-ai.png?size=128"
+		},
+		{
+			"id": "firecrawl",
+			"name": "Firecrawl",
+			"category": "搜索",
+			"brandColor": "#fa5d19",
+			"kind": "remote-mcp",
+			"package": "firecrawl-mcp",
+			"url": "https://mcp.firecrawl.dev/v2/mcp",
+			"headers": {
+				"Authorization": "Bearer ${FIRECRAWL_API_KEY}"
+			},
+			"env": [
+				{
+					"name": "FIRECRAWL_API_KEY",
+					"required": false,
+					"optional": true,
+					"secret": true,
+					"description": "Firecrawl 的 API 密钥；不填只能用抓取、搜索、解析三个工具，而且有速率限制",
+					"url": "https://www.firecrawl.dev/app/api-keys"
+				}
+			],
+			"homepage": "https://github.com/firecrawl/firecrawl-mcp-server",
+			"author": "Firecrawl",
+			"license": "MIT",
+			"description": "把网页和文档变成干净的 Markdown：单页抓取、搜索、整站爬取、结构化抽取。",
+			"longDescription": "Firecrawl 官方托管的服务。它会真的渲染页面、执行 JavaScript，再把正文抽成干净的 Markdown，所以靠脚本加载内容的页面也读得到——这是它和 Fetch 的主要区别。\n\n不填密钥也能用免费层，这时只有三个工具：firecrawl_scrape 抓单页（也能截图、按给定的 schema 抽 JSON），firecrawl_search 搜索网页、新闻或图片，firecrawl_parse 把 PDF、Word 这类文档解析成 Markdown。填了 FIRECRAWL_API_KEY 之后会多出整站爬取、站点地图、结构化抽取、自主调研等工具。\n\n工具一多会占上下文，只在真要爬整站时再填密钥也是一种用法。自建的 Firecrawl 用不了这个托管地址，要改用 npm 包 firecrawl-mcp 在本机跑。",
+			"prompts": [
+				"把这个页面抓下来转成 Markdown，表格要保留",
+				"搜一下今年的前端构建工具横评，把前三篇的要点整理出来",
+				"把这份 PDF 白皮书解析出来，列出里面所有的性能数据"
+			],
+			"logo": "https://github.com/firecrawl.png?size=128"
+		},
+		{
+			"id": "deepwiki",
+			"name": "DeepWiki",
+			"category": "文档",
+			"brandColor": "#353535",
+			"kind": "remote-mcp",
+			"url": "https://mcp.deepwiki.com/mcp",
+			"homepage": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+			"author": "Cognition",
+			"description": "问任何一个公开 GitHub 仓库：它的架构怎么分、某个功能是怎么实现的。",
+			"longDescription": "Cognition（做 Devin 的团队）托管的免费服务，不需要账号。三个工具：read_wiki_structure 看某个仓库的文档目录，read_wiki_contents 读具体章节，ask_wiki_question 直接对仓库提问。\n\n内容来自 DeepWiki 事先为公开仓库生成的 wiki。它读过整个代码库，所以答得了「这个项目的插件是怎么加载的」这种要翻很多文件才能回答的问题。\n\n和 Context7 的分工：Context7 取的是库的使用文档，回答「怎么用」；DeepWiki 讲的是仓库内部，回答「它是怎么做的」。只支持公开仓库；冷门仓库可能还没有生成过 wiki。",
+			"prompts": [
+				"vercel/next.js 的 App Router 渲染流程是怎么组织的",
+				"看看 facebook/react 里 useEffect 的调度是在哪几个文件里实现的",
+				"这个仓库的插件机制是怎么设计的，理一条从注册到调用的链路"
+			],
+			"logo": "https://github.com/CognitionAI.png?size=128"
+		},
+		{
+			"id": "gitmcp",
+			"name": "GitMCP",
+			"category": "文档",
+			"brandColor": "#2563eb",
+			"kind": "remote-mcp",
+			"url": "https://gitmcp.io/docs",
+			"homepage": "https://github.com/idosal/git-mcp",
+			"author": "Ido Salomon",
+			"license": "Apache-2.0",
+			"description": "让模型现查任意公开 GitHub 仓库的文档和代码，不依赖事先建好的索引。",
+			"longDescription": "开源、免费、远程托管。这里配的是它的通用地址 gitmcp.io/docs，模型每次自己决定去读哪个仓库。五个工具：把库名对应到仓库，读仓库的 llms.txt、README 和文档，在文档里搜索，在代码里搜索，以及读文档里引用的链接。\n\n它直接从 GitHub 读当前内容，不依赖预先生成的索引，所以冷门仓库、昨天刚发的版本也查得到。代价是它读到的就是仓库里写了的东西——文档写得少的项目，它也帮不上多少。\n\n只想让它盯住一个仓库，把地址换成 gitmcp.io/<owner>/<repo>，模型就不会跑去读别的仓库。",
+			"prompts": [
+				"查一下 honojs/hono 的中间件应该怎么写",
+				"这个库的 README 里对 Windows 的支持是怎么说的",
+				"在 astral-sh/uv 的代码里找一下 uvx 是怎么决定用哪个缓存版本的"
+			],
+			"logo": "https://github.com/idosal.png?size=128"
+		},
+		{
+			"id": "microsoft-learn",
+			"name": "Microsoft Learn",
+			"category": "文档",
+			"brandColor": "#0078d4",
+			"kind": "remote-mcp",
+			"url": "https://learn.microsoft.com/api/mcp",
+			"homepage": "https://github.com/MicrosoftDocs/mcp",
+			"author": "Microsoft",
+			"description": "搜索和阅读微软官方文档与代码示例：Azure、.NET、Windows、Microsoft 365。",
+			"longDescription": "微软官方托管，不需要账号。三个工具：microsoft_docs_search 在 Microsoft Learn 里搜索，microsoft_docs_fetch 把整篇文档转成 Markdown 读回来，microsoft_code_sample_search 专门找官方代码示例。\n\n它只读 learn.microsoft.com 上的一方文档，不会从来路不明的博客里拼答案。Azure、.NET、C#、PowerShell、Microsoft Graph 这些东西版本多、改得勤，查文档比靠模型的记忆可靠。\n\n范围也就到这里：微软以外的技术它不管，那些用 Context7。",
+			"prompts": [
+				"查一下 Azure Functions 现在的超时上限，以及怎么配置",
+				"找一个用 Microsoft Graph 读取日历事件的 C# 官方示例",
+				".NET 9 的 minimal API 要怎么生成 OpenAPI 文档"
+			],
+			"logo": "https://github.com/MicrosoftDocs.png?size=128"
+		},
+		{
+			"id": "cloudflare-docs",
+			"name": "Cloudflare Docs",
+			"category": "文档",
+			"brandColor": "#f38020",
+			"kind": "remote-mcp",
+			"url": "https://docs.mcp.cloudflare.com/mcp",
+			"homepage": "https://github.com/cloudflare/mcp-server-cloudflare/tree/main/apps/docs-ai-search",
+			"author": "Cloudflare",
+			"license": "Apache-2.0",
+			"description": "搜索 Cloudflare 官方文档：Workers、Pages、R2、D1、KV 等。",
+			"longDescription": "Cloudflare 官方托管，不需要账号。两个工具：search_cloudflare_documentation 在全部官方文档里搜索，migrate_pages_to_workers_guide 给出把 Pages 项目迁到 Workers 的步骤。\n\nCloudflare 的产品更新很勤，Workers 的绑定写法、wrangler 的配置、兼容性日期，模型记忆里的版本经常对不上。写 Workers 代码前让它先查一下，能少走不少弯路。\n\n这个服务只读文档，不碰你的账户。管理 Workers、看日志、查 DNS 的是 Cloudflare 的另外几个服务，那些需要登录授权。",
+			"prompts": [
+				"Workers 里怎么绑定 D1 数据库，wrangler 配置要怎么写",
+				"R2 的预签名 URL 最长能设多久有效期",
+				"按官方步骤把这个 Pages 项目迁到 Workers"
+			],
+			"logo": "https://github.com/cloudflare.png?size=128"
+		},
+		{
+			"id": "aws-documentation",
+			"name": "AWS Documentation",
+			"category": "文档",
+			"brandColor": "#ff9900",
+			"kind": "pypi-mcp",
+			"package": "awslabs.aws-documentation-mcp-server",
+			"command": "uvx",
+			"args": [
+				"awslabs.aws-documentation-mcp-server@latest"
+			],
+			"homepage": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server",
+			"author": "AWS Labs",
+			"license": "Apache-2.0",
+			"description": "搜索和阅读 AWS 官方文档，在大表格里只取需要的行，推荐相关页面。",
+			"longDescription": "AWS Labs 出的，不需要 AWS 账号和凭证。五个工具：search_documentation 搜索，read_documentation 把文档页转成 Markdown 分段读，read_sections 只取指定标题下的章节，search_table 在很长的文档表格里只取匹配的行，recommend 给出与某页相关的其他文档。\n\nAWS 的服务多，配额和参数常改，模型凭记忆给的数字经常过时。先查文档再回答，至少答案有出处。search_table 对配额表、实例规格表这类几百行的表格尤其有用，不用整页读进来。\n\n默认查全球区的文档。AWS 中国区（北京、宁夏）的服务和功能不完全一样，要查中国区，在登录 shell 里 export AWS_DOCUMENTATION_PARTITION=aws-cn 再启动。",
+			"prompts": [
+				"Lambda 函数现在的最长执行时间和内存上限是多少",
+				"S3 跨区域复制要怎么配，有哪些前提条件",
+				"在 EC2 的实例类型表里找出所有带 GPU 的型号"
+			],
+			"logo": "https://github.com/awslabs.png?size=128"
+		},
+		{
+			"id": "dbhub",
+			"name": "DBHub",
+			"category": "数据",
+			"brandColor": "#335dff",
+			"kind": "npm-mcp",
+			"package": "@bytebase/dbhub",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@bytebase/dbhub@latest"
+			],
+			"env": [
+				{
+					"name": "DSN",
+					"required": true,
+					"secret": true,
+					"description": "数据库连接串，协议头决定类型：postgres://、mysql://、mariadb://、sqlserver://、oracle://；SQLite 写成 sqlite:///Users/me/app.db 这样",
+					"url": "https://dbhub.ai/config/command-line"
+				}
+			],
+			"homepage": "https://github.com/bytebase/dbhub",
+			"author": "Bytebase",
+			"license": "MIT",
+			"description": "一个服务连 PostgreSQL、MySQL、MariaDB、SQL Server、Oracle 和 SQLite。",
+			"longDescription": "Bytebase 出的通用数据库服务。默认只有两个工具：execute_sql 执行 SQL，search_objects 按需逐层查看库、表、列、索引和存储过程——不会一上来就把整个 schema 塞进上下文，库再大也只取需要的那部分。\n\n连接串填在 DSN 里，协议头决定数据库类型，还能经 SSH 跳板机连接，见它的命令行文档。它默认可以写：连重要的库之前，要么用只读账号，要么写一份 dbhub.toml，把工具设成 readonly、限定最大返回行数，再用 --config 启动。\n\n它依赖 Node 22.5 以上自带的 SQLite 模块，Node 版本低了起不来。依赖里带着各家数据库的驱动，第一次启用要下载一阵，在我们的实测里用了五十多秒。",
+			"prompts": [
+				"看看这个库里有哪些表，找出和订单相关的",
+				"查一下上个月每天的新增用户数",
+				"这条查询为什么慢，看看执行计划和相关的索引"
+			],
+			"logo": "https://github.com/bytebase.png?size=128"
+		},
+		{
+			"id": "redis",
+			"name": "Redis",
+			"category": "数据",
+			"brandColor": "#ff4438",
+			"kind": "pypi-mcp",
+			"package": "redis-mcp-server",
+			"command": "uvx",
+			"args": [
+				"--from",
+				"redis-mcp-server@latest",
+				"redis-mcp-server",
+				"--url",
+				"${REDIS_URL}"
+			],
+			"env": [
+				{
+					"name": "REDIS_URL",
+					"required": true,
+					"secret": true,
+					"description": "Redis 连接地址。本机默认是 redis://127.0.0.1:6379/0；有密码写成 redis://:密码@主机:6379/0，要 TLS 用 rediss://"
+				}
+			],
+			"homepage": "https://github.com/redis/mcp-redis",
+			"author": "Redis",
+			"license": "MIT",
+			"description": "用自然语言读写 Redis：字符串、哈希、列表、集合、Stream、JSON 和向量检索。",
+			"longDescription": "Redis 官方维护。53 个工具，几乎覆盖所有数据结构：字符串、哈希、列表、集合、有序集合、Pub/Sub、Stream、JSON，还有基于 Redis 查询引擎的向量索引与混合检索，以及 info、dbsize、扫描 key、看客户端连接这类运维查询。\n\nRedis 没开也能启动，用到时才去连。连本机的默认实例，REDIS_URL 填 redis://127.0.0.1:6379/0 就行。\n\n工具多意味着每轮对话都要带上这 53 个定义，比较占上下文。只是偶尔看几个 key 的话，让 agent 直接跑 redis-cli 更省。",
+			"prompts": [
+				"看看这个 Redis 里的 key 都有哪些前缀，各有多少",
+				"把 orders 这个 Stream 里最近的 20 条消息读出来",
+				"看看这台 Redis 现在的内存占用和客户端连接情况"
+			],
+			"logo": "https://github.com/redis.png?size=128"
+		},
+		{
+			"id": "mongodb",
+			"name": "MongoDB",
+			"category": "数据",
+			"brandColor": "#47a248",
+			"kind": "npm-mcp",
+			"package": "mongodb-mcp-server",
+			"command": "npx",
+			"args": [
+				"-y",
+				"mongodb-mcp-server@latest",
+				"--readOnly"
+			],
+			"env": [
+				{
+					"name": "MDB_MCP_CONNECTION_STRING",
+					"required": true,
+					"secret": true,
+					"description": "MongoDB 连接串，mongodb:// 或 mongodb+srv:// 开头",
+					"url": "https://www.mongodb.com/docs/manual/reference/connection-string/"
+				}
+			],
+			"homepage": "https://github.com/mongodb-js/mongodb-mcp-server",
+			"author": "MongoDB",
+			"license": "Apache-2.0",
+			"description": "查 MongoDB：列库和集合、看 schema 和索引、find、聚合、explain。默认只读。",
+			"longDescription": "MongoDB 官方维护。这里默认带了 --readOnly，只开读的工具：列出库和集合、推断集合的 schema、看索引和存储大小、find、count、聚合、explain 执行计划、导出查询结果、看 mongod 的日志，还能查 MongoDB 官方的知识库。\n\n要写数据（插入、更新、删除、建索引），去掉参数里的 --readOnly。要管 Atlas 本身（建集群、管用户）得另配 Atlas 的服务账号，见它的 README。它默认会向 MongoDB 发匿名使用数据，参数里加 --telemetry disabled 可以关掉。\n\n它的依赖很多：在我们的实测里，第一次启动用了一分多钟，之后每次启动也要十几秒。第一次开启如果超时，稍等再开一次。",
+			"prompts": [
+				"看看 orders 集合的字段结构，哪些常用字段没有索引",
+				"统计每个城市上个月的订单数和金额，按金额排序",
+				"这条查询为什么慢，给我看 explain 的结果"
+			],
+			"logo": "https://github.com/mongodb-js.png?size=128"
+		},
+		{
+			"id": "supabase",
+			"name": "Supabase",
+			"category": "数据",
+			"brandColor": "#3fcf8e",
+			"kind": "remote-mcp",
+			"package": "@supabase/mcp-server-supabase",
+			"url": "https://mcp.supabase.com/mcp?read_only=true",
+			"headers": {
+				"Authorization": "Bearer ${SUPABASE_ACCESS_TOKEN}"
+			},
+			"env": [
+				{
+					"name": "SUPABASE_ACCESS_TOKEN",
+					"required": true,
+					"secret": true,
+					"description": "Supabase 个人访问令牌（PAT），在账户设置的 Access Tokens 里生成",
+					"url": "https://supabase.com/dashboard/account/tokens"
+				}
+			],
+			"homepage": "https://github.com/supabase/mcp",
+			"author": "Supabase",
+			"license": "Apache-2.0",
+			"description": "查 Supabase 项目：表和迁移、跑只读 SQL、看日志和安全建议、生成类型。",
+			"longDescription": "Supabase 官方托管的服务。这里的地址带了 read_only=true：SQL 用只读的数据库角色执行，建项目、跑迁移、部署 Edge Function 这类写操作都不开放。能做的有：列组织和项目，看表、扩展和迁移记录，执行 SQL，查日志，看安全和性能建议（比如哪张表没开 RLS），取项目地址和公开密钥，生成 TypeScript 类型，看 Edge Function 和分支，以及搜 Supabase 文档。\n\n用个人访问令牌认证，它能碰到你账号下的所有项目。只想让它碰一个项目，在地址后面加 &project_ref=<项目 ID>；要开写操作，去掉 read_only=true。\n\nSupabase 自己的建议是：只有任务确实需要生产数据时才连生产项目，并且限定到那一个项目、保持只读。",
+			"prompts": [
+				"看看这个项目有哪些表，有没有表忘了开 RLS",
+				"查一下过去一小时 API 的报错日志",
+				"根据当前的表结构生成 TypeScript 类型定义"
+			],
+			"logo": "https://github.com/supabase.png?size=128"
+		},
+		{
+			"id": "figma",
+			"name": "Figma",
+			"category": "设计",
+			"brandColor": "#f24e1e",
+			"kind": "npm-mcp",
+			"package": "figma-developer-mcp",
+			"command": "npx",
+			"args": [
+				"-y",
+				"figma-developer-mcp@latest",
+				"--stdio"
+			],
+			"env": [
+				{
+					"name": "FIGMA_API_KEY",
+					"required": true,
+					"secret": true,
+					"description": "Figma 个人访问令牌，在 Figma 的设置 → 安全 → 个人访问令牌里生成，给文件内容读权限即可",
+					"url": "https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens"
+				}
+			],
+			"homepage": "https://github.com/GLips/Figma-Context-MCP",
+			"author": "Framelink",
+			"license": "MIT",
+			"description": "把 Figma 设计稿的布局、样式和图片交给 agent，照着稿子写界面。",
+			"longDescription": "社区项目 Framelink，不是 Figma 官方出的。两个工具：get_figma_data 按文件或节点的链接取回设计数据，download_figma_images 把稿子里的图片和图标下载到本地。\n\n它不是把截图丢给模型，而是通过 Figma API 取回结构化的设计数据，把布局、间距、颜色、字体、组件层级精简成模型读得动的格式。精确的数值比看图猜像素靠谱。\n\n只需要一个个人访问令牌，不用开着 Figma 桌面端。用法是把某个画板或组件的链接直接贴给 agent。",
+			"prompts": [
+				"照着这个 Figma 链接把登录页做出来，间距和颜色按稿子来",
+				"把这个设计稿里的图标都导出到 src/assets/icons",
+				"对比设计稿和现在的页面实现，列出不一致的地方"
+			],
+			"logo": "https://github.com/GLips.png?size=128"
+		},
+		{
+			"id": "drawio",
+			"name": "draw.io",
+			"category": "设计",
+			"brandColor": "#f08705",
+			"kind": "npm-mcp",
+			"package": "@drawio/mcp",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@drawio/mcp@latest"
+			],
+			"homepage": "https://github.com/jgraph/drawio-mcp",
+			"author": "draw.io",
+			"license": "Apache-2.0",
+			"description": "让 agent 画流程图、架构图、时序图，在 draw.io 编辑器里打开接着改。",
+			"longDescription": "draw.io 官方（JGraph）出的。模型写出图的内容——draw.io XML、CSV 或 Mermaid——它在浏览器里用 draw.io 编辑器打开，你可以接着拖拽修改、导出成图片或 PDF。search_shapes 能在上万个图形里找到 AWS、Azure、Kubernetes、UML、BPMN 这些标准图标的准确样式；另外三个工具读写本地 .drawio 文件里的单页。\n\n和让模型直接吐一段 Mermaid 相比，得到的是一张能继续编辑的正式图，而不是一段还要找地方渲染的文本。\n\n图的数据放在网址 # 后面的片段里，浏览器不会把它发给 draw.io 的服务器。",
+			"prompts": [
+				"把这个服务的部署架构画成图，用 AWS 的标准图标",
+				"根据这段登录代码画一张时序图",
+				"把 docs/architecture.drawio 第二页里的数据库换成 PostgreSQL 的图标"
+			],
+			"logo": "https://github.com/jgraph.png?size=128"
+		},
+		{
+			"id": "markitdown",
+			"name": "MarkItDown",
+			"category": "办公",
+			"brandColor": "#2b579a",
+			"kind": "pypi-mcp",
+			"package": "markitdown-mcp",
+			"command": "uvx",
+			"args": [
+				"markitdown-mcp@latest"
+			],
+			"homepage": "https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp",
+			"author": "Microsoft",
+			"license": "MIT",
+			"description": "把 PDF、Word、Excel、PPT、EPUB、网页等转成 Markdown 给模型读。",
+			"longDescription": "微软出的，只有一个工具 convert_to_markdown：给它一个 file:、http(s): 或 data: 开头的地址，它把内容转成 Markdown。支持 PDF、Word、Excel、PowerPoint、HTML、CSV、JSON、XML、EPUB、ZIP 包，还能取 YouTube 视频的字幕。\n\n转出来的 Markdown 保留了标题、列表和表格，比把 PDF 抽成纯文本好读得多。它能读这台机器上当前用户能读的任何文件。音频文件会被送到 Google 的在线语音识别去转写，处理敏感录音前留意这一点。\n\n依赖很多，第一次启用要下载七十多个包，在我们的实测里用了两分多钟，多半会超过连接超时——失败了等一会儿再开一次，之后启动只要两三秒。",
+			"prompts": [
+				"把这份 PDF 合同转成 Markdown，列出所有付款条款",
+				"读一下这个 Excel 的第二张表，按部门汇总金额",
+				"把这个 PPT 的内容整理成一份讲稿"
+			],
+			"logo": "https://github.com/microsoft.png?size=128"
+		},
+		{
+			"id": "excel",
+			"name": "Excel",
+			"category": "办公",
+			"brandColor": "#217346",
+			"kind": "pypi-mcp",
+			"package": "excel-mcp-server",
+			"command": "uvx",
+			"args": [
+				"excel-mcp-server@latest",
+				"stdio"
+			],
+			"homepage": "https://github.com/haris-musa/excel-mcp-server",
+			"author": "Haris Musa",
+			"license": "MIT",
+			"description": "不用装 Excel，直接读写 .xlsx：数据、公式、格式、图表、数据透视表。",
+			"longDescription": "社区项目，底层用 openpyxl 直接操作文件，所以机器上不需要装 Microsoft Excel。25 个工具：读写单元格、写公式并校验、设置数字格式和条件格式、合并单元格、插入删除行列、建工作表和复制重命名、建图表、建数据透视表和原生表格、读数据验证规则。\n\n它只认 .xlsx 这类新格式，老的 .xls 要先转换。每次调用都要给出文件路径，它能读写当前用户能碰到的任何文件。\n\n和 MarkItDown 的区别：那条只是把表格读成文本；这条能改文件本身，适合「按模板生成报表」「批量整理表格」这类要产出 xlsx 的活。",
+			"prompts": [
+				"读一下 sales.xlsx，按月份和地区做一张数据透视表",
+				"给这张表的金额列加上千分位格式，超过一万的标红",
+				"根据这份数据生成一张按季度的柱状图，放在新的工作表里"
+			],
+			"logo": "https://github.com/haris-musa.png?size=128"
+		},
+		{
+			"id": "notion",
+			"name": "Notion",
+			"category": "办公",
+			"brandColor": "#000000",
+			"kind": "npm-mcp",
+			"package": "@notionhq/notion-mcp-server",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@notionhq/notion-mcp-server@latest"
+			],
+			"env": [
+				{
+					"name": "NOTION_TOKEN",
+					"required": true,
+					"secret": true,
+					"description": "Notion 内部集成的令牌（ntn_ 开头）；建好集成后还要把页面分享给它，它才看得见",
+					"url": "https://www.notion.so/profile/integrations"
+				}
+			],
+			"homepage": "https://github.com/makenotion/notion-mcp-server",
+			"author": "Notion",
+			"license": "MIT",
+			"description": "通过 Notion API 搜索、读写页面和数据库，页面能直接按 Markdown 读写。",
+			"longDescription": "Notion 官方的本地版，工具是照着 Notion API 生成的，24 个：按标题搜索，读写页面和块，按 Markdown 整页读取和更新，查询和更新数据库，读写评论，移动页面。\n\n要先在 Notion 里建一个内部集成拿到令牌，再把需要的页面或数据库分享给这个集成——没分享的页面它看不见，这也是控制它能碰什么的办法。\n\n说在前面：Notion 官方现在主推需要浏览器 OAuth 登录的远程版，这个本地版的仓库写明不再积极维护、将来可能下线。它的搜索也只按标题匹配，不是全文。",
+			"prompts": [
+				"在 Notion 里找到上周的周会记录，整理出待办事项",
+				"把这份需求写进「产品需求」数据库，状态设为草稿",
+				"查一下任务库里所有已经逾期还没完成的任务"
+			],
+			"logo": "https://github.com/makenotion.png?size=128"
+		},
+		{
+			"id": "obsidian",
+			"name": "Obsidian",
+			"category": "办公",
+			"brandColor": "#7c3aed",
+			"kind": "pypi-mcp",
+			"package": "mcp-obsidian",
+			"command": "uvx",
+			"args": [
+				"mcp-obsidian@latest"
+			],
+			"env": [
+				{
+					"name": "OBSIDIAN_API_KEY",
+					"required": true,
+					"secret": true,
+					"description": "Obsidian 社区插件 Local REST API 的密钥，在插件设置页里复制",
+					"url": "https://github.com/coddingtonbear/obsidian-local-rest-api"
+				}
+			],
+			"homepage": "https://github.com/MarkusPfundstein/mcp-obsidian",
+			"author": "Markus Pfundstein",
+			"license": "MIT",
+			"description": "读写你的 Obsidian 仓库：搜索笔记、按标签找、在指定标题下插入内容。",
+			"longDescription": "社区项目。它不直接碰笔记文件，而是通过 Obsidian 的社区插件 Local REST API 操作，所以 Obsidian 要开着，并且装好、启用这个插件，端口保持插件默认的 27124。插件设置页里的 API key 填到 OBSIDIAN_API_KEY。\n\n15 个工具：列目录、读单篇和批量读、全文搜索和用 JsonLogic 写复杂条件、按标签找、读 frontmatter、看最近改过的文件、取日记周记这类周期笔记，以及写入。写入分三种：在某个标题、块或 frontmatter 字段处插入，追加到末尾，整篇覆盖。\n\n能按标题定位插入，是它比直接改 Markdown 文件好用的地方。它也能整篇覆盖和删除文件，放手让它改之前先确认仓库有备份。",
+			"prompts": [
+				"找出我最近一周改过的笔记，整理成一份周报",
+				"在「项目 A」这篇笔记的「待办」标题下面加三条新任务",
+				"找所有带 #idea 标签的笔记，按主题归类"
+			],
+			"logo": "https://github.com/MarkusPfundstein.png?size=128"
+		},
+		{
+			"id": "slack",
+			"name": "Slack",
+			"category": "协作",
+			"brandColor": "#4a154b",
+			"kind": "npm-mcp",
+			"package": "slack-mcp-server",
+			"command": "npx",
+			"args": [
+				"-y",
+				"slack-mcp-server@latest",
+				"--transport",
+				"stdio"
+			],
+			"env": [
+				{
+					"name": "SLACK_MCP_XOXP_TOKEN",
+					"required": true,
+					"secret": true,
+					"description": "Slack 用户 OAuth 令牌（xoxp- 开头）：建一个 Slack App，按文档加好用户权限后装到工作区即可拿到",
+					"url": "https://github.com/korotovsky/slack-mcp-server/blob/master/docs/01-authentication-setup.md"
+				},
+				{
+					"name": "SLACK_MCP_ADD_MESSAGE_TOOL",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "允许发消息：填 true 对所有频道开放，或填逗号分隔的频道 ID 只对这些频道开放；不填就不能发消息"
+				}
+			],
+			"homepage": "https://github.com/korotovsky/slack-mcp-server",
+			"author": "Dmitrii Korotovskii",
+			"license": "MIT",
+			"description": "读 Slack 的频道、私信和讨论串，搜消息，看未读。发消息默认关闭。",
+			"longDescription": "社区项目，不是 Slack 官方出的。能读频道和私信的历史、展开讨论串、搜索消息、列频道、查用户和用户组、看未读和「稍后处理」列表。\n\n发消息、加表情、标记已读默认都是关的，要用得自己打开：发消息设 SLACK_MCP_ADD_MESSAGE_TOOL，可以只对指定的几个频道开放。这是有意为之——让 agent 替你在工作群里说话之前，最好想清楚。\n\n令牌用 xoxp- 开头的用户令牌，它启动时会拿令牌去 Slack 验证，令牌不对就直接退出。README 里还有一种从浏览器里取会话令牌（xoxc/xoxd）的办法，可能违反你所在工作区的规定，这里不推荐。",
+			"prompts": [
+				"把 #incident 频道今天的讨论整理成一份事故时间线",
+				"搜一下最近一个月谁提到过「数据库迁移」，列出链接",
+				"我有哪些未读的私信和 @ 我的消息"
+			],
+			"logo": "https://github.com/korotovsky.png?size=128"
+		},
+		{
+			"id": "atlassian",
+			"name": "Atlassian",
+			"category": "协作",
+			"brandColor": "#0052cc",
+			"kind": "pypi-mcp",
+			"package": "mcp-atlassian",
+			"command": "uvx",
+			"args": [
+				"mcp-atlassian@latest"
+			],
+			"env": [
+				{
+					"name": "JIRA_URL",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "Jira 地址，比如 https://your-company.atlassian.net；Jira 和 Confluence 至少配一个"
+				},
+				{
+					"name": "JIRA_USERNAME",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "Jira 登录邮箱（云版）"
+				},
+				{
+					"name": "JIRA_API_TOKEN",
+					"required": false,
+					"optional": true,
+					"secret": true,
+					"description": "Atlassian API 令牌（云版）",
+					"url": "https://id.atlassian.com/manage-profile/security/api-tokens"
+				},
+				{
+					"name": "CONFLUENCE_URL",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "Confluence 地址，云版一般是 https://your-company.atlassian.net/wiki"
+				},
+				{
+					"name": "CONFLUENCE_USERNAME",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "Confluence 登录邮箱（云版）"
+				},
+				{
+					"name": "CONFLUENCE_API_TOKEN",
+					"required": false,
+					"optional": true,
+					"secret": true,
+					"description": "Atlassian API 令牌，和 Jira 的可以是同一个",
+					"url": "https://id.atlassian.com/manage-profile/security/api-tokens"
+				},
+				{
+					"name": "TOOLSETS",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "填 default 只开核心工具；不填开全部"
+				},
+				{
+					"name": "READ_ONLY_MODE",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "填 true 关掉所有创建、修改、删除的工具"
+				}
+			],
+			"homepage": "https://github.com/sooperset/mcp-atlassian",
+			"author": "sooperset",
+			"license": "MIT",
+			"description": "查和改 Jira 与 Confluence：JQL 搜索、建单改单、流转状态、读写页面。",
+			"longDescription": "社区项目，不是 Atlassian 官方出的，云版和自建的 Server/Data Center 都支持。Jira 这边能用 JQL 搜索、看和建和改 issue、流转状态、记工时、管 Sprint 和看板、处理 Service Desk 请求；Confluence 这边能用 CQL 搜索、读写页面、评论、附件、标签和页面历史。\n\n配了哪个产品就出现哪个产品的工具，什么都不配时它能启动但一个工具都没有。两个都配齐是 98 个工具，只配 Jira 是 63 个，非常占上下文。建议设 TOOLSETS=default，再加 READ_ONLY_MODE=true，实测只剩 16 个核心的读工具。自建版用个人令牌 JIRA_PERSONAL_TOKEN 代替用户名加 API 令牌，见它的文档。\n\nAtlassian 官方也有远程 MCP 服务，但只能走 OAuth 登录；这个社区版用 API 令牌就能连。",
+			"prompts": [
+				"列出当前 Sprint 里还没完成、分给我的 issue",
+				"把这个 bug 的复现步骤建成一个 Jira 单，优先级设为高",
+				"在 Confluence 里找一下新人入职文档，总结成十条"
+			],
+			"logo": "https://github.com/sooperset.png?size=128"
+		},
+		{
+			"id": "kubernetes",
+			"name": "Kubernetes",
+			"category": "云与运维",
+			"brandColor": "#326ce5",
+			"kind": "npm-mcp",
+			"package": "mcp-server-kubernetes",
+			"command": "npx",
+			"args": [
+				"-y",
+				"mcp-server-kubernetes@latest"
+			],
+			"env": [
+				{
+					"name": "ALLOW_ONLY_NON_DESTRUCTIVE_TOOLS",
+					"required": false,
+					"optional": true,
+					"secret": false,
+					"description": "填 true 去掉删除资源、清理、驱逐节点、卸载 Helm 和执行任意 kubectl 命令这几类工具"
+				}
+			],
+			"homepage": "https://github.com/Flux159/mcp-server-kubernetes",
+			"author": "Suyog Sonwalkar",
+			"license": "MIT",
+			"description": "用你本机的 kubectl 和 kubeconfig 管集群：查资源、看日志、apply、扩缩容、装 Helm。",
+			"longDescription": "社区项目。它连的是本机 kubectl 当前的上下文，用的是你 kubeconfig 里的身份，你在终端里能对集群做什么，它就能做什么。23 个工具：get、describe、logs、apply、create、patch、scale、rollout、切换上下文、查资源文档，Helm 的安装升级卸载，节点的 cordon 和 drain，端口转发，在 Pod 里执行命令，以及一个能跑任意 kubectl 命令的 kubectl_generic。\n\n前提是本机装了 kubectl（用 Helm 相关工具还要装 helm），并且 kubectl get pods 能正常出结果。\n\nALLOW_ONLY_NON_DESTRUCTIVE_TOOLS=true 会去掉删除、清理、drain、卸载 Helm 和 kubectl_generic 这 5 个工具，但 apply、patch、scale、在 Pod 里执行命令还在——它不等于只读。连生产集群，最稳妥的是给它单独一份只读权限的 kubeconfig。",
+			"prompts": [
+				"看看 default 命名空间里哪些 Pod 在反复重启，把最近的日志摘出来",
+				"把 web 这个 Deployment 扩到 5 个副本，等滚动更新完告诉我",
+				"列出所有没有设置资源限制的容器"
+			],
+			"logo": "https://github.com/Flux159.png?size=128"
+		},
+		{
+			"id": "grafana",
+			"name": "Grafana",
+			"category": "云与运维",
+			"brandColor": "#f46800",
+			"kind": "pypi-mcp",
+			"package": "mcp-grafana",
+			"command": "uvx",
+			"args": [
+				"mcp-grafana@latest"
+			],
+			"env": [
+				{
+					"name": "GRAFANA_URL",
+					"required": true,
+					"secret": false,
+					"description": "Grafana 地址，比如 http://localhost:3000 或 https://你的实例.grafana.net"
+				},
+				{
+					"name": "GRAFANA_SERVICE_ACCOUNT_TOKEN",
+					"required": true,
+					"secret": true,
+					"description": "Grafana 服务账号令牌，在 管理 → 用户和访问 → 服务账号 里创建；只读场景给 Viewer 角色即可",
+					"url": "https://grafana.com/docs/grafana/latest/administration/service-accounts/"
+				}
+			],
+			"homepage": "https://github.com/grafana/mcp-grafana",
+			"author": "Grafana Labs",
+			"license": "Apache-2.0",
+			"description": "查 Grafana 的仪表盘、Prometheus 指标、Loki 日志、告警和值班，出了事先问它。",
+			"longDescription": "Grafana 官方维护，PyPI 上的包里装的是它的 Go 二进制。工具按类别分：搜索和读写仪表盘、查数据源、跑 PromQL 和 LogQL、看 Tempo 链路和 Pyroscope 性能剖析、管理告警规则和静默、处理事故和值班排班、渲染面板截图、找日志里的错误模式和慢请求。\n\n默认开着 81 个工具，非常占上下文。用不到的类别可以在参数里关掉，比如 --disable-oncall、--disable-incident、--disable-sift；只想读就加 --disable-write，实测剩 65 个。\n\n第一次启用要下载几十兆的二进制，在我们的实测里用了一分钟左右。当前版本不上报使用统计；作者说之后的版本会改成默认上报，到时可以用 --usage-stats disabled 关掉。",
+			"prompts": [
+				"过去一小时 checkout 服务的错误率和 P99 延迟是多少",
+				"在 Loki 里找今天 payment 服务的错误日志，归纳出最常见的几类",
+				"现在有哪些告警在响，分别是什么时候开始的"
+			],
+			"logo": "https://github.com/grafana.png?size=128"
+		},
+		{
+			"id": "sentry",
+			"name": "Sentry",
+			"category": "云与运维",
+			"brandColor": "#362d59",
+			"kind": "remote-mcp",
+			"package": "@sentry/mcp-server",
+			"url": "https://mcp.sentry.dev/mcp",
+			"headers": {
+				"Authorization": "Sentry-Bearer ${SENTRY_ACCESS_TOKEN}"
+			},
+			"env": [
+				{
+					"name": "SENTRY_ACCESS_TOKEN",
+					"required": true,
+					"secret": true,
+					"description": "Sentry 用户令牌，需要 org:read、project:read、project:write、team:read、team:write、event:write 权限",
+					"url": "https://sentry.io/settings/account/api/auth-tokens/"
+				}
+			],
+			"homepage": "https://github.com/getsentry/sentry-mcp",
+			"author": "Sentry",
+			"license": "FSL-1.1-ALv2",
+			"description": "查 Sentry 里的报错和事件，读完整堆栈，让 Seer 分析根因，顺手改 issue 状态。",
+			"longDescription": "Sentry 官方托管的服务。能列组织和项目，用自然语言或 Sentry 的查询语法搜 issue 和事件，按链接取回 issue、事件、Trace 的详情和完整堆栈，调 Sentry 自己的 Seer 分析根因并给出修复建议，以及把 issue 标成已解决、忽略或指派给人。不常用的操作不直接摆出来，而是先用 search_sentry_tools 查、再用 execute_sentry_tool 调，省上下文。\n\n这里用显式令牌：请求头写的是 Sentry-Bearer 而不是 Bearer，这是 Sentry 的约定，改了就连不上。\n\n自建的 Sentry 连不了这个托管地址，要改用 npm 包 @sentry/mcp-server 在本机跑，并传 --host。它的许可证是 FSL，源码公开，但不是 OSI 意义上的开源。",
+			"prompts": [
+				"看看这个项目最近 24 小时出现最多的三个错误，定位到代码",
+				"这个 issue 的堆栈指向哪里，帮我写个修复",
+				"这次发版之后新冒出来的错误有哪些"
+			],
+			"logo": "https://github.com/getsentry.png?size=128"
+		},
+		{
+			"id": "arxiv",
+			"name": "arXiv",
+			"category": "科研",
+			"brandColor": "#b31b1b",
+			"kind": "pypi-mcp",
+			"package": "arxiv-mcp-server",
+			"command": "uvx",
+			"args": [
+				"arxiv-mcp-server@latest"
+			],
+			"homepage": "https://github.com/blazickjp/arxiv-mcp-server",
+			"author": "Joe Blazick",
+			"license": "Apache-2.0",
+			"description": "搜 arXiv、下载论文存在本地、按章节读正文和 LaTeX 源码、导出 BibTeX。",
+			"longDescription": "社区项目。搜索支持分类、日期范围和排序；下载时优先取 HTML 版本，抽出来的正文比 PDF 干净。论文存在本地（默认 ~/.arxiv-mcp-server/papers），之后可以按目录逐节读、在全文里搜片段、对已下载的论文做语义检索，也能取原始 LaTeX 源码看公式。\n\n另外几件事它也管：用 Semantic Scholar 查引用和被引，按 arXiv 元数据导出 BibTeX，订阅一个研究主题、之后只看新出的论文。\n\n19 个工具，不需要任何密钥。想把论文存到别处，在参数里加 --storage-path 和目录。",
+			"prompts": [
+				"搜一下最近三个月关于长上下文检索的论文，挑五篇最相关的讲讲",
+				"下载 1706.03762，逐节读，把方法部分讲清楚",
+				"把这几篇论文的 BibTeX 导出来，放进 refs.bib"
+			],
+			"logo": "https://github.com/blazickjp.png?size=128"
+		},
+		{
+			"id": "hugging-face",
+			"name": "Hugging Face",
+			"category": "科研",
+			"brandColor": "#ffd21e",
+			"kind": "remote-mcp",
+			"url": "https://huggingface.co/mcp",
+			"headers": {
+				"Authorization": "Bearer ${HF_TOKEN}"
+			},
+			"env": [
+				{
+					"name": "HF_TOKEN",
+					"required": false,
+					"optional": true,
+					"secret": true,
+					"description": "Hugging Face 访问令牌，只读权限即可；不填以匿名身份使用，工具少一些",
+					"url": "https://huggingface.co/settings/tokens"
+				}
+			],
+			"homepage": "https://github.com/huggingface/hf-mcp-server",
+			"author": "Hugging Face",
+			"license": "MIT",
+			"description": "在 Hugging Face Hub 上查模型、数据集、Space 和论文。",
+			"longDescription": "Hugging Face 官方托管。不登录也能用，这时有四个工具：搜索模型、数据集和 Space，看仓库详情（下载量、许可证、标签、模型卡），浏览 Hub 上的文件、论文和每日热门，以及查看当前身份。填了 HF_TOKEN 之后，还能按你在 huggingface.co/settings/mcp 里的选择开更多工具和 Space 应用。\n\n挑模型时它比网页搜索直接：下载量、许可证、参数规模、适用任务，查的都是 Hub 上此刻的数据，而不是模型记忆里的。\n\n令牌给只读权限就够了。",
+			"prompts": [
+				"找几个能在 16G 显存上跑的中文 embedding 模型，按下载量排",
+				"看看这个数据集有哪些字段、多大、许可证是什么",
+				"今天 Hub 上有哪些热门的新论文，挑和检索相关的讲讲"
+			],
+			"logo": "https://github.com/huggingface.png?size=128"
+		},
+		{
+			"id": "zotero",
+			"name": "Zotero",
+			"category": "科研",
+			"brandColor": "#cc2936",
+			"kind": "pypi-mcp",
+			"package": "zotero-mcp-server",
+			"command": "uvx",
+			"args": [
+				"--from",
+				"zotero-mcp-server@latest",
+				"zotero-mcp"
+			],
+			"staticEnv": {
+				"ZOTERO_LOCAL": "true"
+			},
+			"homepage": "https://github.com/54yyyu/zotero-mcp",
+			"author": "Steven Yu",
+			"license": "MIT",
+			"description": "让 agent 读你的 Zotero 文献库：检索条目、读全文和批注、整理笔记、导出参考文献。",
+			"longDescription": "社区项目，不是 Zotero 官方出的。这里配的是本地模式，直接读本机的 Zotero 数据库，不需要任何账号：Zotero 7 以上在 设置 → 高级 里勾选「允许此电脑上的其他应用与 Zotero 通信」即可。\n\n41 个工具：按标题、作者、标签、集合、引用键检索，读 PDF 全文、指定页和目录，读写批注与笔记，把一批高亮和批注汇总成结构化的笔记，按 DOI、URL、ISBN、BibTeX 添加条目，管理集合，用 Zotero 自己的 CSL 样式导出参考文献。写操作需要 Zotero 10 以上并授权一次，或者改走网页 API。\n\n工具多，按作者的测算要占一万三千多 token 的上下文；作者自己也提醒，有终端的编码 agent 用它附带的命令行加技能更省。",
+			"prompts": [
+				"在我的 Zotero 里找所有关于对比学习的论文，按年份列出来",
+				"把这篇论文里我做的高亮和批注汇总成一份读书笔记",
+				"把「毕业论文」这个集合导出成 GB/T 7714 格式的参考文献"
+			],
+			"logo": "https://github.com/54yyyu.png?size=128"
+		},
+		{
+			"id": "superpowers",
+			"name": "Superpowers",
+			"repository": "https://github.com/obra/superpowers.git",
+			"category": "工作流",
+			"author": "Jesse Vincent",
+			"description": "一套写代码的做事顺序：先问清需求、写计划、测试先行、派子 agent、交付前自证。",
+			"longDescription": "15 个技能串成一条开发流程：brainstorming 先把需求问清楚再动手，writing-plans 把需求拆成可执行的计划，executing-plans 和 subagent-driven-development 按计划逐项实现，test-driven-development、systematic-debugging、verification-before-completion 管测试、排错和交付前自证，requesting-code-review、receiving-code-review 管评审往来，using-git-worktrees、finishing-a-development-branch 管分支。\n\n适合中等以上规模的功能开发，它会拦住「没问清楚就开写」「没跑测试就说做完了」这类习惯。改一行配置、问一个问题这种小事，它的步骤会显得多余。\n\n以插件形式安装，因为 executing-plans 等技能会读兄弟技能目录里的脚本和提示词。上游给 Claude Code 写的会话启动钩子在 Lyra 里不运行，using-superpowers 靠描述被模型选中。test-driven-development 与 Addy Osmani 那套同名，两套一起装只生效一个。",
+			"prompts": [
+				"先用 brainstorming 把这个需求问清楚，再写实现计划",
+				"按 docs/plans 里那份计划逐项实现，每一项先写测试",
+				"这个测试时好时坏，按 systematic-debugging 的步骤找根因"
+			],
+			"logo": "https://github.com/obra.png?size=128",
+			"brandColor": "#7c3aed",
+			"license": "MIT",
+			"kind": "git-skills"
+		},
+		{
 			"id": "compound-engineering",
 			"name": "Compound Engineering",
-			"category": "开发",
-			"brandColor": "#0f766e",
-			"kind": "git-skills",
 			"repository": "https://github.com/EveryInc/compound-engineering-plugin.git",
-			"homepage": "https://github.com/EveryInc/compound-engineering-plugin",
+			"category": "工作流",
 			"author": "Every",
-			"description": "33 个把工程流程写成步骤的技能：出方案、评审、调试、提交、发 PR，每走一遍都往下一遍里攒经验。",
-			"longDescription": "它的立意是「复利」——每一次工程工作应该让下一次更容易，而不是从零重来。所以技能不止是执行动作，还负责把这次学到的东西沉淀下来给下次用。\n\n覆盖面很宽：brainstorm 出方案、code-review 评审、debug 排障、commit 与 commit-push-pr 走提交流程、babysit-pr 盯着 PR 直到合并。全套走下来是一条完整的开发链路，也可以只挑其中几个用。\n\n技能多是它的优点也是代价：33 个全装上，agent 每次要在更多选项里挑。只想要评审和调试的话，装完删掉其余目录即可。",
+			"description": "36 个工程技能：出方案、评审、调试、提交、盯 PR，并把每次学到的写回仓库。",
+			"longDescription": "围绕一个循环：出方案、写计划、实现、评审，再把经验记下来。ce-brainstorm 和 ce-plan 出方案，ce-work 按计划执行，ce-code-review、ce-debug、ce-simplify-code 管质量，ce-commit、ce-commit-push-pr、ce-babysit-pr、ce-resolve-pr-feedback 管提交和 PR，ce-compound 把这次解决问题时不显然的推理写成仓库里的文档，下次遇到同类问题先查它。lfg 把整条链路串成一句话就能启动的流程。\n\n适合长期维护同一个仓库、希望经验能积累下来的个人或团队。36 个技能全装上会占掉技能目录不少篇幅，只想要其中几个的话，装完删掉用不到的目录。\n\nce-setup、ce-dogfood、ce-polish 等 9 个技能只能手动调用。PR 相关的技能依赖 gh 命令行，ce-proof 依赖 Proof 服务，ce-test-xcode 依赖 XcodeBuildMCP，缺了这些工具对应的技能用不起来。",
 			"prompts": [
-				"用 compound 的方式帮我把这个需求想清楚再动手",
-				"按 code-review 的流程审一遍我这个分支",
-				"这个 PR 帮我盯到能合并为止"
+				"用 ce-plan 把这个需求拆成计划，写进 docs 目录",
+				"用 ce-code-review 审一下这个分支相对 main 的改动",
+				"这个 PR 用 ce-babysit-pr 盯到能合并为止"
 			],
-			"logo": "https://github.com/EveryInc.png?size=128"
+			"logo": "https://github.com/EveryInc.png?size=128",
+			"brandColor": "#0f766e",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "addy-agent-skills",
+			"name": "Agent Skills（Addy Osmani）",
+			"repository": "https://github.com/addyosmani/agent-skills.git",
+			"category": "工作流",
+			"author": "Addy Osmani",
+			"description": "按「定义、计划、构建、验证、评审、上线」六个阶段写成的 25 个工程技能。",
+			"longDescription": "每个技能对应开发周期里的一步：spec-driven-development、planning-and-task-breakdown 在写代码前定规格和任务，incremental-implementation、test-driven-development、source-driven-development 管实现方式，debugging-and-error-recovery、code-review-and-quality、security-and-hardening、performance-optimization 管质量，ci-cd-and-automation、shipping-and-launch、deprecation-and-migration 管上线和演进。需求还模糊时有 idea-refine 和 interview-me。\n\n适合想让 agent 按资深工程师的检查项干活的人，Web 前端项目用得最顺：仓库里的安全、性能、可访问性检查单写得很细。\n\n以插件形式安装，因为评审类技能引用的是仓库根 references/ 下的检查单。browser-testing-with-devtools 需要另装 Chrome DevTools MCP。test-driven-development 与 Superpowers 同名，两套一起装只生效一个。",
+			"prompts": [
+				"先用 spec-driven-development 把这个功能的规格写出来",
+				"按 code-review-and-quality 审一遍这次改动，检查单逐项过",
+				"上线前用 shipping-and-launch 看看还缺什么"
+			],
+			"logo": "https://github.com/addyosmani.png?size=128",
+			"brandColor": "#f59e0b",
+			"license": "MIT",
+			"kind": "git-skills"
+		},
+		{
+			"id": "mattpocock-skills",
+			"name": "Matt Pocock Skills",
+			"repository": "https://github.com/mattpocock/skills.git",
+			"category": "开发",
+			"author": "Matt Pocock",
+			"description": "Matt Pocock 自用的 18 个工程技能：TDD、排查难缠的 bug、评审、拆工单。",
+			"longDescription": "来自 Matt Pocock 自己的 .agents 目录，这里只收了仓库里 engineering 这一组。tdd 按红、绿、重构一片一片地做，diagnosing-bugs 先搭一个能稳定复现问题的反馈回路再改，code-review 同时看是否符合仓库规范、是否忠实于需求，domain-modeling 和 grill-with-docs 用追问把项目术语写进 CONTEXT.md 和 ADR，to-spec、to-tickets、implement、wayfinder 把讨论变成规格和工单再落地。\n\n18 个里有 9 个只能手动调用（ask-matt、implement、triage、wayfinder 等），要用斜杠命令点名，另外 9 个模型会自己选。第一次在某个仓库里用之前，先跑 setup-matt-pocock-skills 配好 issue 跟踪方式和文档目录。\n\n仓库里 productivity、misc 两组没有收进来。prototype 与 Emil Kowalski 那套同名，一起装只生效一个。",
+			"prompts": [
+				"用 tdd 实现这个函数，一次只写一个会失败的测试",
+				"这个 bug 是偶发的，用 diagnosing-bugs 先做出稳定复现",
+				"把刚才的讨论用 to-tickets 拆成工单"
+			],
+			"logo": "https://github.com/mattpocock.png?size=128",
+			"brandColor": "#2563eb",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills/engineering"
 		},
 		{
 			"id": "ponytail",
 			"name": "Ponytail",
-			"category": "评审",
-			"brandColor": "#334155",
-			"kind": "git-skills",
 			"repository": "https://github.com/DietrichGebert/ponytail.git",
-			"homepage": "https://github.com/DietrichGebert/ponytail",
+			"category": "开发",
 			"author": "Dietrich Gebert",
-			"description": "逼 agent 少写代码。同一个需求，它交出来的实现明显更短，也更容易看懂。",
-			"longDescription": "针对的是 agent 一个非常具体的毛病：过度设计。让它加一个日期选择器，它给你一套配置系统、三层抽象和一份 README。这套技能的立场是资深工程师那种懒——能不写就不写，能一行就不写十行。\n\n作者在真实仓库（FastAPI + React）上做过对比：12 个任务平均少写约 54% 的代码，在过度设计最严重的场景（日期选择器）能少 94%，而在本来就已经很精简的地方几乎没有差别。\n\n除了写，还有 review 和 audit 两个方向——拿它回头看已有代码，找出能删掉的部分。",
+			"description": "逼 agent 少写代码：浏览器自带的就不装库，一行能解决就不写十行。",
+			"longDescription": "针对 agent 的一个具体毛病：过度设计。要一个日期选择器，它会装依赖、写包装组件、再讨论时区；ponytail 先问这件事要不要做，再找标准库或平台自带的办法。作者在一个真实的 FastAPI + React 仓库上做了 12 个任务的对比，代码量平均少 54%，花费少约 20%。\n\n6 个技能：ponytail 是写代码时的模式，说「stop ponytail」退出；ponytail-review 只看改动里能删的部分；ponytail-audit 扫整个仓库找过度设计；ponytail-debt 把代码里留下的 ponytail: 注释汇成一份欠账清单；另外两个是帮助卡片和基准数据展示。\n\n它只管写得少，不管写得对。需要完整错误处理、重试、兼容旧环境的地方，要在需求里说清楚。",
 			"prompts": [
-				"用 ponytail 的标准实现这个功能，别过度设计",
-				"audit 一下这个模块，哪些是可以直接删掉的",
-				"这段代码能不能更短，同时不丢掉任何一个安全检查"
+				"用 ponytail 的标准实现这个功能，能不加依赖就不加",
+				"用 ponytail-review 看看这次改动里哪些可以删",
+				"用 ponytail-audit 扫一遍仓库，列出最该简化的地方"
 			],
-			"logo": "https://github.com/DietrichGebert.png?size=128"
+			"logo": "https://github.com/DietrichGebert.png?size=128",
+			"brandColor": "#334155",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
 		},
 		{
-			"id": "claude-octopus",
-			"name": "Claude Octopus",
-			"category": "评审",
-			"brandColor": "#7c3aed",
-			"kind": "git-skills",
-			"repository": "https://github.com/nyldn/claude-octopus.git",
-			"homepage": "https://github.com/nyldn/claude-octopus",
-			"author": "nyldn",
-			"description": "把同一个问题同时交给多个模型，意见不一致的地方会被标出来，而不是等你上线之后才发现。",
-			"longDescription": "出发点是每个模型都有自己的盲区。它接了十个外部模型（Codex、Copilot、Qwen、Ollama、Perplexity、OpenRouter、Grok 等），在评审和交付前设一道共识关卡：几个模型看法一致就放行，分歧会明确地摆出来。\n\n作者自己的建议是别一上来就用——普通改动 Claude 自己就够了，它是留给那些「错了代价很大」的场合：架构决策、安全相关的改动、要对抗式评审的地方。\n\n注意它要调用外部模型，那些 provider 的配置和费用是你自己的。",
+			"id": "vercel-skills",
+			"name": "Vercel Agent Skills",
+			"repository": "https://github.com/vercel-labs/agent-skills.git",
+			"category": "开发",
+			"author": "Vercel",
+			"description": "Vercel 官方的 9 个技能：React/Next.js 性能规则、部署、界面与文案审查。",
+			"longDescription": "vercel-react-best-practices 是 Vercel 工程团队整理的 React 和 Next.js 性能规则，写组件、做评审时逐条对照；vercel-composition-patterns 讲怎样避免布尔属性越加越多；vercel-react-view-transitions 讲 View Transition API；vercel-react-native-skills 覆盖 React Native 与 Expo。web-design-guidelines 和 writing-guidelines 分别按 Vercel 的界面规范和写作规范审查 UI 与文档。\n\n和 Vercel 平台绑定的有三个：deploy-to-vercel、vercel-cli-with-tokens 负责部署，vercel-optimize 先拉项目的用量和指标，再只查指标指向的路由和文件。这三个需要 Vercel 账号和 CLI，其余六个在任何 React 项目里都能用。\n\n仓库里没有单独的 LICENSE 文件，许可证以 README 里写的 MIT 为准。",
 			"prompts": [
-				"这个架构决策，让几个模型都看一遍再给我结论",
-				"对抗式地审一遍这次改动，重点找安全问题",
-				"这两种实现哪个更好，我想听到不一致的意见"
+				"按 vercel-react-best-practices 审一遍这个页面组件的性能",
+				"把这个 Next.js 项目部署到 Vercel，给我预览链接",
+				"用 web-design-guidelines 检查一下这个表单的可访问性"
 			],
-			"logo": "https://github.com/nyldn.png?size=128"
+			"logo": "https://github.com/vercel-labs.png?size=128",
+			"brandColor": "#111111",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "cloudflare",
+			"name": "Cloudflare Skills",
+			"repository": "https://github.com/cloudflare/skills.git",
+			"category": "开发",
+			"author": "Cloudflare",
+			"description": "Cloudflare 官方的 14 个技能：在 Workers 上写代码、部署、调性能。",
+			"longDescription": "覆盖在 Cloudflare 上写代码和部署的主要环节：workers-best-practices 和 wrangler 讲 Workers 的写法与命令行，durable-objects 讲有状态对象，agents-sdk 讲用 Cloudflare Agents SDK 搭 agent，三个 sandbox 技能分别对应 Sandbox SDK 的稳定版、新版和迁移，nextjs-on-cloudflare 讲把 Next.js 跑在 Workers 上。另有 web-perf 做网页性能审计，turnstile-spin 接入 Turnstile 人机验证，cloudflare-email-service 收发邮件，cloudflare-one 及其迁移技能面向 Zero Trust 网络。\n\n适合已经在用或准备迁到 Cloudflare 的项目；写的是 Cloudflare 自己推荐的做法，拿来对照现有代码也有用。\n\n部署和查看线上资源需要 wrangler 和 Cloudflare 账号。以插件形式安装，因为总入口技能 cloudflare 会引用 nextjs-on-cloudflare 目录里的内容。",
+			"prompts": [
+				"用 Durable Objects 给这个 Worker 加一个按房间计数的功能",
+				"把这个 Next.js 应用改成能部署到 Cloudflare Workers",
+				"按 workers-best-practices 审一遍这个 Worker"
+			],
+			"logo": "https://github.com/cloudflare.png?size=128",
+			"brandColor": "#f38020",
+			"license": "Apache-2.0",
+			"kind": "git-skills"
+		},
+		{
+			"id": "expo",
+			"name": "Expo",
+			"repository": "https://github.com/expo/skills.git",
+			"category": "开发",
+			"author": "Expo",
+			"description": "Expo 官方的 24 个技能：路由、原生界面、EAS 构建上架、SDK 升级。",
+			"longDescription": "覆盖一个 Expo / React Native 应用从写到发的主要环节：expo-router、expo-native-ui、expo-ui、expo-animation、expo-data-fetching 管界面和数据，expo-module、expo-dev-client、expo-brownfield 管原生层和接入已有原生应用，expo-upgrade 管 SDK 升级，eas-app-stores、eas-update、eas-workflows、eas-hosting、eas-observe 管构建上架、热更新、CI、托管和线上观测。\n\n适合 Expo 项目；纯 React Native CLI 项目能用上其中一部分。EAS 相关技能需要 Expo 账号和 eas-cli。\n\n插件里声明了 Expo 的远程 MCP 服务（mcp.expo.dev），Lyra 不会随插件自动加载，需要的话在设置 › MCP 里单独添加。",
+			"prompts": [
+				"用 Expo Router 给这个应用加一个带底部标签栏的结构",
+				"把项目升到最新的 Expo SDK，先列出要改的地方",
+				"配一个 EAS Workflow，合并到 main 时自动出 iOS 预览包"
+			],
+			"logo": "https://github.com/expo.png?size=128",
+			"brandColor": "#000020",
+			"license": "MIT",
+			"kind": "git-skills",
+			"path": "plugins/expo"
+		},
+		{
+			"id": "wshobson-python",
+			"name": "Python Development",
+			"repository": "https://github.com/wshobson/agents.git",
+			"category": "开发",
+			"author": "Seth Hobson",
+			"description": "16 条 Python 工程写法：异步、错误处理、打包、测试、类型、性能、可观测性。",
+			"longDescription": "出自 wshobson/agents 这个多插件仓库里的 python-development 插件，只用它的技能部分，插件里的命令和子 agent 定义 Lyra 不加载。每个技能讲一类问题的写法：async-python-patterns、python-background-jobs 讲并发和后台任务，python-error-handling、python-resilience 讲异常和重试，python-packaging、uv-package-manager、python-project-structure、python-configuration 讲打包和工程结构，python-testing-patterns、python-type-safety、python-performance-optimization、python-observability 讲测试、类型、性能和日志指标，另有代码风格、设计模式、反模式和资源管理。\n\n适合用 Python 写服务和工具的项目，可以当作 agent 写代码时的默认规范，也可以拿来审查已有代码。\n\n内容是通用写法，不绑定框架；和团队已有规范冲突时，以团队的为准。",
+			"prompts": [
+				"按 python-error-handling 的写法重构这个模块的异常处理",
+				"用 uv 把这个脚本整理成可以安装的包",
+				"用 async-python-patterns 看看这段并发代码有没有问题"
+			],
+			"logo": "https://github.com/wshobson.png?size=128",
+			"brandColor": "#3776ab",
+			"license": "MIT",
+			"kind": "git-skills",
+			"path": "plugins/python-development"
+		},
+		{
+			"id": "taste-skill",
+			"name": "Taste Skill",
+			"repository": "https://github.com/Leonxlnx/taste-skill.git",
+			"category": "设计",
+			"author": "Leonxlnx",
+			"description": "治 AI 做前端的通病：千篇一律的渐变、卡片和字体，先定设计方向再出页面。",
+			"longDescription": "主技能 design-taste-frontend 读完需求先定设计方向，再按排版、间距、动效的具体规则出页面，目标是避开 AI 生成界面那种一眼就能认出来的样子。其余技能各管一种风格或场景：minimalist-ui、industrial-brutalist-ui、high-end-visual-design 是三条视觉路线，redesign-existing-projects 在不破坏功能的前提下改造现有页面，full-output-enforcement 禁止输出里出现省略和占位代码。\n\n适合落地页、作品集、产品官网这类看重第一眼的页面；后台表格、表单这类讲效率的界面用它收益不大。\n\n图像类技能（imagegen-frontend-web、imagegen-frontend-mobile、image-to-code、brandkit）要求 agent 先生成设计图再写代码，当前模型没有出图工具时用不起来。design-taste-frontend-v1 是保留的旧版。",
+			"prompts": [
+				"用 design-taste-frontend 给这个产品做一个落地页",
+				"按 redesign-existing-projects 改一下这个页面，功能别动",
+				"这个页面太像 AI 做的了，按 minimalist-ui 重做视觉"
+			],
+			"logo": "https://github.com/Leonxlnx.png?size=128",
+			"brandColor": "#be185d",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "emil-kowalski",
+			"name": "Emil Kowalski Skills",
+			"repository": "https://github.com/emilkowalski/skills.git",
+			"category": "设计",
+			"author": "Emil Kowalski",
+			"description": "Emil Kowalski 的界面技能：动画该不该做、用什么曲线、多长，交互怎么调。",
+			"longDescription": "作者在 Vercel 和 Linear 做过设计工程，写了 React 通知组件 Sonner。技能围绕动画和交互手感：animate 按「要不要动、为什么动、用什么实现、动哪个属性」的顺序做决定，animate-expo 是 React Native 版，animation-vocabulary 把「弹出来那种效果」翻成准确的术语，apple-design 把 Apple 的弹簧动画和手势思路搬到 Web，find-animation-opportunities、improve-animations、review-animations 分别找该加的动画、审计现有动效、做评审。另有 mobile-native（让网页在手机上像原生应用）、pick-ui-library、ask-sonner 和 write-swift。\n\n适合在意界面手感的前端和设计工程师，给的数值很具体（缓动曲线、时长），可以直接照着改。\n\npick-ui-library、prototype、review-animations 三个只能手动调用。prototype 与 Matt Pocock 那套同名，一起装只生效一个。",
+			"prompts": [
+				"这个弹窗的进出场动画不对劲，用 review-animations 看看",
+				"用 animate 给这个列表的增删加上过渡",
+				"按 mobile-native 让这个网页在手机上更像原生应用"
+			],
+			"logo": "https://github.com/emilkowalski.png?size=128",
+			"brandColor": "#18181b",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "ui-ux-pro-max",
+			"name": "UI UX Pro Max",
+			"repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+			"category": "设计",
+			"author": "NextLevelBuilder",
+			"description": "带检索数据的界面设计技能：按产品类型推荐风格、配色、字体搭配和页面结构。",
+			"longDescription": "核心是 ui-ux-pro-max：说清产品类型和行业，它用本地 Python 脚本在内置的风格、配色、字体搭配、落地页结构数据里检索，给出一份完整的设计系统建议；加 --stack 参数还能给出 React、Next.js、Vue、SwiftUI、Flutter、Jetpack Compose 等技术栈的实现要点。另外 6 个技能分管品牌（brand）、设计令牌（design-system）、shadcn/ui 加 Tailwind 的界面（ui-styling）、横幅（banner-design）、HTML 演示稿（slides）和综合设计（design，含 logo 与企业形象）。\n\n适合从零定一套视觉方案，或给已有界面找一个统一的方向。需要 Python 3；brand、design-system 的辅助脚本需要 Node；design 技能生成 logo 要 Gemini 等图像接口的 API Key。\n\n主技能里的命令写的是 Claude Code 插件路径 ${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py，Lyra 不展开这个变量，agent 要改用技能目录下的 scripts/search.py。",
+			"prompts": [
+				"给一个独立咖啡馆的预约应用出一套设计系统",
+				"按 ui-ux-pro-max 的建议重做这个仪表盘的配色和字体",
+				"用 slides 把这份方案做成一套 HTML 演示稿"
+			],
+			"logo": "https://github.com/nextlevelbuilder.png?size=128",
+			"brandColor": "#6366f1",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": ".claude/skills"
+		},
+		{
+			"id": "obsidian-skills",
+			"name": "Obsidian Skills",
+			"repository": "https://github.com/kepano/obsidian-skills.git",
+			"category": "文档",
+			"author": "Steph Ango",
+			"description": "让 agent 会写 Obsidian 的双链笔记、Bases 视图和 Canvas 白板。",
+			"longDescription": "作者 kepano（Steph Ango）是 Obsidian 的 CEO。obsidian-markdown 教 agent 写双链、嵌入、callout、属性这些 Obsidian 特有语法；obsidian-bases 编辑 .base 文件，给笔记建数据库式视图；json-canvas 生成 .canvas 白板，画思维导图和流程图；obsidian-cli 通过 obsidian 命令读写、搜索正在运行的仓库，也能重载插件、调试主题。defuddle 把网页抽成干净的 Markdown，knap 用模板和数据批量生成笔记。\n\n适合把 Obsidian 当知识库、想让 agent 直接整理笔记的人，在 vault 目录里打开 Lyra 用最顺手。\n\nobsidian-cli 要求 Obsidian 处于打开状态；defuddle 和 knap 需要用 npm 全局安装各自的命令行（knap 要 Node 20 以上）。只写 Markdown 和 .canvas 的几个技能不需要额外工具。",
+			"prompts": [
+				"把这个文件夹里的会议记录整理成带双链的 Obsidian 笔记",
+				"给我的读书笔记建一个按作者和评分分组的 Bases 视图",
+				"把这个项目的模块关系画成一张 JSON Canvas"
+			],
+			"logo": "https://github.com/kepano.png?size=128",
+			"brandColor": "#6c31e3",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
 		},
 		{
 			"id": "planning-with-files",
 			"name": "Planning with Files",
-			"category": "思考",
-			"brandColor": "#ea580c",
-			"kind": "git-skills",
 			"repository": "https://github.com/OthmanAdi/planning-with-files.git",
-			"homepage": "https://github.com/OthmanAdi/planning-with-files",
+			"category": "思考",
 			"author": "Othman Adi",
-			"description": "把计划写进文件而不是留在上下文里，所以清空对话、崩溃、上下文被压缩之后，它还在。",
-			"longDescription": "解决的是长任务里最恼人的一件事：上下文窗口是有限的，而任务不是。聊到一半被压缩掉，agent 就忘了三小时前定下的方案，然后开始重做已经做完的部分。\n\n做法很朴素：task_plan.md、findings.md、progress.md 三个文件落在磁盘上，每一轮重新读进去。计划、发现、进度分开存，因为它们过期的速度不一样。还有一个可选的完成关卡，不让它在没做完的时候宣布做完。\n\n适合跑几个小时以上的任务；十分钟能做完的事情用它只是多几个文件。",
+			"description": "把计划、发现和进度写进三个文件，上下文被压缩或会话中断后还能接着做。",
+			"longDescription": "长任务最常见的问题是上下文装不下：聊到一半被压缩，agent 就忘了之前定下的方案，开始重做已经做完的部分。这个技能让 agent 在磁盘上维护 task_plan.md、findings.md、progress.md，计划、发现、进度分开存，每次继续工作先读回来；附带的脚本负责初始化、检查是否真的做完、生成进度摘要。\n\n适合跑几个小时以上、跨多次会话的任务；十分钟能做完的事用它只是多出几个文件。\n\n上游在 SKILL.md 里声明了 Claude Code 的生命周期钩子，用来每轮自动注入计划；Lyra 不执行技能里的钩子，计划不会自动注入，要靠 agent 按技能说明主动读写这几个文件。脚本有 bash 和 PowerShell 两套，部分需要 Python 3。仓库里的中文等译本放在更深一层的目录，不会随之安装。",
 			"prompts": [
 				"这个迁移要做很久，先把计划写成文件再开始",
-				"接着 task_plan.md 往下做，做完一步更新 progress",
-				"把这次排查的发现记进 findings，别丢了"
+				"接着 task_plan.md 往下做，每做完一步更新 progress.md",
+				"把这次排查的发现记进 findings.md，别丢了"
 			],
-			"logo": "https://github.com/OthmanAdi.png?size=128"
-		},
-		{
-			"id": "harness",
-			"name": "Harness",
-			"category": "开发",
-			"brandColor": "#0891b2",
-			"kind": "git-skills",
-			"repository": "https://github.com/revfactory/harness.git",
-			"homepage": "https://github.com/revfactory/harness",
-			"author": "Robin Moon",
-			"description": "对着一个项目说一句「给它搭一套」，它生成这个项目专用的 agent 团队和技能定义。",
-			"longDescription": "它本身几乎不干活，干的是生成干活的东西——读你的项目，推断这个领域需要哪几种角色，然后写出 `.claude/agents/` 和技能定义。\n\n这类「元」工具的价值在于起步：从零手写一套 agent 定义，难的不是格式而是想清楚该有哪些角色。它给一份能跑的初稿，你在上面改。\n\n生成的东西是文本，务必自己读一遍再用——它对你项目的理解只来自它看到的那些文件。",
-			"prompts": [
-				"给这个项目搭一套 agent 团队",
-				"这套生成出来的角色划分合理吗，帮我调一下",
-				"再加一个专门管数据库迁移的 agent"
-			],
-			"logo": "https://github.com/revfactory.png?size=128"
-		},
-		{
-			"id": "arscontexta",
-			"name": "Ars Contexta",
-			"category": "思考",
-			"brandColor": "#b45309",
-			"kind": "git-skills",
-			"repository": "https://github.com/agenticnotetaking/arscontexta.git",
-			"homepage": "https://github.com/agenticnotetaking/arscontexta",
-			"author": "Agentic Notetaking",
-			"description": "跟它讲清楚你平时怎么想、怎么做事，它给你生成一套配套的笔记与上下文体系。",
-			"longDescription": "不是给你一个现成的笔记模板，而是先问你怎么工作，再据此推导出目录结构、上下文文件、处理流程、导航索引和笔记模板。理由是别人的组织方式往往不适合你——不合手的模板，最后都会被弃用。\n\n生成的是一整套文件，装完先看它给的结构说明，再决定要不要按它的方式改造现有笔记。\n\n它对已有大量笔记的人价值更明确：从零开始的话，你自己还没有「怎么想」这件事可供它推导。",
-			"prompts": [
-				"我平时是这样整理东西的，帮我生成一套配套的笔记体系",
-				"按这套结构，把我现有的笔记重新组织一遍",
-				"给这个领域补一份上下文文件"
-			],
-			"logo": "https://github.com/agenticnotetaking.png?size=128"
+			"logo": "https://github.com/OthmanAdi.png?size=128",
+			"brandColor": "#ea580c",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
 		},
 		{
 			"id": "i-have-adhd",
 			"name": "I Have ADHD",
-			"category": "思考",
-			"brandColor": "#db2777",
-			"kind": "git-skills",
 			"repository": "https://github.com/ayghri/i-have-adhd.git",
-			"homepage": "https://github.com/ayghri/i-have-adhd",
+			"category": "思考",
 			"author": "ayghri",
-			"description": "答案先给，理由后说。治的是 agent 把结论埋在三段铺垫下面的老毛病。",
-			"longDescription": "只有一个技能，改的是输出的组织方式：先说结论，再说为什么，细节放最后，你想看才往下翻。\n\n名字提到 ADHD，但它不针对任何诊断——任何人在读第四段才看到答案时都会烦。它尤其适合那种你只想确认一件事、却收到一篇文章的场合。\n\n它只管怎么说，不管说得对不对。",
+			"description": "先说下一步，步骤编号，不绕弯：治 agent 把答案埋在三段铺垫下面的毛病。",
+			"longDescription": "只有一个技能，改的是输出的组织方式：先说下一步做什么，多步的活编号列出，跨轮次时重述当前进度，压掉离题的内容，给具体的时间估计，把已经完成的部分标出来。\n\n名字提到 ADHD，但不需要任何诊断，任何人在第四段才看到答案时都会烦。尤其适合只想确认一件事、却常收到一篇文章的场合。\n\n它被设成只能手动开启：输入 /i-have-adhd 进入，说「stop adhd mode」退出，模型不会自己选它。它只管怎么说，不管说得对不对。",
 			"prompts": [
-				"直接说结论，理由放后面",
-				"这个问题一句话回答我，需要展开我再问",
-				"把这段解释压成先答后证的结构"
+				"/i-have-adhd 这个报错怎么修，直接给我步骤",
+				"/i-have-adhd 把部署流程压成一张编号清单",
+				"stop adhd mode，接下来正常解释"
 			],
-			"logo": "https://github.com/ayghri.png?size=128"
+			"logo": "https://github.com/ayghri.png?size=128",
+			"brandColor": "#db2777",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "context-engineering",
+			"name": "Context Engineering",
+			"repository": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering.git",
+			"category": "思考",
+			"author": "Muratcan Koylan",
+			"description": "17 个讲上下文工程的技能：压缩、退化诊断、记忆、多 agent 分工、工具设计、评测。",
+			"longDescription": "面向自己搭 agent 系统的人，不是给日常写业务代码用的。context-fundamentals 讲上下文由哪些部分组成，context-degradation 诊断中间丢失、上下文污染这类退化，context-compression、context-optimization、filesystem-context 讲压缩、预算和把内容卸到文件里，memory-systems、multi-agent-patterns、hosted-agents、harness-engineering 讲记忆、多 agent 分工和运行环境，tool-design 讲工具描述怎么写才会被选对，evaluation、advanced-evaluation 讲回归评测和用模型当评审。\n\n适合设计或排查 agent、RAG、长任务流程时当参考框架；也可以让 agent 用它审查你的系统提示和工具定义。\n\n内容以原理和模式为主，不绑定具体框架，也没有可以直接运行的代码。bdi-mental-states、latent-briefing 偏研究性质，实际用得少。",
+			"prompts": [
+				"按 context-degradation 分析一下这个 agent 为什么跑久了就乱",
+				"用 tool-design 的标准改写这几个工具的描述",
+				"给这个长任务流程设计一套上下文压缩策略"
+			],
+			"logo": "https://github.com/muratcankoylan.png?size=128",
+			"brandColor": "#0891b2",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "marketing-skills",
+			"name": "Marketing Skills",
+			"repository": "https://github.com/coreyhaines31/marketingskills.git",
+			"category": "办公",
+			"author": "Corey Haines",
+			"description": "50 个营销技能：落地页转化、文案、SEO、广告投放、邮件、定价、发布。",
+			"longDescription": "作者 Corey Haines 做转化优化出身。技能按营销环节分：cro、signup、onboarding、paywalls、popups 管转化，copywriting、copy-editing、cold-email、emails 管文案和邮件，seo-audit、ai-seo、programmatic-seo、schema、site-architecture 管搜索，ads、ad-creative、analytics、attribution、ab-testing 管投放和度量，pricing、offers、launch、product-marketing 管定价、发布和产品定位。product-marketing 会先建一份产品营销背景文档，其余技能都从它读产品信息。\n\n适合自己做增长的开发者和小团队，很多技能能直接改代码里的落地页和埋点。内容以英文市场和海外平台为主。\n\n以插件形式安装，因为技能会引用仓库 tools/ 下的第三方工具命令行和接入说明。tools/ 里有作者标明的付费合作方（Verified Partners），它推荐工具时注意分辨。",
+			"prompts": [
+				"用 cro 看看这个落地页为什么转化低，直接改代码",
+				"给这个开发者工具写一组冷启动邮件序列",
+				"按 seo-audit 查一遍这个站点的 SEO 问题"
+			],
+			"logo": "https://github.com/coreyhaines31.png?size=128",
+			"brandColor": "#16a34a",
+			"license": "MIT",
+			"kind": "git-skills"
+		},
+		{
+			"id": "anthropic-data",
+			"name": "Data（Anthropic）",
+			"repository": "https://github.com/anthropics/knowledge-work-plugins.git",
+			"category": "数据",
+			"author": "Anthropic",
+			"description": "Anthropic 的数据分析插件：写 SQL、探查数据、统计、出图、做仪表盘。",
+			"longDescription": "Anthropic 给知识工作者做的插件之一。analyze 回答从单个指标到完整分析的问题，explore-data 看表的形状、空值和分布，write-query、sql-queries 按 Snowflake、BigQuery、Databricks、PostgreSQL 等方言写 SQL，statistical-analysis 做趋势、异常和假设检验，create-viz、data-visualization 用 Python 出图，build-dashboard 生成可交互的 HTML 仪表盘，validate-data 在把分析发出去之前检查方法和偏差。data-context-extractor 把分析师脑子里的业务口径整理成一个公司专用的技能。\n\n适合经常跑数、写报表的产品、运营和分析师；没有数据仓库时，给它 CSV 或 Excel 也能用。\n\n技能里 ~~data warehouse 这类占位符指的是 MCP 连接器。插件声明了 Snowflake、Databricks、BigQuery、Hex、Amplitude 等 8 个 MCP 服务，Lyra 不随插件自动加载，要连数仓需在设置 › MCP 里自己添加。",
+			"prompts": [
+				"这份订单 CSV 里上个月复购率为什么掉了，帮我分析",
+				"把这个查询改写成 BigQuery 方言，并解释每个 CTE",
+				"用这些结果做一个带筛选的 HTML 仪表盘"
+			],
+			"logo": "https://github.com/anthropics.png?size=128",
+			"brandColor": "#d97757",
+			"license": "Apache-2.0",
+			"kind": "git-skills",
+			"path": "data"
+		},
+		{
+			"id": "supabase-skills",
+			"name": "Supabase Skills",
+			"repository": "https://github.com/supabase/agent-skills.git",
+			"category": "数据",
+			"author": "Supabase",
+			"description": "Supabase 官方：Supabase 各产品的用法，外加通用的 Postgres 最佳实践。",
+			"longDescription": "supabase 覆盖数据库、Auth、Edge Functions、Realtime、Storage、向量、Cron、队列，以及 supabase-js、@supabase/ssr 在 Next.js、React、SvelteKit、Astro、Remix 里的接法，登录、会话、JWT 出问题时也按它排查。supabase-postgres-best-practices 是 Supabase 维护的 Postgres 规则：建表选类型、写迁移、设计 RLS、加索引、写查询之前先读它。\n\n第二个技能不绑定 Supabase，自建或其他云上的 Postgres 同样适用。\n\n技能只有两个，但每个都很长、覆盖面宽，模型会在所有和 Supabase 或 Postgres 沾边的任务里调用它们。操作线上项目需要 Supabase CLI 或 MCP。",
+			"prompts": [
+				"给这个 Supabase 项目的 posts 表设计 RLS 策略",
+				"这张表查询很慢，按 Postgres 最佳实践看看该加什么索引",
+				"在 Next.js App Router 里用 @supabase/ssr 接好登录"
+			],
+			"logo": "https://github.com/supabase.png?size=128",
+			"brandColor": "#3ecf8e",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "huggingface-skills",
+			"name": "Hugging Face Skills",
+			"repository": "https://github.com/huggingface/skills.git",
+			"category": "科研",
+			"author": "Hugging Face",
+			"description": "Hugging Face 官方：在 Hub 上找模型和数据集，训练、评测、发布模型。",
+			"longDescription": "hf-cli 是入口，教 agent 用 hf 命令下载、上传和管理模型、数据集、Spaces 与仓库。其余按任务分：huggingface-llm-trainer、trl-training、huggingface-vision-trainer、train-sentence-transformers 训练和微调，huggingface-community-evals 在本地用 lighteval 和 inspect-ai 跑评测，huggingface-datasets 用 Dataset Viewer API 查数据，huggingface-spaces、huggingface-gradio、huggingface-zerogpu 做演示应用，huggingface-papers、huggingface-paper-publisher 查论文、发论文页，huggingface-local-models 和 hf-mem 帮你挑能在本机跑的模型并估算显存。\n\n适合做模型训练、评测和发布的研究者与工程师。\n\n多数操作需要 Hugging Face 账号和 token；在 HF Jobs 上训练需要 Pro 或团队付费账号，否则得用本机 GPU。6 个 hf-cloud-* 技能专讲部署到 AWS SageMaker，需要 AWS 账号，用不到可以删掉。",
+			"prompts": [
+				"用 TRL 在这个数据集上做一轮 SFT，先估一下显存",
+				"帮我挑一个能在 32G 内存的 Mac 上跑的代码模型",
+				"把这个 Gradio 演示部署成一个 Space"
+			],
+			"logo": "https://github.com/huggingface.png?size=128",
+			"brandColor": "#ffd21e",
+			"license": "Apache-2.0",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "anthropic-bio-research",
+			"name": "Bio Research（Anthropic）",
+			"repository": "https://github.com/anthropics/knowledge-work-plugins.git",
+			"category": "科研",
+			"author": "Anthropic",
+			"description": "Anthropic 的生命科学插件：单细胞数据质控与整合、nf-core 流程、科研选题。",
+			"longDescription": "6 个技能：single-cell-rna-qc 按 scverse 的做法给 .h5ad、.h5 数据做质控，scvi-tools 做批次校正和数据整合，nextflow-development 在本机或集群上跑 nf-core 的 rnaseq、sarek、atacseq 流程，instrument-data-to-allotrope 把实验仪器导出的 PDF、CSV、Excel 转成 Allotrope 标准格式，scientific-problem-selection 帮研究者选题、判断卡住的项目要不要换方向，start 检查环境和可用工具。\n\n适合做生物信息分析的研究者。需要 Python 科学计算环境，跑 nf-core 需要 Nextflow 以及 Docker 或 Conda。\n\n插件声明了 PubMed、bioRxiv、ChEMBL、ClinicalTrials、Open Targets、Benchling、BioRender 等 11 个 MCP 服务，Lyra 不随插件加载，查文献和数据库要在设置 › MCP 里自己添加；其中一部分是商业服务，需要各自的账号。",
+			"prompts": [
+				"给这个 10x 单细胞数据做质控，把过滤标准和图都给我",
+				"用 scvi-tools 把这三个批次的数据整合起来",
+				"在本机用 nf-core/rnaseq 跑一遍这些 fastq"
+			],
+			"logo": "https://github.com/anthropics.png?size=128",
+			"brandColor": "#d97757",
+			"license": "Apache-2.0",
+			"kind": "git-skills",
+			"path": "bio-research"
+		},
+		{
+			"id": "google-cloud-skills",
+			"name": "Google Cloud Skills",
+			"repository": "https://github.com/google/skills.git",
+			"category": "云与运维",
+			"author": "Google",
+			"description": "Google 官方的 129 个 Google Cloud 技能：部署、运维、数据与 AI 服务。",
+			"longDescription": "google/skills 仓库里 Google Cloud 这一组，按产品分：gcloud、Cloud Run、GKE（35 个，从建集群、自动扩缩到 TPU 故障排查）、BigQuery、AlloyDB、Cloud SQL、Bigtable、Spanner、Cloud Storage，cloud-logging 和 cloud-monitoring 系列把需求写成日志查询和监控图表，agent-platform 系列管 Gemini Enterprise Agent Platform 上的模型部署、调优、RAG 和评测，gemini-api、gemini-live-api 讲 Gemini 接口，developing-genkit 系列讲 Genkit 的四种语言版本，另有 IAM、SecOps 和架构完善度框架的检查。\n\n适合在 Google Cloud 上开发和运维的团队。多数技能要求本机装好 gcloud 并登录到项目。\n\n129 个技能的名字和描述都会进入模型的技能目录，占用不小；只用其中几个产品的话，装完删掉其余目录。有几个技能用 ../gcloud/SKILL.md 这样的相对路径引用兄弟技能，Lyra 装成技能集合时目录名会加前缀，这些链接会失效，同名技能仍可直接调用。广告、Analytics 等其他分组没有收进来。",
+			"prompts": [
+				"用 gcloud 把这个容器部署到 Cloud Run，配好最小实例数",
+				"这个 GKE 节点一直 NotReady，帮我排查",
+				"把这句需求写成 Cloud Logging 的查询语句"
+			],
+			"logo": "https://github.com/google.png?size=128",
+			"brandColor": "#4285f4",
+			"license": "Apache-2.0",
+			"kind": "skill-collection",
+			"path": "skills/cloud"
+		},
+		{
+			"id": "trailofbits-static-analysis",
+			"name": "Static Analysis（Trail of Bits）",
+			"repository": "https://github.com/trailofbits/skills.git",
+			"category": "安全",
+			"author": "Trail of Bits",
+			"description": "Trail of Bits 出的：用 Semgrep、CodeQL 扫代码漏洞，再整理扫描结果。",
+			"longDescription": "Trail of Bits 是做安全审计的公司，这三个技能出自它的 skills 仓库。semgrep 先识别代码语言、挑规则集，把扫描计划给你确认后再跑，结果合并成 SARIF；codeql 建数据库做跨过程的数据流和污点分析，覆盖 Python、JavaScript/TypeScript、Go、Java/Kotlin、C/C++、C#、Ruby、Swift；sarif-parsing 对多个工具的扫描结果做过滤、去重和格式转换，也适合接进 CI。\n\n适合想在合并前或审计前系统扫一遍漏洞的项目；扫描结果的真假仍要人来判断。\n\n需要本机装好 semgrep 和 CodeQL CLI。许可证是 CC-BY-SA-4.0（署名、相同方式共享），不是宽松许可，改写后再分发要沿用同样的许可。仓库里还有模糊测试、智能合约审计等 40 多个插件，这里只收了静态分析这一个。",
+			"prompts": [
+				"用 semgrep 扫一遍这个仓库，先给我看扫描计划",
+				"给这个 Go 项目建 CodeQL 数据库，查有没有注入类漏洞",
+				"把这几份 SARIF 结果合并去重，按严重程度排好"
+			],
+			"logo": "https://github.com/trailofbits.png?size=128",
+			"brandColor": "#1e3a8a",
+			"license": "CC-BY-SA-4.0",
+			"kind": "git-skills",
+			"path": "plugins/static-analysis"
+		},
+		{
+			"id": "baoyu-skills",
+			"name": "宝玉的技能",
+			"repository": "https://github.com/JimLiu/baoyu-skills.git",
+			"category": "媒体",
+			"author": "宝玉",
+			"description": "宝玉的 21 个内容技能：配图、封面、信息图、翻译，发到公众号、微博和 X。",
+			"longDescription": "围绕「写完一篇文章之后」的活：baoyu-cover-image、baoyu-article-illustrator、baoyu-infographic、baoyu-xhs-images、baoyu-comic、baoyu-slide-deck 生成封面、插图、信息图、小红书图组、知识漫画和幻灯片图片，baoyu-image-gen 统一对接 OpenAI、Google、通义、即梦、Seedream、MiniMax 等十多家图像接口；baoyu-translate 做精翻，baoyu-format-markdown、baoyu-markdown-to-html 排版；baoyu-post-to-wechat、baoyu-post-to-weibo、baoyu-post-to-x 发到公众号、微博和 X；baoyu-url-to-markdown、baoyu-youtube-transcript 抓网页和字幕。\n\n适合做公众号和自媒体内容的人，中文场景考虑得很细。\n\n需要 Node.js 和 bun；生成图片要自己配图像服务的 API Key，发布类技能通过接口或 Chrome CDP 操作你已登录的浏览器。两个 baoyu-danger-* 技能用的是逆向出来的 Gemini 网页版和 X 接口，第一次用会要求确认，有违反平台条款、账号受限的风险。",
+			"prompts": [
+				"给这篇文章生成一张公众号封面，风格简洁一点",
+				"把这篇英文博客精翻成中文，代码块保持原样",
+				"把 article.md 排好版，发到公众号草稿箱"
+			],
+			"logo": "https://github.com/JimLiu.png?size=128",
+			"brandColor": "#dc2626",
+			"license": "MIT",
+			"kind": "skill-collection",
+			"path": "skills"
+		},
+		{
+			"id": "khazix-skills",
+			"name": "卡兹克的技能",
+			"repository": "https://github.com/KKKKhazix/khazix-skills.git",
+			"category": "思考",
+			"author": "数字生命卡兹克",
+			"description": "卡兹克自用的 6 个技能：写任务书、横纵分析、公众号长文、收尾整理、查 AI 资讯。",
+			"longDescription": "都是作者在自己项目里跑过一段时间的：leader 把一句话的想法拆成 agent 能独立跑完的任务书，先读代码库、必要时联网，再一次性问清楚；hv-analysis 用「横纵分析法」研究一个产品、公司或技术，纵向追历史，横向比同类；khazix-writer 按作者本人的文风写公众号长文；neat-freak 在一段工作结束后，把文档、CLAUDE.md、AGENTS.md 和记忆文件跟代码的实际状态对齐；aihot 通过 aihot.news 的只读接口查中文 AI 资讯和日报；storage-analyzer 扫描整机磁盘，出一份分级清理报告。\n\n适合中文内容创作者，以及经常让 agent 跑长任务的人。\n\nkhazix-writer 模仿的是作者本人的文风。storage-analyzer 默认在本地起一个带删除按钮的网页，其中「直接删除」不可逆，点之前看清路径。",
+			"prompts": [
+				"用 leader 把「给博客加全文搜索」拆成 agent 能独立完成的任务书",
+				"用横纵分析法研究一下 Cursor 这家公司",
+				"这一阶段做完了，用 neat-freak 把文档和代码对齐"
+			],
+			"logo": "https://github.com/KKKKhazix.png?size=128",
+			"brandColor": "#9333ea",
+			"license": "MIT",
+			"kind": "skill-collection"
+		},
+		{
+			"id": "anthropic-skills",
+			"name": "Anthropic Skills",
+			"kind": "skill-collection",
+			"repository": "https://github.com/anthropics/skills.git",
+			"path": "skills",
+			"category": "办公",
+			"author": "Anthropic",
+			"license": "Apache-2.0",
+			"homepage": "https://github.com/anthropics/skills",
+			"description": "Anthropic 官方的一组示例技能：文档处理之外的设计、写作、做演示、调 MCP 等。",
+			"logo": "https://github.com/anthropics.png?size=128",
+			"brandColor": "#d97757"
 		}
 	]
 }

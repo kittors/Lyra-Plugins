@@ -1,0 +1,33 @@
+{
+  "name": "supabase",
+  "version": "0.0.0",
+  "description": "查 Supabase 项目：表和迁移、跑只读 SQL、看日志和安全建议、生成类型。",
+  "author": {
+    "name": "Supabase"
+  },
+  "homepage": "https://github.com/supabase/mcp",
+  "interface": {
+    "displayName": "Supabase",
+    "shortDescription": "查 Supabase 项目：表和迁移、跑只读 SQL、看日志和安全建议、生成类型。",
+    "longDescription": "Supabase 官方托管的服务。这里的地址带了 read_only=true：SQL 用只读的数据库角色执行，建项目、跑迁移、部署 Edge Function 这类写操作都不开放。能做的有：列组织和项目，看表、扩展和迁移记录，执行 SQL，查日志，看安全和性能建议（比如哪张表没开 RLS），取项目地址和公开密钥，生成 TypeScript 类型，看 Edge Function 和分支，以及搜 Supabase 文档。\n\n用个人访问令牌认证，它能碰到你账号下的所有项目。只想让它碰一个项目，在地址后面加 &project_ref=<项目 ID>；要开写操作，去掉 read_only=true。\n\nSupabase 自己的建议是：只有任务确实需要生产数据时才连生产项目，并且限定到那一个项目、保持只读。",
+    "developerName": "Supabase",
+    "category": "数据",
+    "brandColor": "#3fcf8e",
+    "websiteURL": "https://github.com/supabase/mcp",
+    "defaultPrompt": [
+      "看看这个项目有哪些表，有没有表忘了开 RLS",
+      "查一下过去一小时 API 的报错日志",
+      "根据当前的表结构生成 TypeScript 类型定义"
+    ]
+  },
+  "license": "Apache-2.0",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "SUPABASE_ACCESS_TOKEN",
+      "description": "Supabase 个人访问令牌（PAT），在账户设置的 Access Tokens 里生成",
+      "url": "https://supabase.com/dashboard/account/tokens",
+      "secret": true
+    }
+  ]
+}

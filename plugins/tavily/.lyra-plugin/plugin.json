@@ -1,0 +1,33 @@
+{
+  "name": "tavily",
+  "version": "0.2.22",
+  "description": "给 agent 用的搜索 API，另带网页抽取、整站爬取、站点地图和多步调研。",
+  "author": {
+    "name": "Tavily"
+  },
+  "homepage": "https://github.com/tavily-ai/tavily-mcp",
+  "interface": {
+    "displayName": "Tavily",
+    "shortDescription": "给 agent 用的搜索 API，另带网页抽取、整站爬取、站点地图和多步调研。",
+    "longDescription": "Tavily 官方维护。五个工具：tavily_search 搜索，tavily_extract 从给定网址抽正文，tavily_crawl 从一个起点顺着链接爬一片页面，tavily_map 只列出站点的页面结构、不取内容，tavily_research 做多步调研并给出带来源的结论。\n\n搜索结果直接带着抽好的正文，模型不用再逐个打开链接。crawl 和 map 适合「把这个文档站整个读一遍」这类任务，只会搜索的工具做不到。\n\n需要 Tavily 的 API 密钥。不填密钥服务也能启动，但每次调用都会失败。",
+    "developerName": "Tavily",
+    "category": "搜索",
+    "brandColor": "#0b0907",
+    "websiteURL": "https://github.com/tavily-ai/tavily-mcp",
+    "defaultPrompt": [
+      "搜一下 Kubernetes 最新一个版本的主要变化",
+      "把这个文档站的页面爬下来，整理出全部 API 的清单",
+      "调研一下几家托管向量数据库的定价和部署方式，给出对比"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "TAVILY_API_KEY",
+      "description": "Tavily 的 API 密钥，注册后在控制台里拿",
+      "url": "https://app.tavily.com",
+      "secret": true
+    }
+  ]
+}

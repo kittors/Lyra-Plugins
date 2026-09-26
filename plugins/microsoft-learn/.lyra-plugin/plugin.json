@@ -1,0 +1,24 @@
+{
+  "name": "microsoft-learn",
+  "version": "0.0.0",
+  "description": "搜索和阅读微软官方文档与代码示例：Azure、.NET、Windows、Microsoft 365。",
+  "author": {
+    "name": "Microsoft"
+  },
+  "homepage": "https://github.com/MicrosoftDocs/mcp",
+  "interface": {
+    "displayName": "Microsoft Learn",
+    "shortDescription": "搜索和阅读微软官方文档与代码示例：Azure、.NET、Windows、Microsoft 365。",
+    "longDescription": "微软官方托管，不需要账号。三个工具：microsoft_docs_search 在 Microsoft Learn 里搜索，microsoft_docs_fetch 把整篇文档转成 Markdown 读回来，microsoft_code_sample_search 专门找官方代码示例。\n\n它只读 learn.microsoft.com 上的一方文档，不会从来路不明的博客里拼答案。Azure、.NET、C#、PowerShell、Microsoft Graph 这些东西版本多、改得勤，查文档比靠模型的记忆可靠。\n\n范围也就到这里：微软以外的技术它不管，那些用 Context7。",
+    "developerName": "Microsoft",
+    "category": "文档",
+    "brandColor": "#0078d4",
+    "websiteURL": "https://github.com/MicrosoftDocs/mcp",
+    "defaultPrompt": [
+      "查一下 Azure Functions 现在的超时上限，以及怎么配置",
+      "找一个用 Microsoft Graph 读取日历事件的 C# 官方示例",
+      ".NET 9 的 minimal API 要怎么生成 OpenAPI 文档"
+    ]
+  },
+  "mcpServers": ".mcp.json"
+}

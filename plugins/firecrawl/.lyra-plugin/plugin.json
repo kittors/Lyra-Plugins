@@ -1,0 +1,34 @@
+{
+  "name": "firecrawl",
+  "version": "0.0.0",
+  "description": "把网页和文档变成干净的 Markdown：单页抓取、搜索、整站爬取、结构化抽取。",
+  "author": {
+    "name": "Firecrawl"
+  },
+  "homepage": "https://github.com/firecrawl/firecrawl-mcp-server",
+  "interface": {
+    "displayName": "Firecrawl",
+    "shortDescription": "把网页和文档变成干净的 Markdown：单页抓取、搜索、整站爬取、结构化抽取。",
+    "longDescription": "Firecrawl 官方托管的服务。它会真的渲染页面、执行 JavaScript，再把正文抽成干净的 Markdown，所以靠脚本加载内容的页面也读得到——这是它和 Fetch 的主要区别。\n\n不填密钥也能用免费层，这时只有三个工具：firecrawl_scrape 抓单页（也能截图、按给定的 schema 抽 JSON），firecrawl_search 搜索网页、新闻或图片，firecrawl_parse 把 PDF、Word 这类文档解析成 Markdown。填了 FIRECRAWL_API_KEY 之后会多出整站爬取、站点地图、结构化抽取、自主调研等工具。\n\n工具一多会占上下文，只在真要爬整站时再填密钥也是一种用法。自建的 Firecrawl 用不了这个托管地址，要改用 npm 包 firecrawl-mcp 在本机跑。",
+    "developerName": "Firecrawl",
+    "category": "搜索",
+    "brandColor": "#fa5d19",
+    "websiteURL": "https://github.com/firecrawl/firecrawl-mcp-server",
+    "defaultPrompt": [
+      "把这个页面抓下来转成 Markdown，表格要保留",
+      "搜一下今年的前端构建工具横评，把前三篇的要点整理出来",
+      "把这份 PDF 白皮书解析出来，列出里面所有的性能数据"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json",
+  "env": [
+    {
+      "name": "FIRECRAWL_API_KEY",
+      "description": "Firecrawl 的 API 密钥；不填只能用抓取、搜索、解析三个工具，而且有速率限制",
+      "url": "https://www.firecrawl.dev/app/api-keys",
+      "secret": true,
+      "optional": true
+    }
+  ]
+}

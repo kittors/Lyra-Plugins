@@ -1,0 +1,25 @@
+{
+  "name": "zotero",
+  "version": "0.13.1",
+  "description": "让 agent 读你的 Zotero 文献库：检索条目、读全文和批注、整理笔记、导出参考文献。",
+  "author": {
+    "name": "Steven Yu"
+  },
+  "homepage": "https://github.com/54yyyu/zotero-mcp",
+  "interface": {
+    "displayName": "Zotero",
+    "shortDescription": "让 agent 读你的 Zotero 文献库：检索条目、读全文和批注、整理笔记、导出参考文献。",
+    "longDescription": "社区项目，不是 Zotero 官方出的。这里配的是本地模式，直接读本机的 Zotero 数据库，不需要任何账号：Zotero 7 以上在 设置 → 高级 里勾选「允许此电脑上的其他应用与 Zotero 通信」即可。\n\n41 个工具：按标题、作者、标签、集合、引用键检索，读 PDF 全文、指定页和目录，读写批注与笔记，把一批高亮和批注汇总成结构化的笔记，按 DOI、URL、ISBN、BibTeX 添加条目，管理集合，用 Zotero 自己的 CSL 样式导出参考文献。写操作需要 Zotero 10 以上并授权一次，或者改走网页 API。\n\n工具多，按作者的测算要占一万三千多 token 的上下文；作者自己也提醒，有终端的编码 agent 用它附带的命令行加技能更省。",
+    "developerName": "Steven Yu",
+    "category": "科研",
+    "brandColor": "#cc2936",
+    "websiteURL": "https://github.com/54yyyu/zotero-mcp",
+    "defaultPrompt": [
+      "在我的 Zotero 里找所有关于对比学习的论文，按年份列出来",
+      "把这篇论文里我做的高亮和批注汇总成一份读书笔记",
+      "把「毕业论文」这个集合导出成 GB/T 7714 格式的参考文献"
+    ]
+  },
+  "license": "MIT",
+  "mcpServers": ".mcp.json"
+}

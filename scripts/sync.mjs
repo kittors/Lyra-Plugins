@@ -25,6 +25,19 @@
  *   `npm-cli`     A command line tool plus instructions for using it. Same wrapper, minus the
  *                 server declaration — what ships is a skill telling the agent how to drive it.
  *
+ *   `pypi-mcp`    A server published to PyPI, started with `uvx`. The same wrapper as `npm-mcp`;
+ *                 the version comes from PyPI.
+ *
+ *   `remote-mcp`  A server somebody else runs, reached over Streamable HTTP (or SSE). The wrapper
+ *                 is a `.mcp.json` with a URL. There is no package, so no version to report.
+ *
+ * A server that needs something from whoever installs it — an API key, a token, a connection
+ * string — lists it under `env` in sources.json: a name, a sentence, where to get one. The wrapper
+ * then carries `${NAME}` where the value goes (an env value for a local server, a header for a
+ * remote one) and the manifest carries the sentence; Lyra asks for the value after installing and
+ * keeps it in its vault. The index repeats the list as `needs`, so the market can say "needs a key"
+ * before anything is installed.
+ *
  * Run with `--check` in CI to fail instead of writing, which is what keeps a hand-edited
  * `registry.json` from surviving review.
  */
@@ -49,7 +62,7 @@ async function main() {
 	for (const source of sources.sources) {
 		const upstream = await describe(source, notes);
 		entries.push(buildEntry(source, upstream));
-		if (source.kind !== "git-skills") {
+		if (!listedDirectly(source.kind)) {
 			for (const [path, body] of buildWrapper(source, upstream)) wrappers.set(path, body);
 		}
 	}
@@ -97,7 +110,9 @@ async function main() {
  */
 async function describe(source, notes) {
 	try {
-		if (source.kind === "git-skills") return await fromGitHub(source);
+		if (source.kind === "git-skills" || source.kind === "skill-collection") return await fromGitHub(source);
+		if (source.kind === "remote-mcp") return {};
+		if (source.kind === "pypi-mcp") return await fromPyPI(source);
 		return await fromNpm(source);
 	} catch (error) {
 		notes.push(`! ${source.id}：取不到上游信息（${error.message}），沿用已有的`);
@@ -113,6 +128,16 @@ async function fromNpm(source) {
 	if (!response.ok) throw new Error(`npm 返回 ${response.status}`);
 	const data = await response.json();
 	return { version: data.version, upstreamDescription: data.description };
+}
+
+async function fromPyPI(source) {
+	const response = await fetch(`https://pypi.org/pypi/${source.package}/json`, {
+		signal: AbortSignal.timeout(TIMEOUT_MS),
+		headers: { accept: "application/json", "user-agent": "lyra-plugins-sync" },
+	});
+	if (!response.ok) throw new Error(`PyPI 返回 ${response.status}`);
+	const data = await response.json();
+	return { version: data.info?.version, upstreamDescription: data.info?.summary };
 }
 
 async function fromGitHub(source) {
@@ -160,25 +185,37 @@ function cleanTag(tag) {
  * infer it from whether a `package` field happens to be present.
  */
 function bundleKind(kind) {
-	return kind === "git-skills" ? "plugin" : "mcp";
+	if (kind === "skill-collection") return "skill";
+	return kind === "git-skills" || kind === "npm-cli" ? "plugin" : "mcp";
+}
+
+/** Whether the upstream is listed as it is (cloned directly) rather than wrapped here. */
+function listedDirectly(kind) {
+	return kind === "git-skills" || kind === "skill-collection";
 }
 
 function buildEntry(source, upstream) {
+	const direct = listedDirectly(source.kind);
 	const entry = {
 		id: source.id,
 		name: source.name,
 		description: source.description,
 		category: source.category,
 		kind: bundleKind(source.kind),
-		repository: source.kind === "git-skills" ? source.repository : REPOSITORY,
+		repository: direct ? source.repository : REPOSITORY,
 		homepage: source.homepage,
 		author: source.author,
 		logo: source.logo,
 		brandColor: source.brandColor,
 	};
-	if (source.kind !== "git-skills") entry.path = `plugins/${source.id}`;
+	if (source.tagline) entry.tagline = source.tagline;
+	if (source.keywords?.length) entry.keywords = source.keywords;
+	if (source.license) entry.license = source.license;
+	if (direct && source.path) entry.path = source.path;
+	if (!direct) entry.path = `plugins/${source.id}`;
 	if (upstream.version) entry.version = upstream.version;
-	if (source.kind !== "git-skills") entry.package = source.package;
+	if (!direct && source.package) entry.package = source.package;
+	if (source.env?.length) entry.needs = source.env.map((need) => ({ name: need.name, description: need.description, url: need.url, ...(isOptional(need) ? { optional: true } : {}) }));
 	return entry;
 }
 
@@ -206,15 +243,24 @@ function buildWrapper(source, upstream) {
 			defaultPrompt: source.prompts ?? [],
 		},
 	};
-	if (source.kind === "npm-mcp") manifest.mcpServers = ".mcp.json";
+	const serves = source.kind === "npm-mcp" || source.kind === "pypi-mcp" || source.kind === "remote-mcp";
+	if (source.license) manifest.license = source.license;
+	if (source.keywords?.length) manifest.keywords = source.keywords;
+	if (serves) manifest.mcpServers = ".mcp.json";
+	// What each placeholder is, for the screen where it is filled in. See `mcp/placeholders.ts` in Lyra.
+	if (source.env?.length) {
+		manifest.env = source.env.map((need) => ({
+			name: need.name,
+			...(need.description ? { description: need.description } : {}),
+			...(need.url ? { url: need.url } : {}),
+			...(typeof need.secret === "boolean" ? { secret: need.secret } : {}),
+			...(isOptional(need) ? { optional: true } : {}),
+		}));
+	}
 	files.push([`${base}/.lyra-plugin/plugin.json`, `${JSON.stringify(manifest, null, 2)}\n`]);
 
-	if (source.kind === "npm-mcp") {
-		const mcp = {
-			mcpServers: {
-				[source.id]: { command: source.command, args: source.args },
-			},
-		};
+	if (serves) {
+		const mcp = { mcpServers: { [source.id]: serverFor(source) } };
 		files.push([`${base}/.mcp.json`, `${JSON.stringify(mcp, null, 2)}\n`]);
 	}
 
@@ -223,6 +269,38 @@ function buildWrapper(source, upstream) {
 	}
 
 	return files;
+}
+
+/** `optional: true`, or `required: false` — sources.json has been written both ways. */
+function isOptional(need) {
+	return need.optional === true || need.required === false;
+}
+
+/**
+ * One server declaration, in the `.mcp.json` shape Claude Code and Lyra both read.
+ *
+ * A local server gets each `env` name as `${NAME}` in its environment, unless the source already
+ * put the placeholder somewhere else (an argument, say) — then the environment is left alone. A
+ * remote server gets its headers as written in sources.json, placeholders and all.
+ */
+function serverFor(source) {
+	if (source.kind === "remote-mcp") {
+		const server = { type: source.transport === "sse" ? "sse" : "http", url: source.url };
+		if (source.headers && Object.keys(source.headers).length > 0) server.headers = source.headers;
+		return server;
+	}
+	const server = {
+		command: source.command ?? (source.kind === "pypi-mcp" ? "uvx" : "npx"),
+		args: source.args,
+	};
+	const written = JSON.stringify(server.args ?? []);
+	const env = {};
+	// An optional value is left out rather than templated: unset is its default, and a placeholder
+	// nobody filled would reach the server as an empty string rather than as "not set".
+	for (const need of source.env ?? []) if (!isOptional(need) && !written.includes(`\${${need.name}}`)) env[need.name] = `\${${need.name}}`;
+	for (const [name, value] of Object.entries(source.staticEnv ?? {})) env[name] = value;
+	if (Object.keys(env).length > 0) server.env = env;
+	return server;
 }
 
 /**
@@ -268,7 +346,7 @@ function binOf(source) {
 }
 
 async function pruneWrappers(sources) {
-	const keep = new Set(sources.filter((s) => s.kind !== "git-skills").map((s) => s.id));
+	const keep = new Set(sources.filter((s) => !listedDirectly(s.kind)).map((s) => s.id));
 	const { readdir } = await import("node:fs/promises");
 	const existing = await readdir(join(ROOT, "plugins"), { withFileTypes: true }).catch(() => []);
 	for (const entry of existing) {
