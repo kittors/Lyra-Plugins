@@ -1,6 +1,6 @@
 {
   "name": "grafana",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "查 Grafana 的仪表盘、Prometheus 指标、Loki 日志、告警和值班，出了事先问它。",
   "author": {
     "name": "Grafana Labs"
