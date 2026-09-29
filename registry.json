@@ -97,7 +97,7 @@
         "terminal"
       ],
       "path": "plugins/desktop-commander",
-      "version": "0.2.51",
+      "version": "0.2.52",
       "package": "@wonderwhy-er/desktop-commander"
     },
     {
@@ -1116,7 +1116,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/grafana",
-      "version": "1.6.1",
+      "version": "1.6.2",
       "package": "mcp-grafana",
       "needs": [
         {
