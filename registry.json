@@ -1083,7 +1083,7 @@
       ],
       "license": "MIT",
       "path": "plugins/kubernetes",
-      "version": "4.1.7",
+      "version": "4.1.8",
       "package": "mcp-server-kubernetes",
       "needs": [
         {
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.29.0"
+      "version": "3.30.0"
     },
     {
       "id": "addy-agent-skills",
