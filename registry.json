@@ -660,7 +660,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/aws-documentation",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "package": "awslabs.aws-documentation-mcp-server"
     },
     {
@@ -840,7 +840,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/drawio",
-      "version": "1.6.1",
+      "version": "1.6.2",
       "package": "@drawio/mcp"
     },
     {
@@ -1116,7 +1116,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/grafana",
-      "version": "1.6.2",
+      "version": "1.6.3",
       "package": "mcp-grafana",
       "needs": [
         {
