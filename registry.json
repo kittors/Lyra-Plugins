@@ -1183,7 +1183,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/arxiv",
-      "version": "0.7.2",
+      "version": "0.7.3",
       "package": "arxiv-mcp-server"
     },
     {
