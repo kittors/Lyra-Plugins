@@ -1,6 +1,6 @@
 {
   "name": "drawio",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "让 agent 画流程图、架构图、时序图，在 draw.io 编辑器里打开接着改。",
   "author": {
     "name": "draw.io"

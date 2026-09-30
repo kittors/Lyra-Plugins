@@ -840,7 +840,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/drawio",
-      "version": "1.6.2",
+      "version": "1.6.3",
       "package": "@drawio/mcp"
     },
     {
