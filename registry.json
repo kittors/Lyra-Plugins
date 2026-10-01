@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.30.2"
+      "version": "3.30.3"
     },
     {
       "id": "addy-agent-skills",
@@ -1548,7 +1548,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.21.0"
+      "version": "3.22.0"
     },
     {
       "id": "i-have-adhd",
@@ -1613,7 +1613,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.11.1"
+      "version": "2.11.6"
     },
     {
       "id": "anthropic-data",
