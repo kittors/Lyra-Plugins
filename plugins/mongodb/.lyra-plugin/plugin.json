@@ -1,6 +1,6 @@
 {
   "name": "mongodb",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "查 MongoDB：列库和集合、看 schema 和索引、find、聚合、explain。默认只读。",
   "author": {
     "name": "MongoDB"

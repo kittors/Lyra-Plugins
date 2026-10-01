@@ -745,7 +745,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/mongodb",
-      "version": "3.0.4",
+      "version": "3.0.5",
       "package": "mongodb-mcp-server",
       "needs": [
         {
