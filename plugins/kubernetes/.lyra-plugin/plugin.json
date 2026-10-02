@@ -1,6 +1,6 @@
 {
   "name": "kubernetes",
-  "version": "4.1.8",
+  "version": "4.1.9",
   "description": "用你本机的 kubectl 和 kubeconfig 管集群：查资源、看日志、apply、扩缩容、装 Helm。",
   "author": {
     "name": "Suyog Sonwalkar"
