@@ -1183,7 +1183,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/arxiv",
-      "version": "0.7.3",
+      "version": "0.8.0",
       "package": "arxiv-mcp-server"
     },
     {
@@ -1351,7 +1351,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "4.10.1"
+      "version": "4.10.3"
     },
     {
       "id": "vercel-skills",
@@ -1613,7 +1613,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.11.14"
+      "version": "2.11.17"
     },
     {
       "id": "anthropic-data",
