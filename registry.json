@@ -339,7 +339,7 @@
       ],
       "license": "MIT",
       "path": "plugins/shadcn",
-      "version": "4.21.1",
+      "version": "4.21.2",
       "package": "shadcn"
     },
     {
@@ -1183,7 +1183,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/arxiv",
-      "version": "0.8.0",
+      "version": "0.8.1",
       "package": "arxiv-mcp-server"
     },
     {

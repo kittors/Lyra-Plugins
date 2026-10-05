@@ -1,6 +1,6 @@
 {
   "name": "shadcn",
-  "version": "4.21.1",
+  "version": "4.21.2",
   "description": "在 shadcn/ui 和第三方组件注册表里找组件、看源码和示例，给出安装命令。",
   "author": {
     "name": "shadcn"
