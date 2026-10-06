@@ -168,7 +168,7 @@
         "workflow"
       ],
       "path": "skills",
-      "version": "3.38.0"
+      "version": "3.39.0"
     },
     {
       "id": "sequential-thinking",
@@ -1116,7 +1116,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/grafana",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "package": "mcp-grafana",
       "needs": [
         {
