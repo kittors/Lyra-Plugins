@@ -339,7 +339,7 @@
       ],
       "license": "MIT",
       "path": "plugins/shadcn",
-      "version": "4.21.2",
+      "version": "4.21.3",
       "package": "shadcn"
     },
     {
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.30.3"
+      "version": "3.30.4"
     },
     {
       "id": "addy-agent-skills",
