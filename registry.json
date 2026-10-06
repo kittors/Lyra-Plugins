@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-10-05",
+  "updatedAt": "2026-10-06",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -1351,7 +1351,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "4.12.0"
+      "version": "4.13.0"
     },
     {
       "id": "vercel-skills",
