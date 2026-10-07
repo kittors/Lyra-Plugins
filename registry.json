@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-10-06",
+  "updatedAt": "2026-10-07",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -1239,7 +1239,7 @@
       ],
       "license": "MIT",
       "path": "plugins/zotero",
-      "version": "0.13.2",
+      "version": "0.13.3",
       "package": "zotero-mcp-server"
     },
     {
@@ -1613,7 +1613,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.11.17"
+      "version": "2.11.18"
     },
     {
       "id": "anthropic-data",
