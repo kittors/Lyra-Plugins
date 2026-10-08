@@ -1,6 +1,6 @@
 {
   "name": "zotero",
-  "version": "0.13.3",
+  "version": "0.14.0",
   "description": "让 agent 读你的 Zotero 文献库：检索条目、读全文和批注、整理笔记、导出参考文献。",
   "author": {
     "name": "Steven Yu"

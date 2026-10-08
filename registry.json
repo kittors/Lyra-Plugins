@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-10-07",
+  "updatedAt": "2026-10-08",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -1116,7 +1116,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/grafana",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "package": "mcp-grafana",
       "needs": [
         {
@@ -1239,7 +1239,7 @@
       ],
       "license": "MIT",
       "path": "plugins/zotero",
-      "version": "0.13.3",
+      "version": "0.14.0",
       "package": "zotero-mcp-server"
     },
     {
