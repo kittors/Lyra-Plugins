@@ -1,6 +1,6 @@
 {
   "name": "arxiv",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "搜 arXiv、下载论文存在本地、按章节读正文和 LaTeX 源码、导出 BibTeX。",
   "author": {
     "name": "Joe Blazick"

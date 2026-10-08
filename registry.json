@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "package": "excel-mcp-server"
     },
     {
@@ -1183,7 +1183,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/arxiv",
-      "version": "0.8.1",
+      "version": "0.8.2",
       "package": "arxiv-mcp-server"
     },
     {
