@@ -1351,7 +1351,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "5.0.0"
+      "version": "5.1.0"
     },
     {
       "id": "vercel-skills",
@@ -1613,7 +1613,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.11.20"
+      "version": "2.11.22"
     },
     {
       "id": "anthropic-data",
