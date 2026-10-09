@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.2.0",
+      "version": "4.2.1",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -685,7 +685,7 @@
       ],
       "license": "MIT",
       "path": "plugins/dbhub",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "package": "@bytebase/dbhub",
       "needs": [
         {

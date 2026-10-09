@@ -1,6 +1,6 @@
 {
   "name": "dbhub",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "一个服务连 PostgreSQL、MySQL、MariaDB、SQL Server、Oracle 和 SQLite。",
   "author": {
     "name": "Bytebase"
