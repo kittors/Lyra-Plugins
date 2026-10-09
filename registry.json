@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.2.1",
+      "version": "4.3.0",
       "package": "@upstash/context7-mcp"
     },
     {
