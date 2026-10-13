@@ -840,7 +840,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/drawio",
-      "version": "1.6.3",
+      "version": "1.7.0",
       "package": "@drawio/mcp"
     },
     {
@@ -1613,7 +1613,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.11.26"
+      "version": "2.11.27"
     },
     {
       "id": "anthropic-data",
