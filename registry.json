@@ -97,7 +97,7 @@
         "terminal"
       ],
       "path": "plugins/desktop-commander",
-      "version": "0.2.52",
+      "version": "0.3.0",
       "package": "@wonderwhy-er/desktop-commander"
     },
     {
@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.3.0",
+      "version": "4.4.1",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -660,7 +660,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/aws-documentation",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "package": "awslabs.aws-documentation-mcp-server"
     },
     {
