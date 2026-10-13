@@ -1307,7 +1307,7 @@
         "workflow"
       ],
       "license": "MIT",
-      "version": "0.6.12"
+      "version": "0.6.13"
     },
     {
       "id": "mattpocock-skills",
@@ -1459,7 +1459,8 @@
         "frontend"
       ],
       "license": "MIT",
-      "path": "skills"
+      "path": "skills",
+      "version": "2.0.0"
     },
     {
       "id": "emil-kowalski",
