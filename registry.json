@@ -73,7 +73,7 @@
         "performance"
       ],
       "path": "plugins/chrome-devtools",
-      "version": "1.10.1",
+      "version": "1.11.0",
       "package": "chrome-devtools-mcp"
     },
     {
@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.4.1",
+      "version": "4.4.2",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -168,7 +168,7 @@
         "workflow"
       ],
       "path": "skills",
-      "version": "3.39.0"
+      "version": "3.40.0"
     },
     {
       "id": "sequential-thinking",
@@ -1614,7 +1614,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.11.30"
+      "version": "2.11.31"
     },
     {
       "id": "anthropic-data",
