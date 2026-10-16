@@ -339,7 +339,7 @@
       ],
       "license": "MIT",
       "path": "plugins/shadcn",
-      "version": "4.21.5",
+      "version": "4.22.0",
       "package": "shadcn"
     },
     {
@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.1.0",
+      "version": "2.1.1",
       "package": "excel-mcp-server"
     },
     {
@@ -1351,7 +1351,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "5.3.0"
+      "version": "5.3.1"
     },
     {
       "id": "vercel-skills",
