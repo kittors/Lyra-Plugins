@@ -840,7 +840,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/drawio",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "package": "@drawio/mcp"
     },
     {
@@ -1549,7 +1549,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.24.1"
+      "version": "3.24.2"
     },
     {
       "id": "i-have-adhd",
