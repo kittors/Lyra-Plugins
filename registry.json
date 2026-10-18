@@ -840,7 +840,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/drawio",
-      "version": "1.9.0",
+      "version": "1.10.0",
       "package": "@drawio/mcp"
     },
     {
@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.2.0",
+      "version": "2.2.1",
       "package": "excel-mcp-server"
     },
     {
