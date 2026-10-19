@@ -1,6 +1,6 @@
 {
   "name": "sequential-thinking",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "把一个难问题拆成能一步步走、并且允许走回头路的思考。",
   "author": {
     "name": "Model Context Protocol"

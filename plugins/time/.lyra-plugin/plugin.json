@@ -1,6 +1,6 @@
 {
   "name": "time",
-  "version": "2026.10.10",
+  "version": "2026.10.19",
   "description": "告诉模型现在几点，并在时区之间换算时间。",
   "author": {
     "name": "Model Context Protocol"

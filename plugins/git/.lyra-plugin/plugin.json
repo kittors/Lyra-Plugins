@@ -1,6 +1,6 @@
 {
   "name": "git",
-  "version": "2026.10.10",
+  "version": "2026.10.19",
   "description": "在本机仓库里看状态、读 diff、翻日志、提交、建和切分支。不碰远端。",
   "author": {
     "name": "Model Context Protocol"
