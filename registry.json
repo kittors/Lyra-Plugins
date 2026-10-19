@@ -1460,7 +1460,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "2.1.2"
+      "version": "2.1.3"
     },
     {
       "id": "emil-kowalski",
@@ -1569,7 +1569,8 @@
         "concise"
       ],
       "license": "MIT",
-      "path": "skills"
+      "path": "skills",
+      "version": "0.4.1"
     },
     {
       "id": "context-engineering",
@@ -1614,7 +1615,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.12.2"
+      "version": "2.13.0"
     },
     {
       "id": "anthropic-data",
