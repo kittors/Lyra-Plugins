@@ -1116,7 +1116,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/grafana",
-      "version": "2.0.2",
+      "version": "2.1.1",
       "package": "mcp-grafana",
       "needs": [
         {
