@@ -865,7 +865,7 @@
       ],
       "license": "MIT",
       "path": "plugins/markitdown",
-      "version": "0.0.1a7",
+      "version": "0.0.1a8",
       "package": "markitdown-mcp"
     },
     {

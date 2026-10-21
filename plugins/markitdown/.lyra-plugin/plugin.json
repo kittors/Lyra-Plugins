@@ -1,6 +1,6 @@
 {
   "name": "markitdown",
-  "version": "0.0.1a7",
+  "version": "0.0.1a8",
   "description": "把 PDF、Word、Excel、PPT、EPUB、网页等转成 Markdown 给模型读。",
   "author": {
     "name": "Microsoft"
