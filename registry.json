@@ -97,7 +97,7 @@
         "terminal"
       ],
       "path": "plugins/desktop-commander",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "package": "@wonderwhy-er/desktop-commander"
     },
     {
