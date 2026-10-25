@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-10-24",
+  "updatedAt": "2026-10-25",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -120,7 +120,7 @@
         "fs"
       ],
       "path": "plugins/filesystem",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "package": "@modelcontextprotocol/server-filesystem"
     },
     {
@@ -392,7 +392,7 @@
       ],
       "license": "MIT",
       "path": "plugins/fetch",
-      "version": "2026.10.19",
+      "version": "2026.10.24",
       "package": "mcp-server-fetch"
     },
     {
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.32.0"
+      "version": "3.32.1"
     },
     {
       "id": "addy-agent-skills",
@@ -1460,7 +1460,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "2.1.4"
+      "version": "2.1.5"
     },
     {
       "id": "emil-kowalski",
