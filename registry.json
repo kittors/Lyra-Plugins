@@ -1083,7 +1083,7 @@
       ],
       "license": "MIT",
       "path": "plugins/kubernetes",
-      "version": "4.1.9",
+      "version": "4.2.1",
       "package": "mcp-server-kubernetes",
       "needs": [
         {
@@ -1615,7 +1615,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.13.0"
+      "version": "2.13.4"
     },
     {
       "id": "anthropic-data",
