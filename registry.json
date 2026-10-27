@@ -1374,7 +1374,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "agent-skills-6ec269328bc400712ee225a173a14b6b29128df7"
+      "version": "agent-skills-1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62"
     },
     {
       "id": "cloudflare",
@@ -1615,7 +1615,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.13.8"
+      "version": "2.13.9"
     },
     {
       "id": "anthropic-data",
