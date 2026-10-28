@@ -745,7 +745,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/mongodb",
-      "version": "3.1.0",
+      "version": "3.2.1",
       "package": "mongodb-mcp-server",
       "needs": [
         {
@@ -1549,7 +1549,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.25.2"
+      "version": "3.26.0"
     },
     {
       "id": "i-have-adhd",
