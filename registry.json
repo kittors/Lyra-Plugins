@@ -914,7 +914,7 @@
       ],
       "license": "MIT",
       "path": "plugins/notion",
-      "version": "2.6.0",
+      "version": "2.6.1",
       "package": "@notionhq/notion-mcp-server",
       "needs": [
         {
@@ -1329,7 +1329,7 @@
       ],
       "license": "MIT",
       "path": "skills/engineering",
-      "version": "1.3.1"
+      "version": "1.3.2"
     },
     {
       "id": "ponytail",

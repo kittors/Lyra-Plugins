@@ -1,6 +1,6 @@
 {
   "name": "notion",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "通过 Notion API 搜索、读写页面和数据库，页面能直接按 Markdown 读写。",
   "author": {
     "name": "Notion"
