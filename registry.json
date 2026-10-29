@@ -745,7 +745,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/mongodb",
-      "version": "3.2.1",
+      "version": "3.2.2",
       "package": "mongodb-mcp-server",
       "needs": [
         {
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.33.1"
+      "version": "3.33.2"
     },
     {
       "id": "addy-agent-skills",
@@ -1307,7 +1307,7 @@
         "workflow"
       ],
       "license": "MIT",
-      "version": "0.6.13"
+      "version": "0.6.14"
     },
     {
       "id": "mattpocock-skills",
@@ -1351,7 +1351,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "5.3.2"
+      "version": "5.3.3"
     },
     {
       "id": "vercel-skills",
