@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.2.4",
+      "version": "2.2.6",
       "package": "excel-mcp-server"
     },
     {
