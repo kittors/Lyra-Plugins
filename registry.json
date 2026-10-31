@@ -48,7 +48,7 @@
         "testing"
       ],
       "path": "plugins/playwright",
-      "version": "0.0.83",
+      "version": "0.0.84",
       "package": "@playwright/mcp"
     },
     {
@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.2.3",
+      "version": "2.2.4",
       "package": "excel-mcp-server"
     },
     {
