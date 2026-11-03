@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.4.4",
+      "version": "4.5.0",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -685,7 +685,7 @@
       ],
       "license": "MIT",
       "path": "plugins/dbhub",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "package": "@bytebase/dbhub",
       "needs": [
         {
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.34.0"
+      "version": "3.35.0"
     },
     {
       "id": "addy-agent-skills",
@@ -1549,7 +1549,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.27.0"
+      "version": "3.28.0"
     },
     {
       "id": "i-have-adhd",
