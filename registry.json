@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-11-04",
+  "updatedAt": "2026-11-05",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -120,7 +120,7 @@
         "fs"
       ],
       "path": "plugins/filesystem",
-      "version": "2.1.0",
+      "version": "2.2.0",
       "package": "@modelcontextprotocol/server-filesystem"
     },
     {
@@ -190,7 +190,7 @@
         "planning"
       ],
       "path": "plugins/sequential-thinking",
-      "version": "2.0.0",
+      "version": "2.1.1",
       "package": "@modelcontextprotocol/server-sequential-thinking"
     },
     {
@@ -213,7 +213,7 @@
         "knowledge graph"
       ],
       "path": "plugins/memory",
-      "version": "2.0.1",
+      "version": "2.1.0",
       "package": "@modelcontextprotocol/server-memory"
     },
     {
@@ -237,7 +237,7 @@
       ],
       "license": "MIT",
       "path": "plugins/time",
-      "version": "2026.10.28",
+      "version": "2026.11.4",
       "package": "mcp-server-time"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "license": "MIT",
       "path": "plugins/git",
-      "version": "2026.10.28",
+      "version": "2026.11.4",
       "package": "mcp-server-git"
     },
     {
@@ -392,7 +392,7 @@
       ],
       "license": "MIT",
       "path": "plugins/fetch",
-      "version": "2026.10.28",
+      "version": "2026.11.4",
       "package": "mcp-server-fetch"
     },
     {
@@ -1460,7 +1460,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "2.1.5"
+      "version": "2.5.0"
     },
     {
       "id": "emil-kowalski",
