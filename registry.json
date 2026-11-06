@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-11-05",
+  "updatedAt": "2026-11-06",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.35.4"
+      "version": "3.36.0"
     },
     {
       "id": "addy-agent-skills",
