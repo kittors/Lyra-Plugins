@@ -315,7 +315,7 @@
       ],
       "license": "MIT",
       "path": "plugins/repomix",
-      "version": "1.18.1",
+      "version": "1.19.0",
       "package": "repomix"
     },
     {
@@ -1014,7 +1014,7 @@
       ],
       "license": "MIT",
       "path": "plugins/atlassian",
-      "version": "0.23.1",
+      "version": "0.24.0",
       "package": "mcp-atlassian",
       "needs": [
         {
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.36.1"
+      "version": "3.37.0"
     },
     {
       "id": "addy-agent-skills",
@@ -1789,7 +1789,7 @@
         "内容创作"
       ],
       "license": "MIT",
-      "version": "1.1.0"
+      "version": "1.2.0"
     },
     {
       "id": "anthropic-skills",

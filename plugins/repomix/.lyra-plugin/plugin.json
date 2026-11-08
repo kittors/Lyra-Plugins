@@ -1,6 +1,6 @@
 {
   "name": "repomix",
-  "version": "1.18.1",
+  "version": "1.19.0",
   "description": "把整个代码仓库打包成一个模型好读的文件，本机目录和 GitHub 仓库都行。",
   "author": {
     "name": "Kazuki Yamada"
