@@ -48,7 +48,7 @@
         "testing"
       ],
       "path": "plugins/playwright",
-      "version": "0.0.84",
+      "version": "0.0.85",
       "package": "@playwright/mcp"
     },
     {
@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.5.1",
+      "version": "4.6.0",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -745,7 +745,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/mongodb",
-      "version": "3.2.2",
+      "version": "3.3.0",
       "package": "mongodb-mcp-server",
       "needs": [
         {
@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.2.6",
+      "version": "2.2.9",
       "package": "excel-mcp-server"
     },
     {
