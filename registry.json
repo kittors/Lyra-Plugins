@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-11-09",
+  "updatedAt": "2026-11-10",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -660,7 +660,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/aws-documentation",
-      "version": "1.2.4",
+      "version": "1.2.5",
       "package": "awslabs.aws-documentation-mcp-server"
     },
     {
@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.2.9",
+      "version": "2.3.0",
       "package": "excel-mcp-server"
     },
     {
@@ -1239,7 +1239,7 @@
       ],
       "license": "MIT",
       "path": "plugins/zotero",
-      "version": "0.15.2",
+      "version": "0.16.0",
       "package": "zotero-mcp-server"
     },
     {
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.37.0"
+      "version": "3.37.1"
     },
     {
       "id": "addy-agent-skills",
@@ -1615,7 +1615,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.14.2"
+      "version": "2.14.9"
     },
     {
       "id": "anthropic-data",
