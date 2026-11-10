@@ -97,7 +97,7 @@
         "terminal"
       ],
       "path": "plugins/desktop-commander",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "package": "@wonderwhy-er/desktop-commander"
     },
     {
@@ -840,7 +840,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/drawio",
-      "version": "1.11.0",
+      "version": "1.12.0",
       "package": "@drawio/mcp"
     },
     {
@@ -1239,7 +1239,7 @@
       ],
       "license": "MIT",
       "path": "plugins/zotero",
-      "version": "0.16.0",
+      "version": "0.17.0",
       "package": "zotero-mcp-server"
     },
     {
