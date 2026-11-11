@@ -73,7 +73,7 @@
         "performance"
       ],
       "path": "plugins/chrome-devtools",
-      "version": "1.12.0",
+      "version": "1.13.0",
       "package": "chrome-devtools-mcp"
     },
     {
@@ -1527,7 +1527,8 @@
         "notes"
       ],
       "license": "MIT",
-      "path": "skills"
+      "path": "skills",
+      "version": "1.1.0"
     },
     {
       "id": "planning-with-files",
@@ -1615,7 +1616,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.14.10"
+      "version": "2.14.12"
     },
     {
       "id": "anthropic-data",
