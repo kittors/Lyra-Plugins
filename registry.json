@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-11",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -1615,7 +1615,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.14.9"
+      "version": "2.14.10"
     },
     {
       "id": "anthropic-data",
