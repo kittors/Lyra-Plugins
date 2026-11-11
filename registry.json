@@ -120,7 +120,7 @@
         "fs"
       ],
       "path": "plugins/filesystem",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "package": "@modelcontextprotocol/server-filesystem"
     },
     {
@@ -168,7 +168,7 @@
         "workflow"
       ],
       "path": "skills",
-      "version": "3.41.0"
+      "version": "3.42.0"
     },
     {
       "id": "sequential-thinking",
@@ -213,7 +213,7 @@
         "knowledge graph"
       ],
       "path": "plugins/memory",
-      "version": "2.1.0",
+      "version": "2.1.1",
       "package": "@modelcontextprotocol/server-memory"
     },
     {
@@ -237,7 +237,7 @@
       ],
       "license": "MIT",
       "path": "plugins/time",
-      "version": "2026.11.4",
+      "version": "2026.11.11",
       "package": "mcp-server-time"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "license": "MIT",
       "path": "plugins/git",
-      "version": "2026.11.4",
+      "version": "2026.11.11",
       "package": "mcp-server-git"
     },
     {
@@ -392,7 +392,7 @@
       ],
       "license": "MIT",
       "path": "plugins/fetch",
-      "version": "2026.11.4",
+      "version": "2026.11.11",
       "package": "mcp-server-fetch"
     },
     {
@@ -685,7 +685,7 @@
       ],
       "license": "MIT",
       "path": "plugins/dbhub",
-      "version": "1.6.0",
+      "version": "1.6.1",
       "package": "@bytebase/dbhub",
       "needs": [
         {
