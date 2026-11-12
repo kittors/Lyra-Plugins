@@ -1,6 +1,6 @@
 {
   "name": "atlassian",
-  "version": "0.24.2",
+  "version": "0.24.3",
   "description": "查和改 Jira 与 Confluence：JQL 搜索、建单改单、流转状态、读写页面。",
   "author": {
     "name": "sooperset"

@@ -97,7 +97,7 @@
         "terminal"
       ],
       "path": "plugins/desktop-commander",
-      "version": "0.3.2",
+      "version": "0.3.3",
       "package": "@wonderwhy-er/desktop-commander"
     },
     {
@@ -1014,7 +1014,7 @@
       ],
       "license": "MIT",
       "path": "plugins/atlassian",
-      "version": "0.24.2",
+      "version": "0.24.3",
       "package": "mcp-atlassian",
       "needs": [
         {
@@ -1790,7 +1790,7 @@
         "内容创作"
       ],
       "license": "MIT",
-      "version": "1.2.1"
+      "version": "1.2.2"
     },
     {
       "id": "anthropic-skills",
