@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.7.0",
+      "version": "4.7.1",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -685,7 +685,7 @@
       ],
       "license": "MIT",
       "path": "plugins/dbhub",
-      "version": "1.6.1",
+      "version": "1.7.0",
       "package": "@bytebase/dbhub",
       "needs": [
         {
@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.3.1",
+      "version": "2.3.2",
       "package": "excel-mcp-server"
     },
     {
@@ -1014,7 +1014,7 @@
       ],
       "license": "MIT",
       "path": "plugins/atlassian",
-      "version": "0.24.5",
+      "version": "0.24.6",
       "package": "mcp-atlassian",
       "needs": [
         {
