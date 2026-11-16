@@ -1014,7 +1014,7 @@
       ],
       "license": "MIT",
       "path": "plugins/atlassian",
-      "version": "0.24.4",
+      "version": "0.24.5",
       "package": "mcp-atlassian",
       "needs": [
         {
