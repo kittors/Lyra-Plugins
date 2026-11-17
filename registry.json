@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.7.2",
+      "version": "4.7.3",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -447,7 +447,7 @@
       ],
       "license": "MIT",
       "path": "plugins/brave-search",
-      "version": "2.1.4",
+      "version": "2.1.5",
       "package": "@brave/brave-search-mcp-server",
       "needs": [
         {
@@ -660,7 +660,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/aws-documentation",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "package": "awslabs.aws-documentation-mcp-server"
     },
     {
