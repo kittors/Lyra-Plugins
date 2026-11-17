@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.7.1",
+      "version": "4.7.2",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -685,7 +685,7 @@
       ],
       "license": "MIT",
       "path": "plugins/dbhub",
-      "version": "1.7.0",
+      "version": "1.7.1",
       "package": "@bytebase/dbhub",
       "needs": [
         {
@@ -840,7 +840,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/drawio",
-      "version": "1.12.0",
+      "version": "1.13.0",
       "package": "@drawio/mcp"
     },
     {
