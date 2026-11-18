@@ -120,7 +120,7 @@
         "fs"
       ],
       "path": "plugins/filesystem",
-      "version": "2.3.0",
+      "version": "2.4.0",
       "package": "@modelcontextprotocol/server-filesystem"
     },
     {
@@ -190,7 +190,7 @@
         "planning"
       ],
       "path": "plugins/sequential-thinking",
-      "version": "2.1.1",
+      "version": "2.2.0",
       "package": "@modelcontextprotocol/server-sequential-thinking"
     },
     {
@@ -213,7 +213,7 @@
         "knowledge graph"
       ],
       "path": "plugins/memory",
-      "version": "2.1.1",
+      "version": "2.2.1",
       "package": "@modelcontextprotocol/server-memory"
     },
     {
@@ -237,7 +237,7 @@
       ],
       "license": "MIT",
       "path": "plugins/time",
-      "version": "2026.11.11",
+      "version": "2026.11.18",
       "package": "mcp-server-time"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "license": "MIT",
       "path": "plugins/git",
-      "version": "2026.11.11",
+      "version": "2026.11.18",
       "package": "mcp-server-git"
     },
     {
@@ -392,7 +392,7 @@
       ],
       "license": "MIT",
       "path": "plugins/fetch",
-      "version": "2026.11.11",
+      "version": "2026.11.18",
       "package": "mcp-server-fetch"
     },
     {
@@ -1285,7 +1285,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.38.1"
+      "version": "3.38.2"
     },
     {
       "id": "addy-agent-skills",
@@ -1790,7 +1790,7 @@
         "内容创作"
       ],
       "license": "MIT",
-      "version": "1.2.2"
+      "version": "1.3.1"
     },
     {
       "id": "anthropic-skills",
