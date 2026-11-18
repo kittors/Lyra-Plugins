@@ -48,7 +48,7 @@
         "testing"
       ],
       "path": "plugins/playwright",
-      "version": "0.0.85",
+      "version": "0.0.86",
       "package": "@playwright/mcp"
     },
     {
@@ -97,7 +97,7 @@
         "terminal"
       ],
       "path": "plugins/desktop-commander",
-      "version": "0.3.3",
+      "version": "0.3.4",
       "package": "@wonderwhy-er/desktop-commander"
     },
     {
@@ -685,7 +685,7 @@
       ],
       "license": "MIT",
       "path": "plugins/dbhub",
-      "version": "1.7.1",
+      "version": "2.0.0",
       "package": "@bytebase/dbhub",
       "needs": [
         {
@@ -1307,7 +1307,7 @@
         "workflow"
       ],
       "license": "MIT",
-      "version": "0.6.16"
+      "version": "0.6.17"
     },
     {
       "id": "mattpocock-skills",
