@@ -1,6 +1,6 @@
 {
   "name": "brave-search",
-  "version": "2.1.5",
+  "version": "2.2.0",
   "description": "Brave 自建索引的搜索：网页、新闻、图片、视频、本地商户，外加结果摘要。",
   "author": {
     "name": "Brave"

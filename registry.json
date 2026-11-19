@@ -447,7 +447,7 @@
       ],
       "license": "MIT",
       "path": "plugins/brave-search",
-      "version": "2.1.5",
+      "version": "2.2.0",
       "package": "@brave/brave-search-mcp-server",
       "needs": [
         {
