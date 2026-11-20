@@ -685,7 +685,7 @@
       ],
       "license": "MIT",
       "path": "plugins/dbhub",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "package": "@bytebase/dbhub",
       "needs": [
         {
@@ -1374,7 +1374,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "agent-skills-1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62"
+      "version": "agent-skills-5a37a6329fbad3666c3207392a6a7c0110e92efb"
     },
     {
       "id": "cloudflare",
@@ -1528,7 +1528,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "1.2.0"
+      "version": "1.2.1"
     },
     {
       "id": "planning-with-files",
@@ -1550,7 +1550,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "3.28.1"
+      "version": "3.29.0"
     },
     {
       "id": "i-have-adhd",
