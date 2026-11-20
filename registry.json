@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-11-19",
+  "updatedAt": "2026-11-20",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -1014,7 +1014,7 @@
       ],
       "license": "MIT",
       "path": "plugins/atlassian",
-      "version": "0.24.6",
+      "version": "0.24.7",
       "package": "mcp-atlassian",
       "needs": [
         {
@@ -1616,7 +1616,7 @@
         "marketing"
       ],
       "license": "MIT",
-      "version": "2.14.13"
+      "version": "2.14.25"
     },
     {
       "id": "anthropic-data",
