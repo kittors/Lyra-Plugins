@@ -73,7 +73,7 @@
         "performance"
       ],
       "path": "plugins/chrome-devtools",
-      "version": "1.13.0",
+      "version": "1.14.0",
       "package": "chrome-devtools-mcp"
     },
     {
@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.7.3",
+      "version": "4.8.0",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.3.3",
+      "version": "2.3.5",
       "package": "excel-mcp-server"
     },
     {
@@ -1307,7 +1307,7 @@
         "workflow"
       ],
       "license": "MIT",
-      "version": "0.6.17"
+      "version": "0.6.18"
     },
     {
       "id": "mattpocock-skills",
