@@ -660,7 +660,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/aws-documentation",
-      "version": "1.2.6",
+      "version": "1.2.7",
       "package": "awslabs.aws-documentation-mcp-server"
     },
     {
