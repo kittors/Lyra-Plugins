@@ -339,7 +339,7 @@
       ],
       "license": "MIT",
       "path": "plugins/shadcn",
-      "version": "4.23.0",
+      "version": "4.23.1",
       "package": "shadcn"
     },
     {
@@ -889,7 +889,7 @@
       ],
       "license": "MIT",
       "path": "plugins/excel",
-      "version": "2.3.5",
+      "version": "2.3.6",
       "package": "excel-mcp-server"
     },
     {
@@ -1528,7 +1528,7 @@
       ],
       "license": "MIT",
       "path": "skills",
-      "version": "1.2.1"
+      "version": "1.2.3"
     },
     {
       "id": "planning-with-files",
