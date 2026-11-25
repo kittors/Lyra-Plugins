@@ -1,7 +1,7 @@
 {
   "$comment": "由 scripts/sync.mjs 从 sources.json 生成，不要手改。",
   "name": "Lyra Plugins",
-  "updatedAt": "2026-11-24",
+  "updatedAt": "2026-11-25",
   "plugins": [
     {
       "id": "agent-browser-cli",
@@ -745,7 +745,7 @@
       ],
       "license": "Apache-2.0",
       "path": "plugins/mongodb",
-      "version": "3.3.0",
+      "version": "3.4.0",
       "package": "mongodb-mcp-server",
       "needs": [
         {
@@ -1239,7 +1239,7 @@
       ],
       "license": "MIT",
       "path": "plugins/zotero",
-      "version": "0.17.3",
+      "version": "0.17.4",
       "package": "zotero-mcp-server"
     },
     {
