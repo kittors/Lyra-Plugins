@@ -120,7 +120,7 @@
         "fs"
       ],
       "path": "plugins/filesystem",
-      "version": "2.4.0",
+      "version": "2.4.1",
       "package": "@modelcontextprotocol/server-filesystem"
     },
     {
@@ -144,7 +144,7 @@
         "library"
       ],
       "path": "plugins/context7",
-      "version": "4.9.0",
+      "version": "4.9.1",
       "package": "@upstash/context7-mcp"
     },
     {
@@ -213,7 +213,7 @@
         "knowledge graph"
       ],
       "path": "plugins/memory",
-      "version": "2.2.1",
+      "version": "2.2.2",
       "package": "@modelcontextprotocol/server-memory"
     },
     {
@@ -237,7 +237,7 @@
       ],
       "license": "MIT",
       "path": "plugins/time",
-      "version": "2026.11.18",
+      "version": "2026.11.27",
       "package": "mcp-server-time"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "license": "MIT",
       "path": "plugins/git",
-      "version": "2026.11.18",
+      "version": "2026.11.27",
       "package": "mcp-server-git"
     },
     {
@@ -392,7 +392,7 @@
       ],
       "license": "MIT",
       "path": "plugins/fetch",
-      "version": "2026.11.18",
+      "version": "2026.11.27",
       "package": "mcp-server-fetch"
     },
     {
